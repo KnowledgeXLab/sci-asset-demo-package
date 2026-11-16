@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C05-power-one", "ok": true, "rows": 1, "value_est": ["12.500000"], "nearest_dist": ["2.500000"], "expected": {"rows": 1, "value_est": ["12.500000"], "nearest_dist": ["2.500000"]}, "why": ""}

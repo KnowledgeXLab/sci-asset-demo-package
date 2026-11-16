@@ -1,0 +1,9 @@
+{
+  "error": "missing_value_column",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

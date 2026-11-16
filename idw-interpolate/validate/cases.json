@@ -1,0 +1,41 @@
+{
+  "asset": "idw-interpolate",
+  "cases": [
+    {
+      "id": "C01-hits",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "title": "命中已知点 → value_est 10/20、nearest_dist 均为 0（两列都判）"
+    },
+    {
+      "id": "C02-equidistant",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "title": "等距两点 → 均值 15、nearest_dist 5（两列都判）"
+    },
+    {
+      "id": "C03-missing-file",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)"
+    },
+    {
+      "id": "C04-bad-column",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "目标点缺 x 列 → 退出码 2 + error.json(bad_columns)"
+    },
+    {
+      "id": "C05-power-one",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "title": "非默认幂次 power=1 → 解析解 12.5、nearest_dist 2.5"
+    },
+    {
+      "id": "C06-bad-power",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "--power ≤ 0 → 退出码 2 + error.json(bad_power)"
+    }
+  ]
+}

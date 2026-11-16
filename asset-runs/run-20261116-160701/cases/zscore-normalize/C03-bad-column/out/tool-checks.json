@@ -1,0 +1,14 @@
+{
+  "case": "C03-bad-column",
+  "rc": 2,
+  "error": {
+    "error": "missing_value_column"
+  },
+  "passed": true,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

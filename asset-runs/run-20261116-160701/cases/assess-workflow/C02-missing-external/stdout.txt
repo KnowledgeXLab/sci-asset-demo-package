@@ -1,0 +1,1 @@
+{"case": "C02-missing-external", "rc": 3, "passed": true}

@@ -1,0 +1,52 @@
+{
+  "tool": "check_skill_spec.py",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0",
+  "spec_format": "markdown",
+  "skills": 4,
+  "failed": 0,
+  "results": [
+    {
+      "asset_dir": "assess-workflow",
+      "asset_type": "skill",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "grid-samples",
+      "asset_type": "data",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "idw-interpolate",
+      "asset_type": "skill",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "zscore-normalize",
+      "asset_type": "tool",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    }
+  ],
+  "rule": "skill 给 agent 用，验收必须上 agent：validate/readme.md 三节——Agent（agent harness + agent model）、测试任务（任务/输入/输出）、通过门槛（指标或对 agent 产物的验证脚本）；缺建议 harness 可替代但须在报告注明",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

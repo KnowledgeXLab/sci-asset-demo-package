@@ -1,0 +1,17 @@
+{
+  "asset": "assess-workflow",
+  "cases": [
+    {
+      "id": "C01-end-to-end",
+      "kind": "workflow",
+      "expected_kind": "success",
+      "title": "数据→工具→技能全链路：100 个数据点、5 个目标点、3 步"
+    },
+    {
+      "id": "C02-missing-external",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "挂载根缺外部资产 → 退出码 3 + error.json(external_asset_missing)"
+    }
+  ]
+}

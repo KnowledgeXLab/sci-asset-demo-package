@@ -1,0 +1,33 @@
+{
+  "case": "C03-read",
+  "checks": [
+    {
+      "name": "record_count",
+      "expected": 100,
+      "actual": 100
+    },
+    {
+      "name": "columns",
+      "expected": [
+        "id",
+        "x",
+        "y",
+        "value"
+      ],
+      "actual": [
+        "id",
+        "x",
+        "y",
+        "value"
+      ]
+    }
+  ],
+  "passed": true,
+  "formula_max_dev": 4.915579161490768e-07,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

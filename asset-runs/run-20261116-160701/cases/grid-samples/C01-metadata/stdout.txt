@@ -1,0 +1,1 @@
+{"case": "C01-metadata", "checks": 3, "passed": true}

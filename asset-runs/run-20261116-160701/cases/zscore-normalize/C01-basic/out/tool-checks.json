@@ -1,0 +1,21 @@
+{
+  "case": "C01-basic",
+  "rc": 0,
+  "zscore": [
+    "-1.224745",
+    "0.000000",
+    "1.224745"
+  ],
+  "stats": {
+    "n": 3,
+    "mean": 2.0,
+    "pstdev": 0.816497
+  },
+  "passed": true,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

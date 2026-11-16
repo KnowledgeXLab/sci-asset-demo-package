@@ -1,0 +1,1 @@
+{"case": "C02-structure", "checks": 2, "passed": true}

@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "id": "zscore-normalize",
+  "display_name": "z-score 标准化",
+  "version": "1.0.0",
+  "category": [
+    "statistics"
+  ],
+  "entrypoint": {
+    "type": "cli",
+    "command": "python scripts/zscore.py --input <csv> --out-dir <dir>"
+  },
+  "parameters": {
+    "type": "object",
+    "required": [
+      "input",
+      "out_dir"
+    ],
+    "properties": {
+      "input": {
+        "type": "string",
+        "description": "CSV，需含 value 列"
+      },
+      "out_dir": {
+        "type": "string",
+        "description": "输出目录"
+      }
+    }
+  },
+  "outputs": {
+    "result.csv": "id,zscore",
+    "stats.json": "n/mean/pstdev"
+  },
+  "errors": [
+    {
+      "code": 2,
+      "when": "value 列缺失（missing_value_column）/ 存在非数值（bad_value）/ 空输入（empty_input）/ 方差为 0（zero_variance）"
+    },
+    {
+      "code": 3,
+      "when": "输入文件不存在（input_not_found）"
+    }
+  ]
+}

@@ -1,0 +1,41 @@
+{
+  "asset": "zscore-normalize",
+  "cases": [
+    {
+      "id": "C01-basic",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "title": "1,2,3 三点：z 值 -1.224745/0/1.224745，mean=2.0，pstdev=0.816497"
+    },
+    {
+      "id": "C02-single",
+      "kind": "edge",
+      "expected_kind": "error",
+      "title": "单条记录方差为 0 → 退出码 2 + error.json(zero_variance)"
+    },
+    {
+      "id": "C03-bad-column",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "缺 value 列 → 退出码 2 + error.json(missing_value_column)"
+    },
+    {
+      "id": "C04-input-missing",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)"
+    },
+    {
+      "id": "C05-bad-value",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "value 含非数值 → 退出码 2 + error.json(bad_value)"
+    },
+    {
+      "id": "C06-empty-input",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "只有表头的空输入 → 退出码 2 + error.json(empty_input)"
+    }
+  ]
+}

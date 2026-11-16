@@ -1,0 +1,29 @@
+{
+  "asset": "grid-samples",
+  "case": "C02-structure",
+  "cmd": [
+    "/home/dengnianchen/miniconda3/bin/python3",
+    "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+    "--case",
+    "C02-structure",
+    "--out-dir",
+    "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C02-structure/out"
+  ],
+  "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+  "rc": 0,
+  "started_at": "2026-11-16T16:07:25+08:00",
+  "finished_at": "2026-11-16T16:07:25+08:00",
+  "stdout": "{\"case\": \"C02-structure\", \"checks\": 2, \"passed\": true}",
+  "stderr": "",
+  "produced": [
+    "out/data-checks.json"
+  ],
+  "passed": true,
+  "python": "3.14.7",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

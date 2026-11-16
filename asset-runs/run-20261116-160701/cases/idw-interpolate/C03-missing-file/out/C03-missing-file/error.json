@@ -1,0 +1,10 @@
+{
+  "error": "input_not_found",
+  "detail": "[Errno 2] No such file or directory: '/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C03-missing-file/out/nope.csv'",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

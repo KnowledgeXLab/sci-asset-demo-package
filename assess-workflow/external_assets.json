@@ -1,0 +1,29 @@
+{
+  "schema_version": "1.0.0",
+  "assets": [
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "asset_version": "1.0.0",
+      "target_path": "grid-samples",
+      "media_type": "inode/directory",
+      "required": true,
+      "license": "CC-BY-4.0"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "asset_version": "1.0.0",
+      "target_path": "zscore-normalize",
+      "media_type": "inode/directory",
+      "required": true,
+      "license": "MIT"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "asset_version": "1.0.0",
+      "target_path": "idw-interpolate",
+      "media_type": "inode/directory",
+      "required": true,
+      "license": "CC-BY-4.0"
+    }
+  ]
+}

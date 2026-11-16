@@ -1,0 +1,101 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+  "asset_type": "data",
+  "name": "规则网格采样点数据",
+  "description": "10×10 网格上 100 个采样点，含 x/y 与观测值，用于示例插值与统计。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:data-acquisition",
+      "label": "数据获取"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-14T00:00:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:generator"
+    }
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "format": [
+        "csv"
+      ],
+      "record_count": 100
+    },
+    "artifacts": [
+      {
+        "id": "points",
+        "artifact_type": "file",
+        "uri": "payload/points.csv",
+        "media_type": "text/csv",
+        "role": "primary-data",
+        "sha256": "e696fc3c86f9b972dc3155d53324cfdf974363da0031df6703d34f55c8b3b81d",
+        "size_bytes": 1895
+      },
+      {
+        "id": "metadata",
+        "artifact_type": "file",
+        "uri": "metadata.json",
+        "media_type": "application/json",
+        "role": "metadata"
+      },
+      {
+        "id": "readme",
+        "artifact_type": "file",
+        "uri": "readme.md",
+        "media_type": "text/markdown",
+        "role": "readme"
+      }
+    ],
+    "domain_attributes": {
+      "scientific_objects": [
+        "采样点",
+        "规则网格",
+        "观测值"
+      ],
+      "spatial": {
+        "crs": "local-cartesian",
+        "bbox": {
+          "x": [
+            0,
+            9
+          ],
+          "y": [
+            0,
+            9
+          ]
+        },
+        "grid": "10x10"
+      }
+    },
+    "asset_protocol": {
+      "readme": "readme.md",
+      "prepare": "usage/readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}

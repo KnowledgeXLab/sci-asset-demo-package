@@ -1,0 +1,106 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+  "asset_type": "skill",
+  "name": "示例评估工作流",
+  "description": "把示例数据、z-score 工具与 IDW 技能串成一条最小工作流，输出含统计量与估值范围的汇总报告。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:data-processing",
+      "label": "数据加工"
+    },
+    {
+      "id": "operation:analysis",
+      "label": "分析"
+    },
+    {
+      "id": "operation:prediction",
+      "label": "预测"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-14T00:00:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:generator"
+    }
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "runtime": "python>=3.10（仅标准库）",
+      "asset_role": "workflow",
+      "steps": [
+        "read_data",
+        "zscore_normalize",
+        "idw_interpolate"
+      ]
+    },
+    "artifacts": [
+      {
+        "id": "skill-instructions",
+        "artifact_type": "file",
+        "uri": "SKILL.md",
+        "media_type": "text/markdown",
+        "role": "skill-instructions"
+      },
+      {
+        "id": "orchestrator",
+        "artifact_type": "file",
+        "uri": "scripts/run_workflow.py",
+        "media_type": "text/x-python",
+        "role": "runner"
+      },
+      {
+        "id": "targets",
+        "artifact_type": "file",
+        "uri": "targets.csv",
+        "media_type": "text/csv",
+        "role": "input-template"
+      },
+      {
+        "id": "external-refs",
+        "artifact_type": "file",
+        "uri": "external_assets.json",
+        "media_type": "application/json",
+        "role": "external-references"
+      }
+    ],
+    "domain_attributes": {
+      "scientific_objects": [
+        "采样点",
+        "标准化结果",
+        "插值估值"
+      ],
+      "spatial": {
+        "crs": "inherits-data-asset"
+      }
+    },
+    "asset_protocol": {
+      "readme": "SKILL.md",
+      "prepare": "usage/readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}

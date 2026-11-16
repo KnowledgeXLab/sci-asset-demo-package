@@ -1,0 +1,1 @@
+{"case": "C03-bad-column", "rc": 2, "passed": true}

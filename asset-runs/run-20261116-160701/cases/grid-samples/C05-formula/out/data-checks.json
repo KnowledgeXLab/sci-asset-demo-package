@@ -1,0 +1,18 @@
+{
+  "case": "C05-formula",
+  "checks": [
+    {
+      "name": "formula_recompute",
+      "expected": true,
+      "actual": true
+    }
+  ],
+  "passed": true,
+  "formula_max_dev": 4.915579161490768e-07,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

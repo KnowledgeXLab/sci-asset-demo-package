@@ -1,0 +1,19 @@
+工作流已跑通，`validate/validate.py --case C01-end-to-end` 的四项检查（data_points / targets / steps / estimate_range）全部通过；我另外用独立脚本复算了一遍 IDW 与均值，数值逐项一致。
+
+`report.json` 关键值：
+
+| 字段 | 值 |
+|---|---|
+| data_points | **100** |
+| targets | **5** |
+| estimate_min | **12.323535** |
+| estimate_max | **18.208559** |
+
+即 estimate 范围 = **[12.323535, 18.208559]**（另附参考：`value_mean` = 15.699537、`value_pstdev` = 2.318747，`steps` = read_data → zscore_normalize → idw_interpolate）。
+
+几点说明：
+- 产物均落在当前工作目录，技能目录只读未改动；除 `report.json` 外还有中间产物 `tool/{result.csv,stats.json}` 与 `skill/{interpolated.csv,run.json}`，全部使用相对路径引用外部资产，换机器可复现比对。
+- 估值确实是对**原始观测值**做 IDW（量级 12–18，与均值 15.7 同尺度，而非 z-score 的 ±3），说明标准化只用于产出统计量、未改变插值输入，符合 SKILL.md 的口径。
+- 5 个目标点的估值为：16.441320、16.143838、14.333148、18.208559、12.323535，极值来自 (1.5, 8.5) 与 (8.5, 1.25) 两点。
+
+产物绝对路径：/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/agent/assess-workflow/report.json

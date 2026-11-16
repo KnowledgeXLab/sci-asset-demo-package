@@ -1,0 +1,83 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+  "asset_type": "skill",
+  "name": "IDW 反距离权重插值技能",
+  "description": "按已知散点观测对目标点做反距离权重估值，输出估测值与最近邻距离，适合快速生成连续表面。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:analysis",
+      "label": "分析"
+    },
+    {
+      "id": "operation:prediction",
+      "label": "预测"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-14T00:00:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:generator"
+    }
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "runtime": "python>=3.10（仅标准库）"
+    },
+    "artifacts": [
+      {
+        "id": "skill-instructions",
+        "artifact_type": "file",
+        "uri": "SKILL.md",
+        "media_type": "text/markdown",
+        "role": "skill-instructions"
+      },
+      {
+        "id": "runner",
+        "artifact_type": "file",
+        "uri": "scripts/run.py",
+        "media_type": "text/x-python",
+        "role": "runner"
+      }
+    ],
+    "domain_attributes": {
+      "scientific_objects": [
+        "散点观测",
+        "估值表面"
+      ],
+      "spatial": {
+        "crs": "local-cartesian",
+        "method": "IDW",
+        "default_power": 2
+      }
+    },
+    "asset_protocol": {
+      "readme": "SKILL.md",
+      "prepare": "usage/readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}

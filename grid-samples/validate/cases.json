@@ -1,0 +1,30 @@
+{
+  "asset": "grid-samples",
+  "cases": [
+    {
+      "id": "C01-metadata",
+      "kind": "declared-metadata",
+      "title": "记录数/列名/值域与 metadata.json 声明一致"
+    },
+    {
+      "id": "C02-structure",
+      "kind": "structure",
+      "title": "列集合与行序稳定（首行 id=p001）"
+    },
+    {
+      "id": "C03-read",
+      "kind": "file_metadata",
+      "title": "payload/points.csv 可解析为 UTF-8 CSV 且含表头"
+    },
+    {
+      "id": "C04-extent",
+      "kind": "declared-metadata",
+      "title": "声明空间范围与网格完整性：bbox 与 grid{nx,ny} 和实体一致"
+    },
+    {
+      "id": "C05-formula",
+      "kind": "declared-formula",
+      "title": "声明公式逐行复算：按 metadata.formula（i 自 1 起）重算 100 行，最大偏差 ≤ 1e-06"
+    }
+  ]
+}

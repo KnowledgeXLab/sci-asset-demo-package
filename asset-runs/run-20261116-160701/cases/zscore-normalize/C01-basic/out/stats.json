@@ -1,0 +1,11 @@
+{
+  "n": 3,
+  "mean": 2.0,
+  "pstdev": 0.816497,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

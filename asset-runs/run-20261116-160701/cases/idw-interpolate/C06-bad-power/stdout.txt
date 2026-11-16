@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C06-bad-power", "rc": 2, "error": "bad_power", "expected": {"rc": 2, "error": "bad_power"}, "ok": true}

@@ -1,0 +1,1 @@
+{"case": "C03-read", "checks": 2, "passed": true}

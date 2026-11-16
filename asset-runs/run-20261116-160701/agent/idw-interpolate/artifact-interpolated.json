@@ -1,0 +1,12 @@
+{
+  "artifact": "interpolated.csv",
+  "source": "agent/idw-interpolate/interpolated.csv",
+  "note": "原始 CSV 在 prune 后由本文件保留内容（prune 会清理 .csv 实体，内容为重跑即可复现的产物）",
+  "content": "x,y,value_est,nearest_dist\n0,0,10.000000,0.000000\n10,0,20.000000,0.000000\n",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

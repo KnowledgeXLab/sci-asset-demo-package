@@ -1,0 +1,465 @@
+[
+  {
+    "asset": "grid-samples",
+    "case": "C01-metadata",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+      "--case",
+      "C01-metadata",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C01-metadata/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:24+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C01-metadata\", \"checks\": 3, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/data-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "grid-samples",
+    "case": "C02-structure",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+      "--case",
+      "C02-structure",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C02-structure/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C02-structure\", \"checks\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/data-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "grid-samples",
+    "case": "C03-read",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+      "--case",
+      "C03-read",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C03-read/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C03-read\", \"checks\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/data-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "grid-samples",
+    "case": "C04-extent",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+      "--case",
+      "C04-extent",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C04-extent/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C04-extent\", \"checks\": 3, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/data-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "grid-samples",
+    "case": "C05-formula",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples/validate/validate.py",
+      "--case",
+      "C05-formula",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/grid-samples/C05-formula/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/grid-samples",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C05-formula\", \"checks\": 1, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/data-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C01-basic",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C01-basic",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C01-basic/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C01-basic\", \"rc\": 0, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/in.csv",
+      "out/result.csv",
+      "out/stats.json",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C02-single",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C02-single",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C02-single/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C02-single\", \"rc\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/in2.csv",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C03-bad-column",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C03-bad-column",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C03-bad-column/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C03-bad-column\", \"rc\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/in3.csv",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C04-input-missing",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C04-input-missing",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C04-input-missing/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C04-input-missing\", \"rc\": 3, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C05-bad-value",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C05-bad-value",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C05-bad-value/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C05-bad-value\", \"rc\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/in5.csv",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "zscore-normalize",
+    "case": "C06-empty-input",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize/validate/validate.py",
+      "--case",
+      "C06-empty-input",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/zscore-normalize/C06-empty-input/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/zscore-normalize",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"case\": \"C06-empty-input\", \"rc\": 2, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/in6.csv",
+      "out/tool-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C01-hits",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C01-hits",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C01-hits/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:25+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C01-hits\", \"ok\": true, \"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"], \"expected\": {\"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"]}, \"why\": \"\"}",
+    "stderr": "",
+    "produced": [
+      "out/interpolated.csv",
+      "out/run.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C02-equidistant",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C02-equidistant",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C02-equidistant/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:25+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C02-equidistant\", \"ok\": true, \"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"], \"expected\": {\"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"]}, \"why\": \"\"}",
+    "stderr": "",
+    "produced": [
+      "out/interpolated.csv",
+      "out/run.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C03-missing-file",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C03-missing-file",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C03-missing-file/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C03-missing-file\", \"rc\": 3, \"error\": \"input_not_found\", \"expected\": {\"rc\": 3, \"error\": \"input_not_found\"}, \"ok\": true}",
+    "stderr": "",
+    "produced": [
+      "out/C03-missing-file/error.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C04-bad-column",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C04-bad-column",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C04-bad-column/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C04-bad-column\", \"rc\": 2, \"error\": \"bad_columns\", \"expected\": {\"rc\": 2, \"error\": \"bad_columns\"}, \"ok\": true}",
+    "stderr": "",
+    "produced": [
+      "out/C04-bad-column/error.json",
+      "out/bad-targets.csv"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C05-power-one",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C05-power-one",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C05-power-one/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C05-power-one\", \"ok\": true, \"rows\": 1, \"value_est\": [\"12.500000\"], \"nearest_dist\": [\"2.500000\"], \"expected\": {\"rows\": 1, \"value_est\": [\"12.500000\"], \"nearest_dist\": [\"2.500000\"]}, \"why\": \"\"}",
+    "stderr": "",
+    "produced": [
+      "out/interpolated.csv",
+      "out/run.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "idw-interpolate",
+    "case": "C06-bad-power",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+      "--case",
+      "C06-bad-power",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C06-bad-power/out"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"mode\": \"self-check\", \"case\": \"C06-bad-power\", \"rc\": 2, \"error\": \"bad_power\", \"expected\": {\"rc\": 2, \"error\": \"bad_power\"}, \"ok\": true}",
+    "stderr": "",
+    "produced": [
+      "out/C06-bad-power/error.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "assess-workflow",
+    "case": "C01-end-to-end",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/assess-workflow/validate/validate.py",
+      "--case",
+      "C01-end-to-end",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C01-end-to-end/out",
+      "--assets-root",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/assess-workflow"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/assess-workflow",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"case\": \"C01-end-to-end\", \"rc\": 0, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/report.json",
+      "out/skill/interpolated.csv",
+      "out/skill/run.json",
+      "out/tool/result.csv",
+      "out/tool/stats.json",
+      "out/workflow-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  },
+  {
+    "asset": "assess-workflow",
+    "case": "C02-missing-external",
+    "cmd": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/assess-workflow/validate/validate.py",
+      "--case",
+      "C02-missing-external",
+      "--out-dir",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C02-missing-external/out",
+      "--assets-root",
+      "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C02-missing-external/empty-root"
+    ],
+    "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/assess-workflow",
+    "rc": 0,
+    "started_at": "2026-11-16T16:07:26+08:00",
+    "finished_at": "2026-11-16T16:07:26+08:00",
+    "stdout": "{\"case\": \"C02-missing-external\", \"rc\": 3, \"passed\": true}",
+    "stderr": "",
+    "produced": [
+      "out/error.json",
+      "out/workflow-checks.json"
+    ],
+    "passed": true,
+    "python": "3.14.7"
+  }
+]

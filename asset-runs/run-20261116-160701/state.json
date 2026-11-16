@@ -1,0 +1,189 @@
+{
+  "run_id": "run-20261116-160701",
+  "package": "demo-assets-1.0.0",
+  "package_root": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0",
+  "work_copy": "examples/.asset-work/run-20261116-160701",
+  "stages": [
+    {
+      "stage": "scope_inventory",
+      "status": "completed",
+      "artifacts": [
+        "inventory.json",
+        "manifest-before.json"
+      ],
+      "note": "4 个资产、42 个关键文件全部存在；包内无 asset-runs（本批新建）"
+    },
+    {
+      "stage": "envelope_validation",
+      "status": "completed",
+      "artifacts": [
+        "envelope-report.json"
+      ],
+      "note": "4/4 PASS，schema 交叉校验引擎 jsonschema 4.26.0，0 error 0 warning；实体路径/size_bytes/sha256 全部实测一致"
+    },
+    {
+      "stage": "selfcontained",
+      "status": "completed",
+      "artifacts": [
+        "selfcontained-report.json"
+      ],
+      "note": "4/4 OK，越界 0；assess-workflow 的跨资产依赖走 external_assets.json 合规通道"
+    },
+    {
+      "stage": "usage_doc",
+      "status": "completed",
+      "artifacts": [
+        "usage.md"
+      ]
+    },
+    {
+      "stage": "skill_test_spec",
+      "status": "completed",
+      "artifacts": [
+        "skill-validate-readme.json"
+      ],
+      "note": "4/4 OK（2 个 skill 资产的 validate/readme.md 三节齐备）"
+    },
+    {
+      "stage": "external_mount",
+      "status": "completed",
+      "artifacts": [
+        "external-mounts.json"
+      ],
+      "note": "同包解析 3、包外复制 0、缺失 0；按 target_path 在副本内建软链 3 条，原始包未写入"
+    },
+    {
+      "stage": "registration_list",
+      "status": "completed",
+      "artifacts": [
+        "registration/科学数字资产清单.xlsx",
+        "registration/check-list-report.json",
+        "registration/field-evidence.json",
+        "registration/asset-row-map.json",
+        "registration/asset-ids.json",
+        "registration/external-refs.json"
+      ],
+      "note": "对外发版清单 23 列 × 4 行（一资产一行）+ 用例明细 21 行；自检 0 error 0 warning；平台未注册（用户未要求）"
+    },
+    {
+      "stage": "given_cases",
+      "status": "completed",
+      "artifacts": [
+        "cases.json",
+        "_raw-results.json"
+      ],
+      "note": "19/19 通过（data 5、tool 6、skill 6、workflow 2）"
+    },
+    {
+      "stage": "independent_check",
+      "status": "completed",
+      "artifacts": [
+        "independent-check.json"
+      ],
+      "note": "31 项独立复算全部与声明/解析解一致；不依赖包内脚本的判定逻辑"
+    },
+    {
+      "stage": "skill_agent_acceptance",
+      "status": "completed",
+      "artifacts": [
+        "agent/idw-interpolate-report.json",
+        "agent/assess-workflow-report.json"
+      ],
+      "note": "harness=DSH headless（readme 建议），2/2 pass；nested dsh 首次写入宿主 profile 被沙箱拒绝，自动改隔离 DSH_HOME 重试成功（现场留在 *-attempt-01-sandbox-*.txt）"
+    },
+    {
+      "stage": "sage_a1.5",
+      "status": "completed",
+      "artifacts": [
+        "sage-need.json",
+        "sage-config.json",
+        "sage-a1.5-report.json",
+        "agent-sage/idw-interpolate-report.json",
+        "agent-sage/assess-workflow-report.json"
+      ],
+      "note": "needed=true（含 skill 资产）；配置由宿主 DSH profile/凭据解析，探测 200、模型在列；同一 harness 换后端跑 2/2 通过；不计入判定"
+    },
+    {
+      "stage": "mcp_registration",
+      "status": "not_applicable_no_such_asset",
+      "note": "包内无 MCP/HTTP 端点，也无工具函数描述需要注册；采用 CLI/库直连验证（含预期失败调用，见 cases.json 的错误用例）"
+    },
+    {
+      "stage": "model_deployment",
+      "status": "not_applicable_no_such_asset",
+      "note": "包内无模型权重、预处理文件或推理入口"
+    },
+    {
+      "stage": "environment_deployment",
+      "status": "not_applicable_no_such_asset",
+      "note": "包内无 environment 类型资产"
+    },
+    {
+      "stage": "trajectory_support",
+      "status": "not_applicable_no_such_asset",
+      "note": "包内无 trajectory 类型资产"
+    },
+    {
+      "stage": "benchmark_support",
+      "status": "not_applicable_no_such_asset",
+      "note": "包内无 benchmark 类型资产"
+    },
+    {
+      "stage": "comparison",
+      "status": "completed",
+      "artifacts": [
+        "comparison.json"
+      ],
+      "note": "21/21 pass"
+    },
+    {
+      "stage": "coverage_gate",
+      "status": "completed",
+      "artifacts": [
+        "coverage.json"
+      ],
+      "note": "data 5/≥3、tool 6/≥3、skill 10/≥2，均达标"
+    },
+    {
+      "stage": "validation_report",
+      "status": "completed",
+      "artifacts": [
+        "validation-report.md"
+      ],
+      "note": "check_report.py 通过（error 0 warning 0）"
+    },
+    {
+      "stage": "evidence_prune",
+      "status": "completed",
+      "artifacts": [
+        "evidence-prune.json"
+      ],
+      "note": "清理 19 项、5695 B；agent 产物 CSV 内容已转存 artifact-interpolated.json / artifact-report-snapshot.json，不依赖被清理的实体"
+    },
+    {
+      "stage": "stamp",
+      "status": "completed",
+      "note": "front matter 写入 skill 版本与生成时间；证据 JSON 打戳"
+    },
+    {
+      "stage": "work_copy_cleanup",
+      "status": "completed",
+      "artifacts": [
+        "work-copy.json"
+      ],
+      "note": "副本已清理并用文件数/字节数复核原始包未被改动"
+    }
+  ],
+  "blocked_items": [],
+  "skipped_items": [],
+  "notes": [
+    "隔离 DSH_HOME 副本（含凭据文件）已从 run 目录移除，未随包交付",
+    "包内示例占位信息（虚构 project-id 2026ZD000042、提供方「示例资产提供方」、urn:demo:generator、LICENSE 占位文本）按示例口径处理，不计为问题"
+  ],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

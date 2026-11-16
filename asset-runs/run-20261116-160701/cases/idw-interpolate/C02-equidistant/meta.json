@@ -1,0 +1,30 @@
+{
+  "asset": "idw-interpolate",
+  "case": "C02-equidistant",
+  "cmd": [
+    "/home/dengnianchen/miniconda3/bin/python3",
+    "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate/validate/validate.py",
+    "--case",
+    "C02-equidistant",
+    "--out-dir",
+    "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/idw-interpolate/C02-equidistant/out"
+  ],
+  "cwd": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261116-160701/idw-interpolate",
+  "rc": 0,
+  "started_at": "2026-11-16T16:07:25+08:00",
+  "finished_at": "2026-11-16T16:07:26+08:00",
+  "stdout": "{\"mode\": \"self-check\", \"case\": \"C02-equidistant\", \"ok\": true, \"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"], \"expected\": {\"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"]}, \"why\": \"\"}",
+  "stderr": "",
+  "produced": [
+    "out/interpolated.csv",
+    "out/run.json"
+  ],
+  "passed": true,
+  "python": "3.14.7",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

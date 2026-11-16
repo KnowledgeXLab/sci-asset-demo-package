@@ -1,0 +1,41 @@
+{
+  "records": 100,
+  "columns": [
+    "id",
+    "x",
+    "y",
+    "value"
+  ],
+  "bbox": {
+    "x": [
+      0,
+      9
+    ],
+    "y": [
+      0,
+      9
+    ]
+  },
+  "grid": {
+    "nx": 10,
+    "ny": 10,
+    "complete": true
+  },
+  "value_range": [
+    10.06741,
+    20.4125
+  ],
+  "sha256": "e696fc3c86f9b972dc3155d53324cfdf974363da0031df6703d34f55c8b3b81d",
+  "formula": {
+    "expr": "10 + 3*sin(x/2) + 2*cos(y/3) + 0.1*i",
+    "variables": {
+      "x": "列 x 的整数取值",
+      "y": "列 y 的整数取值",
+      "i": "行号"
+    },
+    "i_base": 1,
+    "i_rule": "按行递增，1…record_count",
+    "row_order": "先行内递增 x（0→9），再行间递增 y",
+    "tolerance": 1e-06
+  }
+}

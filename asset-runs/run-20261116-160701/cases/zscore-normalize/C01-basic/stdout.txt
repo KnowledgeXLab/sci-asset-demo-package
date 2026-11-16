@@ -1,0 +1,1 @@
+{"case": "C01-basic", "rc": 0, "passed": true}

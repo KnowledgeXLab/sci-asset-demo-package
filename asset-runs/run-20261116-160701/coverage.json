@@ -1,0 +1,65 @@
+{
+  "tool": "check_coverage.py",
+  "checked_at": "2026-11-16T16:11:47+08:00",
+  "cases_file": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases.json",
+  "minimums": "/home/dengnianchen/projects/agent_centric/.dsh/skills/sci-asset-verify-skill/assets/case-minimums.json",
+  "verdict": "sufficient",
+  "totals": {
+    "planned": 21,
+    "executed": 21,
+    "passed": 21,
+    "failed": 0,
+    "skipped": 0
+  },
+  "by_type": [
+    {
+      "asset_type": "data",
+      "planned": 5,
+      "executed": 5,
+      "passed": 5,
+      "failed": 0,
+      "skipped": 0,
+      "not_evaluated": 0,
+      "negative_expected": 0,
+      "min_cases": 3,
+      "min_executed": 2,
+      "status": "ok",
+      "reasons": []
+    },
+    {
+      "asset_type": "tool",
+      "planned": 6,
+      "executed": 6,
+      "passed": 6,
+      "failed": 0,
+      "skipped": 0,
+      "not_evaluated": 0,
+      "negative_expected": 5,
+      "min_cases": 3,
+      "min_executed": 2,
+      "status": "ok",
+      "reasons": []
+    },
+    {
+      "asset_type": "skill",
+      "planned": 10,
+      "executed": 10,
+      "passed": 10,
+      "failed": 0,
+      "skipped": 0,
+      "not_evaluated": 0,
+      "negative_expected": 4,
+      "min_cases": 2,
+      "min_executed": 1,
+      "status": "ok",
+      "reasons": []
+    }
+  ],
+  "gaps": [],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

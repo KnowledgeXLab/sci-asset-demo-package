@@ -1,0 +1,149 @@
+{
+  "run_id": "run-20261116-160701",
+  "package": "demo-assets-1.0.0",
+  "note": "对外发版清单不设「资产协议」「验证报告路径」列：前者只写在 asset.json 的 spec.asset_protocol，后者记录在本文件；清单「质量说明」末句已指向 validation-report.md。",
+  "report": "validation-report.md",
+  "comparison": "comparison.json",
+  "coverage": "coverage.json",
+  "assets": {
+    "规则网格采样点数据": {
+      "asset_id": "2026ZD000042/demo/data/grid-samples",
+      "版本": "1.0.0",
+      "validation_report": "validation-report.md",
+      "cases_evidence": [
+        "cases/grid-samples/",
+        "cases.json",
+        "comparison.json",
+        "independent-check.json"
+      ],
+      "sources": {
+        "资产摘要": "asset.json#description",
+        "任务|操作标签": "asset.json#task_classes[].id",
+        "科学对象": "asset.json#spec.domain_attributes.scientific_objects",
+        "资产提供单位": "asset.json#provenance.provider[].name",
+        "来源|产出方式": "asset.json#provenance.source",
+        "格式|接口": "asset.json#spec.metadata + spec.artifacts[].media_type",
+        "规模|数量": "asset.json#spec.metadata + validate/cases.json",
+        "空间|坐标|实验条件": "asset.json#spec.domain_attributes.spatial",
+        "输入说明/输出说明": "资产 readme/SKILL.md + scripts/*.py + validate/readme.md",
+        "运行环境|资源要求": "asset.json#spec.metadata.runtime + 脚本 import 清单",
+        "评价指标|验收条件": "本次 cases.json / comparison.json（run-20261116-160701）",
+        "质量说明": "validation-report.md + comparison.json",
+        "资产关联": "external_assets.json（仅 assess-workflow 有）"
+      },
+      "case_ids": [
+        "grid-samples/C01-metadata",
+        "grid-samples/C02-structure",
+        "grid-samples/C03-read",
+        "grid-samples/C04-extent",
+        "grid-samples/C05-formula"
+      ]
+    },
+    "z-score 标准化工具": {
+      "asset_id": "2026ZD000042/demo/tool/zscore-normalize",
+      "版本": "1.0.0",
+      "validation_report": "validation-report.md",
+      "cases_evidence": [
+        "cases/zscore-normalize/",
+        "cases.json",
+        "comparison.json",
+        "independent-check.json"
+      ],
+      "sources": {
+        "资产摘要": "asset.json#description",
+        "任务|操作标签": "asset.json#task_classes[].id",
+        "科学对象": "asset.json#spec.domain_attributes.scientific_objects",
+        "资产提供单位": "asset.json#provenance.provider[].name",
+        "来源|产出方式": "asset.json#provenance.source",
+        "格式|接口": "asset.json#spec.metadata + spec.artifacts[].media_type",
+        "规模|数量": "asset.json#spec.metadata + validate/cases.json",
+        "空间|坐标|实验条件": "asset.json#spec.domain_attributes.spatial",
+        "输入说明/输出说明": "资产 readme/SKILL.md + scripts/*.py + validate/readme.md",
+        "运行环境|资源要求": "asset.json#spec.metadata.runtime + 脚本 import 清单",
+        "评价指标|验收条件": "本次 cases.json / comparison.json（run-20261116-160701）",
+        "质量说明": "validation-report.md + comparison.json",
+        "资产关联": "external_assets.json（仅 assess-workflow 有）"
+      },
+      "case_ids": [
+        "zscore-normalize/C01-basic",
+        "zscore-normalize/C02-single",
+        "zscore-normalize/C03-bad-column",
+        "zscore-normalize/C04-input-missing",
+        "zscore-normalize/C05-bad-value",
+        "zscore-normalize/C06-empty-input"
+      ]
+    },
+    "IDW 反距离权重插值技能": {
+      "asset_id": "2026ZD000042/demo/skill/idw-interpolate",
+      "版本": "1.0.0",
+      "validation_report": "validation-report.md",
+      "cases_evidence": [
+        "cases/idw-interpolate/",
+        "cases.json",
+        "comparison.json",
+        "independent-check.json"
+      ],
+      "sources": {
+        "资产摘要": "asset.json#description",
+        "任务|操作标签": "asset.json#task_classes[].id",
+        "科学对象": "asset.json#spec.domain_attributes.scientific_objects",
+        "资产提供单位": "asset.json#provenance.provider[].name",
+        "来源|产出方式": "asset.json#provenance.source",
+        "格式|接口": "asset.json#spec.metadata + spec.artifacts[].media_type",
+        "规模|数量": "asset.json#spec.metadata + validate/cases.json",
+        "空间|坐标|实验条件": "asset.json#spec.domain_attributes.spatial",
+        "输入说明/输出说明": "资产 readme/SKILL.md + scripts/*.py + validate/readme.md",
+        "运行环境|资源要求": "asset.json#spec.metadata.runtime + 脚本 import 清单",
+        "评价指标|验收条件": "本次 cases.json / comparison.json（run-20261116-160701）",
+        "质量说明": "validation-report.md + comparison.json",
+        "资产关联": "external_assets.json（仅 assess-workflow 有）"
+      },
+      "case_ids": [
+        "idw-interpolate/C01-hits",
+        "idw-interpolate/C02-equidistant",
+        "idw-interpolate/C03-missing-file",
+        "idw-interpolate/C04-bad-column",
+        "idw-interpolate/C05-power-one",
+        "idw-interpolate/C06-bad-power",
+        "idw-interpolate/A01-agent-artifact"
+      ]
+    },
+    "示例评估工作流": {
+      "asset_id": "2026ZD000042/demo/skill/assess-workflow",
+      "版本": "1.0.0",
+      "validation_report": "validation-report.md",
+      "cases_evidence": [
+        "cases/assess-workflow/",
+        "cases.json",
+        "comparison.json",
+        "independent-check.json"
+      ],
+      "sources": {
+        "资产摘要": "asset.json#description",
+        "任务|操作标签": "asset.json#task_classes[].id",
+        "科学对象": "asset.json#spec.domain_attributes.scientific_objects",
+        "资产提供单位": "asset.json#provenance.provider[].name",
+        "来源|产出方式": "asset.json#provenance.source",
+        "格式|接口": "asset.json#spec.metadata + spec.artifacts[].media_type",
+        "规模|数量": "asset.json#spec.metadata + validate/cases.json",
+        "空间|坐标|实验条件": "asset.json#spec.domain_attributes.spatial",
+        "输入说明/输出说明": "资产 readme/SKILL.md + scripts/*.py + validate/readme.md",
+        "运行环境|资源要求": "asset.json#spec.metadata.runtime + 脚本 import 清单",
+        "评价指标|验收条件": "本次 cases.json / comparison.json（run-20261116-160701）",
+        "质量说明": "validation-report.md + comparison.json",
+        "资产关联": "external_assets.json（仅 assess-workflow 有）"
+      },
+      "case_ids": [
+        "assess-workflow/C01-end-to-end",
+        "assess-workflow/C02-missing-external",
+        "assess-workflow/A01-agent-artifact"
+      ]
+    }
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

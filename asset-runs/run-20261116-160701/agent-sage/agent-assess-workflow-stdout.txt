@@ -1,0 +1,15 @@
+
+
+工作流已成功运行（退出码 0，3 个步骤全部完成）。以下是 `report.json` 的关键信息：
+
+| 字段 | 值 |
+|---|---|
+| data_points | 100 |
+| targets | 5 |
+| estimate_min | 12.323535 |
+| estimate_max | 18.208559 |
+| value_mean | 15.699537 |
+| value_pstdev | 2.318747 |
+
+报告已按要求写入产物目录：
+_report.json 产物绝对路径：/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/agent-sage/assess-workflow/report.json_

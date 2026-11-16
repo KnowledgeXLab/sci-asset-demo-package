@@ -1,0 +1,14 @@
+{
+  "case": "C06-empty-input",
+  "rc": 2,
+  "error": {
+    "error": "empty_input"
+  },
+  "passed": true,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

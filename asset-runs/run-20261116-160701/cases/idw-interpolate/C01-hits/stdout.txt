@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C01-hits", "ok": true, "rows": 2, "value_est": ["10.000000", "20.000000"], "nearest_dist": ["0.000000", "0.000000"], "expected": {"rows": 2, "value_est": ["10.000000", "20.000000"], "nearest_dist": ["0.000000", "0.000000"]}, "why": ""}

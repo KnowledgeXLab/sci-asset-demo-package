@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C03-missing-file", "rc": 3, "error": "input_not_found", "expected": {"rc": 3, "error": "input_not_found"}, "ok": true}

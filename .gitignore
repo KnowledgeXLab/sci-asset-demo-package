@@ -1,0 +1,8 @@
+# 核验期临时产物
+.asset-work/
+.dsh-home-*/
+.credentials.yaml
+__pycache__/
+*.pyc
+
+# 说明：asset-runs/ 故意纳入仓库，作为一次核验的完整证据

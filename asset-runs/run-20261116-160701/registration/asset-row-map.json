@@ -1,0 +1,43 @@
+{
+  "run_id": "run-20261116-160701",
+  "row_key": [
+    "资产ID",
+    "版本"
+  ],
+  "rows": [
+    {
+      "资产ID": "2026ZD000042/demo/data/grid-samples",
+      "版本": "1.0.0",
+      "资产目录": "grid-samples",
+      "internal_number": null,
+      "asset_name": "规则网格采样点数据"
+    },
+    {
+      "资产ID": "2026ZD000042/demo/tool/zscore-normalize",
+      "版本": "1.0.0",
+      "资产目录": "zscore-normalize",
+      "internal_number": null,
+      "asset_name": "z-score 标准化工具"
+    },
+    {
+      "资产ID": "2026ZD000042/demo/skill/idw-interpolate",
+      "版本": "1.0.0",
+      "资产目录": "idw-interpolate",
+      "internal_number": null,
+      "asset_name": "IDW 反距离权重插值技能"
+    },
+    {
+      "资产ID": "2026ZD000042/demo/skill/assess-workflow",
+      "版本": "1.0.0",
+      "资产目录": "assess-workflow",
+      "internal_number": null,
+      "asset_name": "示例评估工作流"
+    }
+  ],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}

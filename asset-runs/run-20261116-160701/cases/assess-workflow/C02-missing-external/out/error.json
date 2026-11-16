@@ -1,0 +1,14 @@
+{
+  "error": "external_asset_missing",
+  "missing": {
+    "data": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C02-missing-external/empty-root/grid-samples",
+    "tool": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C02-missing-external/empty-root/zscore-normalize",
+    "skill": "/home/dengnianchen/projects/agent_centric/examples/demo-assets-1.0.0/asset-runs/run-20261116-160701/cases/assess-workflow/C02-missing-external/empty-root/idw-interpolate"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.4-dev",
+    "commit": "bdf50dd",
+    "version_source": "VERSION"
+  }
+}
