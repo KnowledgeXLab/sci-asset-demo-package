@@ -19,6 +19,7 @@ ERROR_CASES = {                                    # 文档承诺的错误分支
     'C03-missing-file': {'rc': 3, 'error': 'input_not_found'},
     'C04-bad-column': {'rc': 2, 'error': 'bad_columns'},
     'C06-bad-power': {'rc': 2, 'error': 'bad_power'},
+    'C07-no-source-points': {'rc': 2, 'error': 'no_source_points'},
 }
 
 def judge(csv_path: pathlib.Path, case: str) -> dict:
@@ -62,6 +63,9 @@ def main() -> int:
         if case == 'C06-bad-power':
             args = ['--points', str(here / 'validate' / 'cases' / 'C01' / 'points.csv'),
                     '--targets', str(here / 'validate' / 'cases' / 'C01' / 'targets.csv'), '--power', '0']
+        elif case == 'C07-no-source-points':          # 已知点表只有表头
+            empty = out / 'empty-points.csv'; empty.write_text('x,y,value\n', encoding='utf-8')
+            args = ['--points', str(empty), '--targets', str(here / 'validate' / 'cases' / 'C01' / 'targets.csv')]
         elif case == 'C03-missing-file':
             args = ['--points', str(out / 'nope.csv'), '--targets', str(here / 'validate' / 'cases' / 'C01' / 'targets.csv')]
         else:                                       # 目标点缺 x 列

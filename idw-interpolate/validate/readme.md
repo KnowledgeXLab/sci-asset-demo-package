@@ -26,9 +26,9 @@
 
 - 门槛类型：脚本 + 指标
 - 指标：`value_est_exact = 0`（命中已知点的两行估值分别等于 10.000000 / 20.000000）、`nearest_dist` 逐值相等（0.000000 / 0.000000）——**两列都判**，防止产物把某列写成常数
-- 给定用例共 6 组：`C01-hits`（命中已知点 → 10/20）、`C02-equidistant`（等距 → 均值 15）、
+- 给定用例共 7 组：`C01-hits`（命中已知点 → 10/20）、`C02-equidistant`（等距 → 均值 15）、
   `C05-power-one`（`--power 1` → (2.5,0) 处解析解 12.5，覆盖非默认幂次分支），
-  以及 **3 组预期错误用例**：`C03-missing-file` → 退出码 3 + `input_not_found`、`C04-bad-column` → 退出码 2 + `bad_columns`、`C06-bad-power`（`--power ≤ 0`）→ 退出码 2 + `bad_power`；均由 `--case` 自检覆盖
+  以及 **4 组预期错误用例**：`C03-missing-file` → 退出码 3 + `input_not_found`、`C04-bad-column` → 退出码 2 + `bad_columns`、`C06-bad-power`（`--power ≤ 0`）→ 退出码 2 + `bad_power`、`C07-no-source-points`（已知点表只有表头）→ 退出码 2 + `no_source_points`；均由 `--case` 自检覆盖
 - 验证脚本：`python validate/validate.py --case C01-hits --artifact <agent 产物目录>`
   （`--artifact` 只读 agent 输出的 `interpolated.csv`，逐值比对 `value_est` 与 `nearest_dist` 两列，**不会重跑本资产脚本**）
 - 判定口径：脚本退出码 0 且上述指标成立才算通过；agent 没产出文件或路径缺失记 `blocked`，不得记通过

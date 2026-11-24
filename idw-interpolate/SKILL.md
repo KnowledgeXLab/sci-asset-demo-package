@@ -17,4 +17,4 @@ description: 用反距离权重（IDW）把已知采样点的观测值插值到�
 ```
 python scripts/run.py --points points.csv --targets targets.csv --out-dir out --power 2
 ```
-命中已知点（距离 0）时直接取该点观测值。`--power ≤ 0` → 退出码 2 并写 `error.json(bad_power)`；输入缺列 → 退出码 2（`bad_columns`）；文件不存在 → 退出码 3（`input_not_found`）。
+命中已知点（距离 0）时直接取该点观测值。`--power ≤ 0` → 退出码 2 并写 `error.json(bad_power)`；输入缺列 → 退出码 2（`bad_columns`）；文件不存在 → 退出码 3（`input_not_found`）；已知点表为空（只有表头）→ 退出码 2（`no_source_points`）。

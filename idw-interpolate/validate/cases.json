@@ -36,6 +36,12 @@
       "kind": "invalid",
       "expected_kind": "error",
       "title": "--power ≤ 0 → 退出码 2 + error.json(bad_power)"
+    },
+    {
+      "id": "C07-no-source-points",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "title": "已知点表为空（只有表头）→ 退出码 2 + error.json(no_source_points)"
     }
   ]
 }

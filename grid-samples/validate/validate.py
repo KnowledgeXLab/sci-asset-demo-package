@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """自检：读本资产 payload 与 metadata，核对记录数、列名、值与元数据一致。"""
-import argparse, csv, json, sys, pathlib
-ap = argparse.ArgumentParser(); ap.add_argument('--case', default='C01'); ap.add_argument('--out-dir', default='out')
+import argparse, ast, csv, json, sys, pathlib
+ap = argparse.ArgumentParser(); ap.add_argument('--case', default='C01-metadata'); ap.add_argument('--out-dir', default='out')
 a = ap.parse_args()
 here = pathlib.Path(__file__).resolve().parents[1]
 meta = json.loads((here / 'metadata.json').read_text(encoding='utf-8'))
@@ -10,17 +10,50 @@ with open(here / 'payload' / 'points.csv', encoding='utf-8') as f:
 vals = [float(r['value']) for r in rows]
 import math
 
+# ---- 受限表达式求值：只允许算术、常量、白名单函数与变量 x/y/i ----
+# 替代 eval()：metadata.json 来自第三方时，eval 可以执行任意代码（`__import__('os').system(...)`）
+ALLOWED_FUNCS = {'sin': math.sin, 'cos': math.cos, 'sqrt': math.sqrt, 'exp': math.exp}
+ALLOWED_CONSTS = {'pi': math.pi, 'e': math.e}
+ALLOWED_VARS = {'x', 'y', 'i'}
+ALLOWED_NODES = (ast.Expression, ast.BinOp, ast.UnaryOp, ast.Constant, ast.Name, ast.Load,
+                 ast.Call, ast.Add, ast.Sub, ast.Mult, ast.Div, ast.Pow, ast.Mod,
+                 ast.USub, ast.UAdd, ast.FloorDiv)
+
+
+def safe_eval(expr: str, variables: dict) -> float:
+    """按白名单求值；出现任何白名单外语法/名称就抛 ValueError（不静默放过）。"""
+    try:
+        tree = ast.parse(expr, mode='eval')
+    except SyntaxError as exc:
+        raise ValueError(f'表达式语法错误：{exc}') from exc
+    for node in ast.walk(tree):
+        if not isinstance(node, ALLOWED_NODES):
+            raise ValueError(f'表达式含不允许的语法：{type(node).__name__}')
+        if isinstance(node, ast.Call):
+            if not isinstance(node.func, ast.Name) or node.func.id not in ALLOWED_FUNCS:
+                raise ValueError(f'表达式含不允许的函数调用：{ast.unparse(node.func)}')
+            if node.keywords:
+                raise ValueError('表达式不支持关键字参数')
+        if isinstance(node, ast.Name) and node.id not in ALLOWED_VARS \
+                and node.id not in ALLOWED_FUNCS and node.id not in ALLOWED_CONSTS:
+            raise ValueError(f'表达式含未定义名称：{node.id}')
+    env = dict(ALLOWED_CONSTS, **ALLOWED_FUNCS)
+    for k in ALLOWED_VARS:
+        if k in variables:
+            env[k] = variables[k]
+    return float(eval(compile(tree, '<expr>', 'eval'), {'__builtins__': {}}, env))  # noqa: S307
+
+
 def formula_max_dev(rows, meta):
     """按 metadata.formula 复算每行 value，返回最大绝对偏差（无声明则 None）。"""
     f = meta.get('formula') or {}
     if not f.get('expr'):
         return None
     base = int(f.get('i_base', 1))
-    ns = {'sin': math.sin, 'cos': math.cos, 'sqrt': math.sqrt, 'pi': math.pi, 'exp': math.exp}
     worst = 0.0
     for k, r in enumerate(rows, start=base):
-        ns.update({'x': int(r['x']), 'y': int(r['y']), 'i': k})
-        worst = max(worst, abs(eval(f['expr'], {'__builtins__': {}}, ns) - float(r['value'])))  # noqa: S307
+        val = safe_eval(f['expr'], {'x': int(r['x']), 'y': int(r['y']), 'i': k})
+        worst = max(worst, abs(val - float(r['value'])))
     return worst
 
 xs = sorted({int(r['x']) for r in rows}); ys = sorted({int(r['y']) for r in rows})
@@ -50,7 +83,10 @@ BY_CASE = {
     'C04-extent': ['bbox_x', 'bbox_y', 'grid_complete'],   # 声明空间范围/网格完整性
     'C05-formula': ['formula_recompute'],                  # 声明公式逐行复算
 }
-want = BY_CASE.get(a.case, [c['name'] for c in ALL])
+if a.case not in BY_CASE:
+    print(f'未知用例 id：{a.case}；可用：{", ".join(BY_CASE)}', file=sys.stderr)
+    sys.exit(2)
+want = BY_CASE[a.case]
 checks = [c for c in ALL if c['name'] in want]
 ok = all(c['expected'] == c['actual'] for c in checks)
 out = pathlib.Path(a.out_dir); out.mkdir(parents=True, exist_ok=True)
