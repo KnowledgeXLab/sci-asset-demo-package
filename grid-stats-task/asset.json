@@ -1,0 +1,146 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+  "asset_type": "task",
+  "name": "网格采样点汇总任务（harbor 格式示例）",
+  "description": "harbor / terminal-bench-science 格式的 task 示例：把 67 个网格采样点汇总成确定性 JSON 摘要，由独立 verifier 逐字段核对；oracle 期望 reward=1、nop 期望 reward=0。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:task-execution",
+      "label": "任务执行"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-24T09:00:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:grid-stats"
+    },
+    "notes": "数据由确定性公式 (x*7 + y*3) % 11 + 1 生成，可复算。"
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "benchmark_format": "harbor",
+      "task_format_version": "1.4",
+      "task_name": "terminal-bench-science/demo-grid-stats",
+      "verification": {
+        "kind": "harbor_oracle_nop",
+        "oracle_expect_reward": 1,
+        "nop_expect_reward": 0,
+        "entrypoint": "tests/test.sh",
+        "verifier_mode": "separate",
+        "lint_clean": true
+      }
+    },
+    "artifacts": [
+      {
+        "id": "task-toml",
+        "artifact_type": "file",
+        "uri": "task.toml",
+        "media_type": "text/prs.toml",
+        "role": "task-definition"
+      },
+      {
+        "id": "instruction",
+        "artifact_type": "file",
+        "uri": "instruction.md",
+        "media_type": "text/markdown",
+        "role": "task-instruction"
+      },
+      {
+        "id": "points",
+        "artifact_type": "file",
+        "uri": "environment/data/points.csv",
+        "media_type": "text/csv",
+        "role": "primary-data",
+        "sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b",
+        "size_bytes": 424
+      },
+      {
+        "id": "dockerfile",
+        "artifact_type": "file",
+        "uri": "environment/Dockerfile",
+        "media_type": "text/x-dockerfile",
+        "role": "environment"
+      },
+      {
+        "id": "solve",
+        "artifact_type": "file",
+        "uri": "solution/solve.py",
+        "media_type": "text/x-python",
+        "role": "reference-solution"
+      },
+      {
+        "id": "verifier",
+        "artifact_type": "file",
+        "uri": "tests/test_summary.py",
+        "media_type": "text/x-python",
+        "role": "verifier"
+      },
+      {
+        "id": "test-sh",
+        "artifact_type": "file",
+        "uri": "tests/test.sh",
+        "media_type": "text/x-sh",
+        "role": "verifier-entrypoint"
+      },
+      {
+        "id": "tests-dockerfile",
+        "artifact_type": "file",
+        "uri": "tests/Dockerfile",
+        "media_type": "text/x-dockerfile",
+        "role": "verifier-environment"
+      },
+      {
+        "id": "verifier-data",
+        "artifact_type": "file",
+        "uri": "tests/data/points.csv",
+        "media_type": "text/csv",
+        "role": "verifier-ground-truth",
+        "sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b",
+        "size_bytes": 424
+      },
+      {
+        "id": "readme",
+        "artifact_type": "file",
+        "uri": "readme.md",
+        "media_type": "text/markdown",
+        "role": "documentation"
+      }
+    ],
+    "domain_attributes": {
+      "data_modality": [
+        "tabular"
+      ],
+      "deterministic": true,
+      "expected_runtime_seconds": 5
+    },
+    "asset_protocol": {
+      "validate": {
+        "command": "python3 validate/validate.py",
+        "working_directory": "."
+      }
+    }
+  }
+}

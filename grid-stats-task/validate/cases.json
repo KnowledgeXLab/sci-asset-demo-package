@@ -1,0 +1,12 @@
+{
+  "asset": "grid-stats-task",
+  "cases": [
+    {
+      "id": "C01-oracle-nop",
+      "kind": "task",
+      "expected_kind": "harbor",
+      "title": "harbor 双 trial：oracle 注入 solution 期望 reward=1，nop 不注入期望 reward=0（nop 即负例）",
+      "entrypoint": "tests/test.sh"
+    }
+  ]
+}
