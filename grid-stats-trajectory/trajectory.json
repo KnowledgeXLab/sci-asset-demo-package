@@ -1,0 +1,100 @@
+{
+  "schema_version": "1.0.0",
+  "format": "ATIF",
+  "conforms_to": "https://github.com/harbor-framework/harbor/blob/main/rfcs/0001-trajectory-format.md",
+  "trajectory_id": "traj-demo-grid-stats-001",
+  "task": {
+    "id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+    "name": "terminal-bench-science/demo-grid-stats"
+  },
+  "agent": {
+    "harness": "DSH",
+    "model": "harness-default",
+    "backend": "oracle"
+  },
+  "environment_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+  "tool_ids": [],
+  "run": {
+    "status": "success",
+    "trials": 1,
+    "reward": 1.0,
+    "started_time": "2026-11-24T10:20:00+08:00",
+    "finished_time": "2026-11-24T10:20:15+08:00"
+  },
+  "steps": [
+    {
+      "step": 1,
+      "role": "user",
+      "type": "message",
+      "timestamp": "2026-11-24T10:20:01+08:00",
+      "content": "把 /workspace/data/points.csv 汇总成 /workspace/output/summary.json（字段见 instruction.md）。"
+    },
+    {
+      "step": 2,
+      "role": "agent",
+      "type": "plan",
+      "timestamp": "2026-11-24T10:20:04+08:00",
+      "content": "读 67 行采样点 → 计算 count/sum/mean/min/max/extent → 按 x、y 中位数分四象限 → 写 JSON。"
+    },
+    {
+      "step": 3,
+      "role": "agent",
+      "type": "tool_call",
+      "timestamp": "2026-11-24T10:20:07+08:00",
+      "tool": "python3 solution/solve.py",
+      "arguments": {
+        "data": "/workspace/data/points.csv",
+        "out": "/workspace/output/summary.json"
+      }
+    },
+    {
+      "step": 4,
+      "role": "environment",
+      "type": "tool_result",
+      "timestamp": "2026-11-24T10:20:09+08:00",
+      "status": "ok",
+      "exit_code": 0,
+      "stdout": "已写出 /workspace/output/summary.json：count=67"
+    },
+    {
+      "step": 5,
+      "role": "agent",
+      "type": "verification",
+      "timestamp": "2026-11-24T10:20:12+08:00",
+      "verifier": "tests/test_summary.py",
+      "result": "pass",
+      "reward": 1.0,
+      "evidence": "verifier/ctrf.json + verifier/reward.txt"
+    },
+    {
+      "step": 6,
+      "role": "agent",
+      "type": "final",
+      "timestamp": "2026-11-24T10:20:14+08:00",
+      "content": "summary.json 已写出并通过 verifier（reward=1）。",
+      "result_summary": {
+        "count": 67,
+        "value_sum": 394,
+        "value_mean": 5.880597,
+        "x_extent": [
+          0,
+          9
+        ],
+        "y_extent": [
+          0,
+          9
+        ],
+        "quadrant_counts": {
+          "Q1": 17,
+          "Q2": 17,
+          "Q3": 17,
+          "Q4": 16
+        }
+      }
+    }
+  ],
+  "artifacts": {
+    "trajectory": "trajectory.json",
+    "final_output": "benchmark 用例中引用：output/summary.json"
+  }
+}

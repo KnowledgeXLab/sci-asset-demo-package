@@ -1,0 +1,151 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark",
+  "asset_type": "benchmark",
+  "name": "网格汇总任务评测基准",
+  "description": "基于 grid-stats-task 的可复现评测定义：字段精确匹配（0.8）+ 产物自洽（0.2），阈值 1.0；含参考答案与两个自带样例。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "label": "网格采样点汇总任务"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "stage:verification",
+      "label": "验证"
+    },
+    {
+      "id": "operation:analysis",
+      "label": "数据分析"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-24T14:30:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "derived",
+      "uri": "sciasset://2026ZD000042/demo/task/grid-stats-task"
+    }
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": [
+      "参考答案与评分规则不得暴露给被测 agent"
+    ]
+  },
+  "spec": {
+    "metadata": {
+      "task_ids": [
+        "sciasset://2026ZD000042/demo/task/grid-stats-task"
+      ],
+      "metrics": [
+        {
+          "id": "field_exact",
+          "weight": 0.8,
+          "type": "field_exact_match"
+        },
+        {
+          "id": "internal_consistency",
+          "weight": 0.2,
+          "type": "invariant"
+        }
+      ],
+      "aggregation": "weighted_sum",
+      "pass_threshold": 1.0,
+      "protocol": {
+        "n_trials": 1,
+        "submission_layout": "output/summary.json",
+        "reference": "benchmark/reference/summary.json",
+        "entrypoint": "benchmark/run_evaluation.py"
+      }
+    },
+    "artifacts": [
+      {
+        "id": "rubric",
+        "artifact_type": "file",
+        "uri": "benchmark/scoring-rubric.json",
+        "media_type": "application/json",
+        "role": "scoring-rubric",
+        "sha256": "035e6afdb068ae0040826c731e7fcd64c40ea841c493d013c63e9c11899ba8df",
+        "size_bytes": 1017
+      },
+      {
+        "id": "entrypoint",
+        "artifact_type": "file",
+        "uri": "benchmark/run_evaluation.py",
+        "media_type": "text/x-python",
+        "role": "evaluation-entrypoint",
+        "sha256": "1fad284f274ed1c3554bdc6cae02ff9d8451a1d7707cc1c9887374429d921dc1",
+        "size_bytes": 3927
+      },
+      {
+        "id": "reference",
+        "artifact_type": "file",
+        "uri": "benchmark/reference/summary.json",
+        "media_type": "application/json",
+        "role": "reference-answer",
+        "sha256": "46df25dc96939f5ba971081f443b58beb819f53bc40084c50699ba37e5c8b67c",
+        "size_bytes": 252
+      },
+      {
+        "id": "case-good",
+        "artifact_type": "file",
+        "uri": "benchmark/cases/good/summary.json",
+        "media_type": "application/json",
+        "role": "sample-submission-correct",
+        "sha256": "46df25dc96939f5ba971081f443b58beb819f53bc40084c50699ba37e5c8b67c",
+        "size_bytes": 252
+      },
+      {
+        "id": "case-bad",
+        "artifact_type": "file",
+        "uri": "benchmark/cases/bad/summary.json",
+        "media_type": "application/json",
+        "role": "sample-submission-wrong",
+        "sha256": "ab6fc3c17644f0286248d80ac808ad0f00af12386ad219c4e35b375e81333bfc",
+        "size_bytes": 252
+      },
+      {
+        "id": "readme",
+        "artifact_type": "file",
+        "uri": "readme.md",
+        "media_type": "text/markdown",
+        "role": "readme",
+        "sha256": "1cce7f6987f3c78ae0d773d96d323d26c29cd919d1c20bebcc0f9191faa17464",
+        "size_bytes": 2058
+      }
+    ],
+    "domain_attributes": {
+      "evaluation_method": "确定性命中判定（无抽样）",
+      "applicable_scope": "与 grid-stats-task 同域的 67 点网格汇总产物",
+      "limitations": [
+        "只评测数值正确性，不评测代码质量或实现路径"
+      ]
+    },
+    "asset_protocol": {
+      "task_ids": [
+        "sciasset://2026ZD000042/demo/task/grid-stats-task"
+      ],
+      "readme": "readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}

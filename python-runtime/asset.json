@@ -1,0 +1,109 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+  "asset_type": "environment",
+  "name": "示例 Python 最小运行环境",
+  "description": "运行示例资产所需的最小可复现环境：Python ≥ 3.10、仅标准库、无网络、1 CPU / 1 GB，容器定义随包。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:analysis",
+      "label": "数据分析"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-24T14:10:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:python-runtime"
+    }
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "environment_type": "container",
+      "os": "linux",
+      "python_version": "3.12",
+      "python_requires": ">=3.10",
+      "python_packages": [],
+      "network_access": "none",
+      "resources": {
+        "cpus": 1,
+        "memory_mb": 1024,
+        "storage_mb": 2048,
+        "gpus": 0
+      },
+      "build": {
+        "dockerfile": "environment/Dockerfile",
+        "build_required_for_check": false
+      }
+    },
+    "artifacts": [
+      {
+        "id": "dockerfile",
+        "artifact_type": "file",
+        "uri": "environment/Dockerfile",
+        "media_type": "text/x-dockerfile",
+        "role": "environment-definition",
+        "sha256": "7958cbc25cfe5c2181b33f89a3cc2745e21b2e196d566285d6927701ab9d90f6",
+        "size_bytes": 475
+      },
+      {
+        "id": "requirements-lock",
+        "artifact_type": "file",
+        "uri": "environment/requirements.lock",
+        "media_type": "text/plain",
+        "role": "dependency-lock",
+        "sha256": "aa1fbeb167ea66256c2fb50e13ac6b6c32d4e132251745c49e0544d3ae855593",
+        "size_bytes": 206
+      },
+      {
+        "id": "runtime-check",
+        "artifact_type": "file",
+        "uri": "environment/runtime_check.py",
+        "media_type": "text/x-python",
+        "role": "environment-self-check",
+        "sha256": "c8ab459b9b45629d76d3c65544ff2eed693a0ffd374168a50b51dc7e89ab53c1",
+        "size_bytes": 2240
+      },
+      {
+        "id": "readme",
+        "artifact_type": "file",
+        "uri": "readme.md",
+        "media_type": "text/markdown",
+        "role": "readme",
+        "sha256": "8dade78063e3f9ff77e05474caab58d1c2cc0d71de43308a8e470b7b7ccdb28c",
+        "size_bytes": 1708
+      }
+    ],
+    "domain_attributes": {
+      "scientific_software": [],
+      "note": "示例资产（data/tool/skill/task/benchmark）都只用 Python 标准库，故本环境不含科学计算栈"
+    },
+    "asset_protocol": {
+      "readme": "readme.md",
+      "prepare": "usage/readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}

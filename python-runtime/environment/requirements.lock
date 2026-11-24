@@ -1,0 +1,2 @@
+# 本环境无第三方依赖（空锁文件），Python 3.12.x 标准库即可运行示例资产
+# 如需扩展，请在此登记 "包==版本" 并同步更新 asset.json 的 spec.metadata.python_packages

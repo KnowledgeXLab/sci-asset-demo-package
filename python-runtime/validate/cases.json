@@ -1,0 +1,13 @@
+{
+  "asset": "python-runtime",
+  "cases": [
+    { "id": "C01-runtime-ok", "kind": "environment", "expected_kind": "success",
+      "title": "环境自检通过：python ≥ 3.10、8 个标准库模块可用、无网络依赖（runtime-report.ok=true）" },
+    { "id": "C02-no-third-party", "kind": "environment", "expected_kind": "success",
+      "title": "声明的依赖清单为空，环境内不应出现 numpy/pandas/scipy/tensorflow/torch（third_party_present 为空）" },
+    { "id": "C03-python-version-gate", "kind": "environment", "expected_kind": "error",
+      "title": "模拟 python 版本不满足（3.9）→ 自检判不通过（problems 含版本原因）" },
+    { "id": "C04-dockerfile-consistent", "kind": "declared-metadata", "expected_kind": "success",
+      "title": "Dockerfile 的基础镜像版本与 asset.json 声明的 python 版本一致，且 requirements.lock 无实际依赖" }
+  ]
+}

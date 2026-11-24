@@ -1,0 +1,15 @@
+{
+  "asset": "grid-summary-benchmark",
+  "cases": [
+    { "id": "C01-score-good", "kind": "benchmark", "expected_kind": "success",
+      "title": "正确产物（cases/good）→ score=1.0、passed=true（七个字段全对 + 两条自洽约束成立）" },
+    { "id": "C02-score-bad", "kind": "benchmark", "expected_kind": "error",
+      "title": "篡改产物（cases/bad：value_sum 398、象限和 68≠67）→ passed=false，且 score<1" },
+    { "id": "C03-rubric-schema", "kind": "declared-metadata", "expected_kind": "success",
+      "title": "评分规则自洽：权重之和=1、pass_threshold∈[0,1]、指标类型在支持列表内、产物布局与 task 一致" },
+    { "id": "C04-reference-consistency", "kind": "benchmark", "expected_kind": "success",
+      "title": "参考答案自洽：字段与判分口径一致、象限之和=count、mean=sum/count（容差 1e-6）" },
+    { "id": "C05-missing-submission", "kind": "invalid", "expected_kind": "error",
+      "title": "产物目录没有 summary.json → problems 记录缺失、passed=false" }
+  ]
+}

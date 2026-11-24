@@ -1,0 +1,13 @@
+{
+  "asset": "linear-model",
+  "cases": [
+    { "id": "C01-predict", "kind": "predict", "expected_kind": "success",
+      "title": "6 条样本按 weights.json 推理，prediction 与解析解逐值一致（2.0/3.0/2.75/3.75/3.5/4.5）" },
+    { "id": "C02-reproducible", "kind": "predict", "expected_kind": "success",
+      "title": "同一输入连跑两次，predictions.csv 逐字节一致（确定性推理）" },
+    { "id": "C03-bad-column", "kind": "invalid", "expected_kind": "error",
+      "title": "输入缺 y 列 → 退出码 2 + error.json(bad_columns)" },
+    { "id": "C04-input-missing", "kind": "invalid", "expected_kind": "error",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)" }
+  ]
+}

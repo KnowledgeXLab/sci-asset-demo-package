@@ -1,0 +1,13 @@
+{
+  "asset": "grid-stats-trajectory",
+  "cases": [
+    { "id": "C01-structure", "kind": "trajectory", "expected_kind": "success",
+      "title": "结构合法：format=ATIF、6 步、每步 role/type 在词表内、时间严格递增、run.status=success" },
+    { "id": "C02-outcome-consistency", "kind": "trajectory", "expected_kind": "success",
+      "title": "结果自洽：final 的 result_summary 与关联 task 的期望一致（count 67 / sum 394 / mean 5.880597 / 四象限 17·17·17·16）" },
+    { "id": "C03-evidence-linked", "kind": "trajectory", "expected_kind": "success",
+      "title": "证据链完整：verification 步给出 verifier 名称、result=pass、reward=1 与证据位置" },
+    { "id": "C04-broken-step", "kind": "invalid", "expected_kind": "error",
+      "title": "篡改用例：删掉 verification 步 → 校验判不通过（trajectory 不能缺验证证据）" }
+  ]
+}

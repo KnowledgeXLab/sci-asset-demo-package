@@ -1,0 +1,10 @@
+{
+  "schema_version": "1.0.0",
+  "model_type": "linear_regression",
+  "features": ["x", "y"],
+  "coef": [0.5, 0.25],
+  "intercept": 1.0,
+  "tolerance": 1e-09,
+  "trained_on": "urn:demo:linear-train-6-points",
+  "notes": "演示用确定性线性模型：prediction = 1.0 + 0.5*x + 0.25*y，权重即本文件。"
+}

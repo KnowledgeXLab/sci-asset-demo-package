@@ -1,6 +1,6 @@
-# demo-assets-1.2.1（示例资产包）
+# demo-assets-1.3.0（示例资产包）
 
-一个最小的示例资产包（v1.2.1）：**数据 1 个、工具 1 个、skill 2 个（其中 1 个工作流）、harbor task 1 个**，共 5 个资产。工作流通过 `external_assets.json` 引用另外三个资产。合规性与功能以核验报告为准，本 readme 只描述内容与用法。
+一个示例资产包（v1.3.0）：**八类资产各至少 1 个**——数据、工具、模型、环境、skill（2 个，其中 1 个工作流）、task（harbor 格式）、trajectory、benchmark，共 9 个资产。工作流通过 `external_assets.json` 引用另外三个资产；task / trajectory / benchmark 三者按 asset id 相互关联。合规性与功能以核验报告为准，本 readme 只描述内容与用法。
 所有资产都用 Python 标准库实现，无需联网、无需第三方依赖。
 
 ## 仓库内容
@@ -9,7 +9,9 @@
 
 ```
 .
-├── grid-samples/  zscore-normalize/  idw-interpolate/  assess-workflow/  grid-stats-task/   # 5 个资产
+├── grid-samples/  zscore-normalize/  linear-model/  python-runtime/        # data / tool / model / environment
+├── idw-interpolate/  assess-workflow/                                      # skill ×2（其一为工作流）
+├── grid-stats-task/  grid-stats-trajectory/  grid-summary-benchmark/      # task / trajectory / benchmark
 ├── readme.md                                                                              # 本说明
 ├── VERSION                                                                                # 包版本
 └── asset-runs/run-<批次>/                                                                 # 一次核验的完整证据
@@ -30,9 +32,13 @@
 |---|---|---|
 | `grid-samples/` | data | 10×10 网格 100 个采样点（`payload/points.csv` + `metadata.json`，含可复算公式声明） |
 | `zscore-normalize/` | tool | 把 CSV 的 `value` 列做 z-score 标准化 |
+| `linear-model/` | model | 确定性线性回归（`prediction = 1.0 + 0.5x + 0.25y`），权重随包，推理仅标准库 |
+| `python-runtime/` | environment | 最小运行环境声明：Python ≥ 3.10、仅标准库、无网络，含 Dockerfile 与环境自检 |
 | `idw-interpolate/` | skill | 反距离权重（IDW）插值技能 |
 | `assess-workflow/` | skill（工作流） | 编排前三个资产：读数据 → 标准化 → 插值 → 汇总 `report.json` |
 | `grid-stats-task/` | task | harbor（terminal-bench-science）格式任务：把 67 个网格点汇总成确定性 JSON 摘要；oracle 期望 reward=1、nop 期望 reward=0 |
+| `grid-stats-trajectory/` | trajectory | 上述 task 的一次成功运行轨迹（ATIF，6 步：计划→调用→结果→验证→结论） |
+| `grid-summary-benchmark/` | benchmark | 基于该 task 的评测定义：字段精确匹配 0.8 + 产物自洽 0.2，阈值 1.0，含参考答案与样例 |
 
 > 规范里没有独立的 `workflow` 资产类型，工作流按 `skill` 登记，并在 `spec.metadata.asset_role: workflow` 与 `steps` 里标明角色。
 
@@ -41,9 +47,13 @@
 ```
 sciasset://2026ZD000042/demo/data/grid-samples
 sciasset://2026ZD000042/demo/tool/zscore-normalize
+sciasset://2026ZD000042/demo/model/linear-model
+sciasset://2026ZD000042/demo/environment/python-runtime
 sciasset://2026ZD000042/demo/skill/idw-interpolate
 sciasset://2026ZD000042/demo/skill/assess-workflow
 sciasset://2026ZD000042/demo/task/grid-stats-task
+sciasset://2026ZD000042/demo/trajectory/grid-stats-trajectory
+sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark
 ```
 
 `project-id` 用示例编号 `2026ZD000042`（虚构，仅用于演示格式）；真实项目按其任务书首页的编号填写。
@@ -84,8 +94,15 @@ grid-stats-task/
 └── validate/                  # cases.json（oracle+nop 即一条用例）+ readme.md + 离线自检 validate.py
 ```
 
-与通用结构的差别：task 资产的"实现"是 `environment/` + `solution/` + `tests/`（而不是 script/payload），
-判定由 harbor 官方 CLI 的两条 trial 给出，不用 `validate/cases.json` 逐条跑。
+与通用结构的差别：
+
+| 类型 | 实现位置 | 判定方式 |
+|---|---|---|
+| `task` | `environment/` + `solution/` + `tests/` | harbor 官方 CLI 的 oracle/nop 两条 trial |
+| `model` | `model/weights.json` + `model/predict.py` | `validate/cases.json` 四条（数值、可复现、两类错误） |
+| `environment` | `environment/Dockerfile` + `requirements.lock` + `runtime_check.py` | 环境自检四条（版本门槛、标准库、无第三方、声明一致） |
+| `trajectory` | `trajectory.json`（ATIF，6 步） | 结构/结果自洽/证据链/门槛有效四条 |
+| `benchmark` | `benchmark/scoring-rubric.json` + `run_evaluation.py` + `reference/` | 评分引擎与规则自洽五条 |
 
 ## 怎么核验
 
@@ -102,10 +119,27 @@ grid-stats-task/
 它会依次做：盘点资产并读使用说明 → 固定清单判定（P0/P1 + 覆盖表）→ 跑各资产自带用例 →
 harbor 任务跑官方 CLI 的 oracle（期望 reward=1）与 nop（期望 reward=0）→ 生成核验报告与 23 列对外发版清单。
 
-本包用当前版本如实跑过一遍，预期结论：**24 条用例全部通过、固定清单 P0 0 / P1 0、harbor oracle=1 / nop=0**。
+预期结论：**固定清单 P0 0 / P1 0**；`grid-stats-task` 的 harbor oracle=1 / nop=0；
+各资产自带用例全部通过（随包 `asset-runs/run-20261124-102008` 是 v1.2.0 时 5 个资产的完整批次，
+v1.3.0 新增的 4 个类型资产已逐条自检通过，尚未重跑整包 agent + Sage + harbor 批次）。
 只想核验其中一部分时，把范围写进 prompt 即可（例如「只看 `grid-stats-task` 这个资产」）；harbor 任务的 oracle/nop 双 trial 与 Sage 附加测试由 skill 按包内情况自动触发，不必在 prompt 里点名。
 
 ## 版本记录
+
+### 1.3.0 — 2026-11-24
+
+**补齐八类资产**（新增 model / environment / trajectory / benchmark 四个示例资产）
+
+- `linear-model`（model）：确定性线性回归，权重随包、推理仅标准库；4 条用例（数值、可复现、缺列、缺文件）
+- `python-runtime`（environment）：Python ≥ 3.10 + 仅标准库 + 无网络的容器声明，含 Dockerfile、空依赖锁与环境自检；
+  4 条用例（自检通过、无第三方、版本门槛生效、Dockerfile 与声明一致）
+- `grid-stats-trajectory`（trajectory）：`grid-stats-task` 的一次成功运行轨迹（ATIF，6 步，含验证证据 reward=1）；
+  4 条用例（结构、结果自洽、证据链、删验证步必须不通过）
+- `grid-summary-benchmark`（benchmark）：基于该 task 的评测定义（字段精确匹配 0.8 + 自洽 0.2，阈值 1.0，含参考答案与正/负样例）；
+  5 条用例（满分、篡改不通过、规则自洽、参考答案自洽、缺产物）
+- 三者按 asset id 关联：trajectory 声明 `task_ids`/`environment_id`，benchmark 声明 `task_ids` 与 `tasks[].id`
+
+校验结论：9 个资产包络 jsonschema 全部通过；固定清单 P0 0 / P1 0。
 
 ### 1.2.1 — 2026-11-24
 

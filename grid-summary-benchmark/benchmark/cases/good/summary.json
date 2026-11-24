@@ -1,0 +1,21 @@
+{
+  "count": 67,
+  "value_mean": 5.880597,
+  "value_min": 1,
+  "value_max": 11,
+  "x_extent": [
+    0,
+    9
+  ],
+  "y_extent": [
+    0,
+    9
+  ],
+  "quadrant_counts": {
+    "Q1": 17,
+    "Q2": 17,
+    "Q3": 17,
+    "Q4": 16
+  },
+  "value_sum": 394
+}

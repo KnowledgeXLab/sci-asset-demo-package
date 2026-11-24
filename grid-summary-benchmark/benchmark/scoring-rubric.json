@@ -1,0 +1,44 @@
+{
+  "schema_version": "1.0.0",
+  "name": "grid-summary-scoring",
+  "metrics": [
+    {
+      "id": "field_exact",
+      "weight": 0.8,
+      "type": "field_exact_match",
+      "fields": [
+        "count",
+        "value_min",
+        "value_max",
+        "value_sum",
+        "x_extent",
+        "y_extent",
+        "quadrant_counts"
+      ],
+      "criterion": "与参考答案逐字段完全相等（数值容差 1e-6）"
+    },
+    {
+      "id": "internal_consistency",
+      "weight": 0.2,
+      "type": "invariant",
+      "invariants": [
+        "quadrant_counts 之和 == count",
+        "|value_mean - value_sum/count| <= 1e-6"
+      ],
+      "criterion": "产物自洽性约束全部成立"
+    }
+  ],
+  "aggregation": {
+    "method": "weighted_sum",
+    "range": [
+      0.0,
+      1.0
+    ]
+  },
+  "pass_threshold": 1.0,
+  "protocol": {
+    "n_trials": 1,
+    "submission_layout": "output/summary.json",
+    "notes": "评测时只读 agent 产物；参考答案与 rubrics 不得暴露给被测 agent"
+  }
+}

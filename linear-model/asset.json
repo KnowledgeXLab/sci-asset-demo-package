@@ -1,0 +1,140 @@
+{
+  "schema_version": "1.0.0",
+  "asset_id": "sciasset://2026ZD000042/demo/model/linear-model",
+  "asset_type": "model",
+  "name": "线性回归示例模型",
+  "description": "确定性二维线性回归模型（prediction = 1.0 + 0.5·x + 0.25·y），权重随包，推理仅用标准库。",
+  "asset_version": "1.0.0",
+  "lifecycle": "validated",
+  "domains": [
+    {
+      "id": "domain:earth-science",
+      "name": "地球科学"
+    }
+  ],
+  "task_classes": [
+    {
+      "id": "operation:prediction",
+      "label": "预测"
+    },
+    {
+      "id": "operation:analysis",
+      "label": "数据分析"
+    }
+  ],
+  "provenance": {
+    "created_time": "2026-11-24T14:00:00+08:00",
+    "provider": [
+      {
+        "name": "示例资产提供方",
+        "role": "author"
+      }
+    ],
+    "source": {
+      "kind": "generated",
+      "uri": "urn:demo:linear-model"
+    },
+    "notes": "权重为演示用手工设定值，非真实训练产物。"
+  },
+  "governance": {
+    "license": "CC-BY-4.0",
+    "access": "public",
+    "risk_level": "low",
+    "privacy": "none",
+    "usage_constraints": []
+  },
+  "spec": {
+    "metadata": {
+      "model_type": "linear_regression",
+      "capabilities": [
+        "prediction"
+      ],
+      "input_format": {
+        "kind": "csv",
+        "required_columns": [
+          "x",
+          "y"
+        ],
+        "optional_columns": [
+          "id"
+        ]
+      },
+      "output_format": {
+        "kind": "csv",
+        "columns": [
+          "id",
+          "x",
+          "y",
+          "prediction"
+        ]
+      },
+      "inference": {
+        "interface": "cli",
+        "entrypoint": "model/predict.py",
+        "runtime": "python>=3.10（仅标准库）"
+      },
+      "weights": {
+        "file": "model/weights.json",
+        "format": "json"
+      }
+    },
+    "artifacts": [
+      {
+        "id": "weights",
+        "artifact_type": "file",
+        "uri": "model/weights.json",
+        "media_type": "application/json",
+        "role": "model-weights",
+        "sha256": "aca2cbed55d9cabf703f70643f1e9e7ea450f1ad949c0e8c1e41171d7e123a4a",
+        "size_bytes": 315
+      },
+      {
+        "id": "inference",
+        "artifact_type": "file",
+        "uri": "model/predict.py",
+        "media_type": "text/x-python",
+        "role": "inference-implementation",
+        "sha256": "dc552914a47a7f36167634e5c08c3d95390dd5e4245905a469f478c063ace6ab",
+        "size_bytes": 3658
+      },
+      {
+        "id": "samples",
+        "artifact_type": "file",
+        "uri": "payload/samples.csv",
+        "media_type": "text/csv",
+        "role": "sample-input",
+        "sha256": "9562e15076abdac111fa179a2229b4163c8b36ae0669e9431c35628c656b8ff4",
+        "size_bytes": 61
+      },
+      {
+        "id": "readme",
+        "artifact_type": "file",
+        "uri": "readme.md",
+        "media_type": "text/markdown",
+        "role": "readme",
+        "sha256": "3051066953b16384eca0b0f778f52c2691f734b86b3bfcba013612bede7e63c3",
+        "size_bytes": 1453
+      }
+    ],
+    "domain_attributes": {
+      "scientific_object": "网格采样点上的二维线性响应面",
+      "applicable_scope": "x∈[0,6]、y∈[0,4] 的整数采样点（与自带样本同域）",
+      "limitations": [
+        "不建模非线性关系",
+        "不给预测区间/不确定性",
+        "超出训练域不保证外推"
+      ],
+      "accuracy": {
+        "metric": "r2",
+        "value": 1.0,
+        "on": "payload/samples.csv（解析构造，故为 1.0）"
+      }
+    },
+    "asset_protocol": {
+      "readme": "readme.md",
+      "prepare": "usage/readme.md",
+      "use": "usage/readme.md",
+      "validate": "validate/cases.json"
+    }
+  }
+}
