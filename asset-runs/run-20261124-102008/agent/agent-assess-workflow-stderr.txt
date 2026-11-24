@@ -1,0 +1,24 @@
+dsh: reasoning:
+Let's read SKILL.md, asset.json, external_assets.json.
+dsh: reasoning:
+Read the runner script and usage readme.
+dsh: reasoning:
+Now read usage/readme.md, external_assets.json, validate files.
+dsh: reasoning:
+Now let's check the symlinked assets exist and their structure.
+dsh: reasoning:
+All three external assets are mounted. Now run the workflow from the product directory. Command:
+
+python scripts/run_workflow.py --assets-root <本资产目录> --out-dir out
+
+But the user said report written to current working directory as report.json. So we should use --out-dir . in the cwd. But note the script writes tool/ and skill/ subdirs in out-dir. That's fine, put them in cwd? The user said "报告写到当前工作目录下的 report.json" and products written here. So --out-dir . would put report.json, tool/, skill/ in cwd. That's acceptable. Maybe better: run with --out-dir . so report.json is directly in cwd.
+
+Also note the script path: I need to run /home/.../assess-workflow/scripts/run_workflow.py. Let me check python availability and run.
+
+Note the script's `here` = parents[1] = asset directory, uses here/'targets.csv' — good, self-owned targets.
+
+Let me run it.
+dsh: reasoning:
+All checks passed. Let me also sanity-check the skill output for interpolation values, and that external_assets doesn't contain absolute mount paths (correct - only names). Also confirm skill/run.json.
+
+Let me quickly verify interpolated.csv values to double-check min/max.

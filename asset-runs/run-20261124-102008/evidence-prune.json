@@ -1,0 +1,527 @@
+{
+  "tool": "prune_evidence.py",
+  "run": "run-20261124-102008",
+  "pruned_at": "2026-11-24T10:28:50+08:00",
+  "dry_run": false,
+  "ledger_mark_error": null,
+  "keep_work": false,
+  "bytes_before": 600915,
+  "bytes_after": 516182,
+  "pruned_items": 49,
+  "pruned_bytes": 84733,
+  "scan_items": 49,
+  "scan_bytes": 84733,
+  "passes": [
+    {
+      "at": "2026-11-24T10:28:50+08:00",
+      "items": 49,
+      "bytes": 84733,
+      "pruned": [
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 377
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2228
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1098
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/result.json",
+          "kind": "harbor_trial",
+          "bytes": 4329
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 3706
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/reward.json",
+          "kind": "harbor_trial",
+          "bytes": 16
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/reward.txt",
+          "kind": "harbor_trial",
+          "bytes": 2
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/test-stdout.txt",
+          "kind": "harbor_trial",
+          "bytes": 52
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/agent/oracle.txt",
+          "kind": "harbor_trial",
+          "bytes": 52
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 373
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/artifacts/workspace/output/summary.json",
+          "kind": "harbor_trial",
+          "bytes": 252
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2234
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1101
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/result.json",
+          "kind": "harbor_trial",
+          "bytes": 4341
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 360
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/reward.json",
+          "kind": "harbor_trial",
+          "bytes": 16
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/reward.txt",
+          "kind": "harbor_trial",
+          "bytes": 2
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/test-stdout.txt",
+          "kind": "harbor_trial",
+          "bytes": 59
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 376
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2228
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/exception.txt",
+          "kind": "harbor_trial",
+          "bytes": 2250
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1098
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/result.json",
+          "kind": "harbor_trial",
+          "bytes": 7343
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 15927
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 376
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2234
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/exception.txt",
+          "kind": "harbor_trial",
+          "bytes": 2250
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1101
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/result.json",
+          "kind": "harbor_trial",
+          "bytes": 7355
+        },
+        {
+          "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 15939
+        },
+        {
+          "path": "agent-sage/idw-interpolate/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 77
+        },
+        {
+          "path": "agent-sage/assess-workflow/skill/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 171
+        },
+        {
+          "path": "agent-sage/assess-workflow/tool/result.csv",
+          "kind": "bulk_file",
+          "bytes": 1559
+        },
+        {
+          "path": "validation-run/zscore-normalize/C06-empty-input/in6.csv",
+          "kind": "bulk_file",
+          "bytes": 9
+        },
+        {
+          "path": "validation-run/zscore-normalize/C02-single/in2.csv",
+          "kind": "bulk_file",
+          "bytes": 13
+        },
+        {
+          "path": "validation-run/zscore-normalize/C01-basic/in.csv",
+          "kind": "bulk_file",
+          "bytes": 21
+        },
+        {
+          "path": "validation-run/zscore-normalize/C01-basic/result.csv",
+          "kind": "bulk_file",
+          "bytes": 48
+        },
+        {
+          "path": "validation-run/zscore-normalize/C05-bad-value/in5.csv",
+          "kind": "bulk_file",
+          "bytes": 15
+        },
+        {
+          "path": "validation-run/zscore-normalize/C03-bad-column/in3.csv",
+          "kind": "bulk_file",
+          "bytes": 11
+        },
+        {
+          "path": "validation-run/assess-workflow/C01-end-to-end/skill/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 171
+        },
+        {
+          "path": "validation-run/assess-workflow/C01-end-to-end/tool/result.csv",
+          "kind": "bulk_file",
+          "bytes": 1559
+        },
+        {
+          "path": "validation-run/idw-interpolate/C01-hits/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 77
+        },
+        {
+          "path": "validation-run/idw-interpolate/C04-bad-column/bad-targets.csv",
+          "kind": "bulk_file",
+          "bytes": 4
+        },
+        {
+          "path": "validation-run/idw-interpolate/C07-no-source-points/empty-points.csv",
+          "kind": "bulk_file",
+          "bytes": 10
+        },
+        {
+          "path": "validation-run/idw-interpolate/C02-equidistant/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 52
+        },
+        {
+          "path": "validation-run/idw-interpolate/C05-power-one/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 54
+        },
+        {
+          "path": "agent/idw-interpolate/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 77
+        },
+        {
+          "path": "agent/assess-workflow/skill/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 171
+        },
+        {
+          "path": "agent/assess-workflow/tool/result.csv",
+          "kind": "bulk_file",
+          "bytes": 1559
+        }
+      ]
+    }
+  ],
+  "kept_rule": "保留 *.md/*.json/*.txt/*.log/*.xlsx、registration/、scripts/、deployment/probes/*/probe.json；清理 */work/、deployment/probes/*/out/ 与 registration/ 之外的大体积实体文件",
+  "pruned": [
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 377
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2228
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1098
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/result.json",
+      "kind": "harbor_trial",
+      "bytes": 4329
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 3706
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/reward.json",
+      "kind": "harbor_trial",
+      "bytes": 16
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/reward.txt",
+      "kind": "harbor_trial",
+      "bytes": 2
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__pD57mDS/verifier/test-stdout.txt",
+      "kind": "harbor_trial",
+      "bytes": 52
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/agent/oracle.txt",
+      "kind": "harbor_trial",
+      "bytes": 52
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 373
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/artifacts/workspace/output/summary.json",
+      "kind": "harbor_trial",
+      "bytes": 252
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2234
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1101
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/result.json",
+      "kind": "harbor_trial",
+      "bytes": 4341
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 360
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/reward.json",
+      "kind": "harbor_trial",
+      "bytes": 16
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/reward.txt",
+      "kind": "harbor_trial",
+      "bytes": 2
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__mU3gfBU/verifier/test-stdout.txt",
+      "kind": "harbor_trial",
+      "bytes": 59
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 376
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2228
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/exception.txt",
+      "kind": "harbor_trial",
+      "bytes": 2250
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1098
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/result.json",
+      "kind": "harbor_trial",
+      "bytes": 7343
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/nop/grid-stats-task__Z76zKph/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 15927
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 376
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2234
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/exception.txt",
+      "kind": "harbor_trial",
+      "bytes": 2250
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1101
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/result.json",
+      "kind": "harbor_trial",
+      "bytes": 7355
+    },
+    {
+      "path": "harbor/grid-stats-task-attempt-01-blocked-buildx/oracle/grid-stats-task__ZWbpHLN/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 15939
+    },
+    {
+      "path": "agent-sage/idw-interpolate/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 77
+    },
+    {
+      "path": "agent-sage/assess-workflow/skill/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 171
+    },
+    {
+      "path": "agent-sage/assess-workflow/tool/result.csv",
+      "kind": "bulk_file",
+      "bytes": 1559
+    },
+    {
+      "path": "validation-run/zscore-normalize/C06-empty-input/in6.csv",
+      "kind": "bulk_file",
+      "bytes": 9
+    },
+    {
+      "path": "validation-run/zscore-normalize/C02-single/in2.csv",
+      "kind": "bulk_file",
+      "bytes": 13
+    },
+    {
+      "path": "validation-run/zscore-normalize/C01-basic/in.csv",
+      "kind": "bulk_file",
+      "bytes": 21
+    },
+    {
+      "path": "validation-run/zscore-normalize/C01-basic/result.csv",
+      "kind": "bulk_file",
+      "bytes": 48
+    },
+    {
+      "path": "validation-run/zscore-normalize/C05-bad-value/in5.csv",
+      "kind": "bulk_file",
+      "bytes": 15
+    },
+    {
+      "path": "validation-run/zscore-normalize/C03-bad-column/in3.csv",
+      "kind": "bulk_file",
+      "bytes": 11
+    },
+    {
+      "path": "validation-run/assess-workflow/C01-end-to-end/skill/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 171
+    },
+    {
+      "path": "validation-run/assess-workflow/C01-end-to-end/tool/result.csv",
+      "kind": "bulk_file",
+      "bytes": 1559
+    },
+    {
+      "path": "validation-run/idw-interpolate/C01-hits/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 77
+    },
+    {
+      "path": "validation-run/idw-interpolate/C04-bad-column/bad-targets.csv",
+      "kind": "bulk_file",
+      "bytes": 4
+    },
+    {
+      "path": "validation-run/idw-interpolate/C07-no-source-points/empty-points.csv",
+      "kind": "bulk_file",
+      "bytes": 10
+    },
+    {
+      "path": "validation-run/idw-interpolate/C02-equidistant/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 52
+    },
+    {
+      "path": "validation-run/idw-interpolate/C05-power-one/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 54
+    },
+    {
+      "path": "agent/idw-interpolate/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 77
+    },
+    {
+      "path": "agent/assess-workflow/skill/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 171
+    },
+    {
+      "path": "agent/assess-workflow/tool/result.csv",
+      "kind": "bulk_file",
+      "bytes": 1559
+    }
+  ],
+  "ledger_marks": {
+    "cases.json": 1,
+    "comparison.json": 0
+  },
+  "report_note_injected": true,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "run_id": "run-20261124-102008",
+  "source_root": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "work_copy": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-102008",
+  "work_root_origin": "default",
+  "created_at": "2026-11-24T10:20:13+08:00",
+  "copy_files": 546,
+  "copy_bytes": 473546,
+  "init_verify": {
+    "source_files": 546,
+    "source_bytes": 473546,
+    "copy_files": 546,
+    "copy_bytes": 473546,
+    "files_match": true,
+    "bytes_match": true,
+    "sums": [],
+    "sums_checked": false,
+    "sums_note": "按约定不核验 SHA256SUMS",
+    "ok": true
+  },
+  "rule": "执行只在副本中；原始包仅写 asset-runs/<run_id>/",
+  "manifest_before": {
+    "file": "asset-runs/run-20261124-102008/manifest-before.json",
+    "entries": 546
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  },
+  "cleaned_at": "2026-11-24T10:29:11+08:00",
+  "copy_removed": true,
+  "copy_exists_after": false,
+  "verify_after_clean": {
+    "checked": false,
+    "reason": "按约定不核验 SHA256SUMS（完整性以文件数/字节数为准）",
+    "files": 546,
+    "bytes": 473546
+  }
+}

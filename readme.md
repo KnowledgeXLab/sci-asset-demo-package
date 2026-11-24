@@ -1,6 +1,6 @@
-# demo-assets-1.0.0（示例资产包）
+# demo-assets-1.2.0（示例资产包）
 
-一个最小的示例资产包：数据、工具、skill、工作流各 1 个，外加 1 个 harbor 格式的 task 示例；工作流通过 `external_assets.json` 引用另外三个资产。合规性与功能以核验报告为准，本 readme 只描述内容与用法。
+一个最小的示例资产包（v1.2.0）：数据、工具、skill、工作流各 1 个，外加 1 个 harbor 格式的 task 示例；工作流通过 `external_assets.json` 引用另外三个资产。合规性与功能以核验报告为准，本 readme 只描述内容与用法。
 所有资产都用 Python 标准库实现，无需联网、无需第三方依赖。
 
 ## 目录
@@ -63,3 +63,15 @@ harbor 任务的目录约定（`grid-stats-task/`）：`task.toml` + `instructio
 
 核验产出由 `sci-asset-verify-skill` 生成；`asset-runs/` 只作参考，**再次核验时不会被读取或对比**（skill 规定不参考包内已有结果）。
 
+## 版本记录
+
+### 1.2.0 — 2026-11-24
+
+- 新增 harbor（terminal-bench-science）格式的 task 示例资产 `grid-stats-task/`：oracle 期望 reward=1、nop 期望 reward=0；
+  verifier 与 agent 沙箱隔离（`environment_mode=separate`）、自带真值、`harbor lint` 无发现
+- `grid-stats-task`：修正 instruction 示例值（`quadrant_counts` 应为 17/17/17/16）、`task_classes` 改用词表内取值；
+  `validate/validate.py` 增加"示例值 vs 判分口径"自检
+- `idw-interpolate`：补 `no_source_points` 失败语义与用例 `C07-no-source-points`（用例 6 → 7 组）
+- `grid-samples`：`validate.py` 用白名单 AST 求值替代 `eval()`；`--case` 默认值对齐 `cases.json`，未知 id 直接 exit 2
+- `assess-workflow`：readme 注明 `A01` 是 agent 验收编号、不属于 `cases.json` 给定用例
+- 附 2026-11-24 10:20:08 批次完整核验产出（24/24 用例通过，P0 0 / P1 0）

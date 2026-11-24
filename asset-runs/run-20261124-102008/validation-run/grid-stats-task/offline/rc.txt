@@ -1,0 +1,2 @@
+default rc=0
+no-solution rc=0

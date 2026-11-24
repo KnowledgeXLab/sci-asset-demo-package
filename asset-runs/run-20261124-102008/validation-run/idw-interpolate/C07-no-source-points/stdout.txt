@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C07-no-source-points", "rc": 2, "error": "no_source_points", "expected": {"rc": 2, "error": "no_source_points"}, "ok": true}

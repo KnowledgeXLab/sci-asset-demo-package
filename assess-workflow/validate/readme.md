@@ -30,4 +30,4 @@
   （`--artifact` 只读 agent 输出的 `report.json` 并核对字段，**不会重跑工作流**）
 - 判定口径：脚本退出码 0 且上述指标全部成立。注意两处 rc=3 含义不同：
   · **给定用例 `C02-missing-external`** 期望工作流以 rc=3 报"外部资产缺失"→ 这是**通过**；
-  · **agent 验收 `A01`** 若因外部资产没挂上而 rc=3 → 记 `blocked`（不是通过，也不是失败）
+  · **agent 验收 `A01`**（编号仅用于 agent 验收场景，**不属于** `validate/cases.json` 的给定用例；给定用例只有 `C01-end-to-end` / `C02-missing-external`）若因外部资产没挂上而 rc=3 → 记 `blocked`（不是通过，也不是失败）

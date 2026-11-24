@@ -1,0 +1,5 @@
+FAIL: 缺少产物：/tmp/grid-stats-validate-e58iennl/output/summary.json
+OK：instruction.md 示例与 verifier 期望值一致
+
+参考解 rc=0；verifier rc=1
+OK：缺产物时 verifier 判不通过（门槛有效）

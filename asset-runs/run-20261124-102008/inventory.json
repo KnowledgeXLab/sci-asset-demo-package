@@ -1,0 +1,246 @@
+{
+  "run_id": "run-20261124-102008",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "asset_count": 5,
+  "excluded": [
+    "asset-runs/（历史批次与本次产出，不登记为资产）",
+    ".git/",
+    "__pycache__/",
+    "*.pyc",
+    "._*（AppleDouble）"
+  ],
+  "root_level_files_note": "包根一级文件（readme.md、VERSION、.gitignore）只记录存在性，不读内容、不据以判定",
+  "root_level_files": [
+    ".gitignore",
+    "VERSION",
+    "readme.md"
+  ],
+  "assets": [
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "asset_type": "skill",
+      "name": "示例评估工作流",
+      "asset_version": "1.0.0",
+      "lifecycle": "validated",
+      "source_path": "assess-workflow",
+      "key_files": {
+        "SKILL.md": {
+          "sha256": "6000d575d465ec9667172bda7a0cd5a303a80b770c8963e5db6203dbeb26ef24",
+          "size_bytes": 1693,
+          "declared_sha256": null
+        },
+        "scripts/run_workflow.py": {
+          "sha256": "6d16f96ceb345967d39adf6f5332771d5e91e722a72ee59e8130e9d0b39ba723",
+          "size_bytes": 3445,
+          "declared_sha256": null
+        },
+        "targets.csv": {
+          "sha256": "3546cdf785a1b6425fcf3907050e912a109f154acd847fa4e42407be7b31db13",
+          "size_bytes": 47,
+          "declared_sha256": null
+        },
+        "external_assets.json": {
+          "sha256": "d55e406780cd511b2105e450e220b1e9c397c1bce20283b2236f15aa53f578d9",
+          "size_bytes": 785,
+          "declared_sha256": null
+        }
+      },
+      "related_assets": [
+        "sciasset://2026ZD000042/demo/data/grid-samples",
+        "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+        "sciasset://2026ZD000042/demo/skill/idw-interpolate"
+      ],
+      "validate_entry": [
+        "validate/cases.json",
+        "validate/readme.md",
+        "validate/validate.py"
+      ],
+      "evidence_paths": {
+        "validate_readme": "validate/readme.md",
+        "cases": "validate/cases.json"
+      },
+      "gaps": []
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "asset_type": "data",
+      "name": "规则网格采样点数据",
+      "asset_version": "1.0.0",
+      "lifecycle": "validated",
+      "source_path": "grid-samples",
+      "key_files": {
+        "payload/points.csv": {
+          "sha256": "e696fc3c86f9b972dc3155d53324cfdf974363da0031df6703d34f55c8b3b81d",
+          "size_bytes": 1895,
+          "declared_sha256": "e696fc3c86f9b972dc3155d53324cfdf974363da0031df6703d34f55c8b3b81d"
+        },
+        "metadata.json": {
+          "sha256": "ff6b585c548debbdc8243a562dae495d7d5705ce07088712d1f5f304385247af",
+          "size_bytes": 711,
+          "declared_sha256": null
+        },
+        "readme.md": {
+          "sha256": "e2e7a88bbc7823a768c4f36a6c769401e0cccb84c358c7a946bea5e01d67995a",
+          "size_bytes": 500,
+          "declared_sha256": null
+        }
+      },
+      "related_assets": [],
+      "validate_entry": [
+        "validate/cases.json",
+        "validate/readme.md",
+        "validate/validate.py"
+      ],
+      "evidence_paths": {
+        "validate_readme": "validate/readme.md",
+        "cases": "validate/cases.json"
+      },
+      "gaps": []
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "asset_type": "task",
+      "name": "网格采样点汇总任务（harbor 格式示例）",
+      "asset_version": "1.0.0",
+      "lifecycle": "validated",
+      "source_path": "grid-stats-task",
+      "key_files": {
+        "task.toml": {
+          "sha256": "01633a51f282772d1a6d981cb2c240f8fa3836ba6de18183fb59b8247fbd84a2",
+          "size_bytes": 1098,
+          "declared_sha256": null
+        },
+        "instruction.md": {
+          "sha256": "7f1621a7a13040866f88765e266c385730380030d1ad4314238b6dc0fe1d0ea1",
+          "size_bytes": 1303,
+          "declared_sha256": null
+        },
+        "environment/data/points.csv": {
+          "sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b",
+          "size_bytes": 424,
+          "declared_sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b"
+        },
+        "environment/Dockerfile": {
+          "sha256": "e934fe9ab1b45d0fbedb97b9fef205abc699f092e7817aa4d1dedac03d57b8d7",
+          "size_bytes": 281,
+          "declared_sha256": null
+        },
+        "solution/solve.py": {
+          "sha256": "b0f829d85259e9fd2393ad1db4ba6e366ce2fd3aff2529b5d5d412ccd38fa132",
+          "size_bytes": 1659,
+          "declared_sha256": null
+        },
+        "tests/test_summary.py": {
+          "sha256": "a43476e85fe39f3eadb4052f287da485157c4280ca097904ab2c719d4c316d55",
+          "size_bytes": 4537,
+          "declared_sha256": null
+        },
+        "tests/test.sh": {
+          "sha256": "274fd5043ba80996bbca8d4eeef25210b4c50ed8952b75d8381fd3ebde0a6f2b",
+          "size_bytes": 570,
+          "declared_sha256": null
+        },
+        "tests/Dockerfile": {
+          "sha256": "a91c09b1d5beadbbb0198e13a0bd6f7ea0b5ccebfd514179e2b2c5d423c5f81b",
+          "size_bytes": 423,
+          "declared_sha256": null
+        },
+        "tests/data/points.csv": {
+          "sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b",
+          "size_bytes": 424,
+          "declared_sha256": "96eaf6fc793ae6e581dc8041570cdcea9f2938af2f10a371b7fa3a5452f8b86b"
+        },
+        "readme.md": {
+          "sha256": "1aaa9e5792dd4cd19f2243108ed97455b6d2fa99547614ed81d0519d5f41deb9",
+          "size_bytes": 2886,
+          "declared_sha256": null
+        }
+      },
+      "related_assets": [],
+      "validate_entry": [
+        "validate/cases.json",
+        "validate/readme.md",
+        "validate/validate.py"
+      ],
+      "evidence_paths": {
+        "validate_readme": "validate/readme.md",
+        "cases": "validate/cases.json"
+      },
+      "gaps": []
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "asset_type": "skill",
+      "name": "IDW 反距离权重插值技能",
+      "asset_version": "1.0.0",
+      "lifecycle": "validated",
+      "source_path": "idw-interpolate",
+      "key_files": {
+        "SKILL.md": {
+          "sha256": "1ff58e97b3d19bd0b35f52e7a0f194129978e0cdfe0dda7666a80bb1135fa56d",
+          "size_bytes": 1057,
+          "declared_sha256": null
+        },
+        "scripts/run.py": {
+          "sha256": "09449d647707980166009f5327ceeebd26fa0cf6da1a6da791dbcc94f9300328",
+          "size_bytes": 2758,
+          "declared_sha256": null
+        }
+      },
+      "related_assets": [],
+      "validate_entry": [
+        "validate/cases",
+        "validate/cases.json",
+        "validate/readme.md",
+        "validate/validate.py"
+      ],
+      "evidence_paths": {
+        "validate_readme": "validate/readme.md",
+        "cases": "validate/cases.json"
+      },
+      "gaps": []
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "asset_type": "tool",
+      "name": "z-score 标准化工具",
+      "asset_version": "1.0.0",
+      "lifecycle": "validated",
+      "source_path": "zscore-normalize",
+      "key_files": {
+        "scripts/zscore.py": {
+          "sha256": "78a0549c2fb8422c7ea6632f612be468c8e5e9e76ca91366d70b2965846f46f7",
+          "size_bytes": 2308,
+          "declared_sha256": null
+        },
+        "tool.json": {
+          "sha256": "eb79978e223f8b51262242a31ed1832d7649fb24c716f746dc7e4143a5dd9200",
+          "size_bytes": 963,
+          "declared_sha256": null
+        },
+        "readme.md": {
+          "sha256": "dad4ddf60fb999e66e33a986fff7215bfa89c9a40f9ee57cbaebdfb650e23094",
+          "size_bytes": 365,
+          "declared_sha256": null
+        }
+      },
+      "related_assets": [],
+      "validate_entry": [
+        "validate/cases.json",
+        "validate/readme.md",
+        "validate/validate.py"
+      ],
+      "evidence_paths": {
+        "validate_readme": "validate/readme.md",
+        "cases": "validate/cases.json"
+      },
+      "gaps": []
+    }
+  ],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

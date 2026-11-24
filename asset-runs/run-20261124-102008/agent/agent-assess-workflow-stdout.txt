@@ -1,0 +1,14 @@
+工作流已跑通，校验通过（`validate.py --case C01-end-to-end` 退出码 0，四项检查全部 true）。
+
+**report.json 关键结果：**
+
+| 字段 | 值 |
+|---|---|
+| `data_points` | **100** |
+| `targets` | **5** |
+| `estimate_min` | **12.323535** |
+| `estimate_max` | **18.208559** |
+
+补充上下文：`steps` = `read_data` → `zscore_normalize` → `idw_interpolate`（三步齐全）；原始观测值统计量 `value_mean` = 15.699537、`value_pstdev` = 2.318747；IDW 用 power=2 对原始值插值，5 个目标点估值分别为 16.441320 / 16.143838 / 14.333148 / 18.208559 / 12.323535，落在上述 min–max 区间内。`external_assets` 只记录相对目录名（`grid-samples`/`zscore-normalize`/`idw-interpolate`），未写入挂载的绝对路径，产物可跨机逐值比对。
+
+产物（含 `report.json` 及中间结果 `tool/stats.json`、`skill/interpolated.csv`）已写入当前工作目录，技能目录保持只读未被改动：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-102008/agent/assess-workflow/report.json`。

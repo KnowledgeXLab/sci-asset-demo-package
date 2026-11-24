@@ -1,0 +1,17 @@
+插值完成，并已通过官方校验器（`ok: true`，两个目标点都命中已知采样点，`value_est` 和 `nearest_dist` 两列逐值相等）。
+
+**产出**
+- 产物路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-102008/agent/idw-interpolate/interpolated.csv`
+- 附带的 `run.json` 记录了本次运行参数：`{"mode":"idw","power":2.0,"source_points":2,"targets":2}`
+
+**每行 value_est**
+
+| x | y | value_est | nearest_dist |
+|---|---|---|---|
+| 0 | 0 | **10.000000** | 0.000000 |
+| 10 | 0 | **20.000000** | 0.000000 |
+
+说明：两个目标点与已知点坐标完全重合（距离 0），按技能约定直接取该点的观测值，因此估值精确等于原始观测 10 和 20，而不是加权平均。所有产物均写在当前工作目录，未修改技能目录（只读）。
+
+产物绝对路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-102008/agent/idw-interpolate/interpolated.csv`
+

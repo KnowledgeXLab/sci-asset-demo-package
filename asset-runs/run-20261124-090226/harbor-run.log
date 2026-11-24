@@ -1,3 +1,0 @@
-[harbor] 已自动安装 harbor CLI（0.27.0）→ /tmp/sci-asset-verify-harbor-venv
-harbor 验证完成：通过 1 / 失败 0 / blocked 0（共 1 个任务）
-报告：/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/harbor-run-report.json

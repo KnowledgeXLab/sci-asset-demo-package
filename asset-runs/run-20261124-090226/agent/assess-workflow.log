@@ -1,2 +1,0 @@
-启动 agent：DSH（DeepSeek Harness）（backend=harness, model=harness 默认）
-{"harness": "dsh", "backend": "harness", "agent_rc": 0, "gate_rc": 0, "verdict": "pass", "hint": null}
