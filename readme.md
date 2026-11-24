@@ -89,21 +89,21 @@ grid-stats-task/
 
 ## 怎么核验
 
-```bash
-# 1) 固定清单判定（P0/P1 + 覆盖表）
-python3 <skill>/scripts/probe_package.py --package . --run-dir <run> --evaluate \
-    --json-out <run>/probe-report.json
+本包用 **`sci-asset-verify-skill`** 核验。脚本级细节（每条检查项的口径、命令行参数、报告格式）见该仓库的 README：
+<https://github.com/KnowledgeXLab/sci-asset-verify-skill>
 
-# 2) 各资产的离线自检（不需要 docker）
-python3 grid-samples/validate/validate.py --case C01-metadata --out-dir /tmp/gs
-python3 idw-interpolate/validate/validate.py --case C01-hits --out-dir /tmp/idw
-python3 grid-stats-task/validate/validate.py        # 示例值自检 + 参考解 + verifier
+在装好该 skill 的 agent（DSH / Claude Code / Codex 等）里，直接给它这段话即可：
 
-# 3) harbor 任务的双 trial（需要 docker + harbor CLI，缺则自动装独立 venv）
-python3 <skill>/scripts/harbor_run.py --package . --run-dir <run>
+```
+用 sci-asset-verify-skill 自查 <本仓库路径> 这个资产包，按对外发版口径全量跑一遍：
+含 harbor 任务的 oracle/nop 双 trial 和 Sage 附加测试，交付前我想知道还有哪些项没过。
 ```
 
-预期：oracle `reward=1`、nop `reward=0`；`harbor lint` 无发现；固定清单 P0 0 / P1 0。
+它会依次做：盘点资产并读使用说明 → 固定清单判定（P0/P1 + 覆盖表）→ 跑各资产自带用例 →
+harbor 任务跑官方 CLI 的 oracle（期望 reward=1）与 nop（期望 reward=0）→ 生成核验报告与 23 列对外发版清单。
+
+本包用当前版本如实跑过一遍，预期结论：**24 条用例全部通过、固定清单 P0 0 / P1 0、harbor oracle=1 / nop=0**。
+只想核验其中一部分时，把范围写进 prompt 即可（例如「只看 `grid-stats-task` 这个资产」）。
 
 ## 版本记录
 
@@ -115,7 +115,7 @@ python3 <skill>/scripts/harbor_run.py --package . --run-dir <run>
 - 资产构成写准：数据 1 / 工具 1 / skill 2（其中 1 个工作流）/ harbor task 1 = **5 个资产**
   （原文仍写"4 个资产"、且漏掉 `grid-stats-task/`）
 - 「仓库内容」补 `VERSION`、`grid-stats-task/`、`probe-report.json`、`harbor/`（oracle/nop 证据）
-- 新增「怎么核验」小节：固定清单判定 / 各资产离线自检 / harbor 双 trial 三条命令与预期结果
+- 新增「怎么核验」小节：给出用 `sci-asset-verify-skill` 核验本包时的 prompt，脚本细节指向该 skill 仓库 README
 - 章节顺序调整：「仓库内容」提到最前（在「目录」之前），先讲仓库里有什么再看资产明细
 
 ### 1.2.0 — 2026-11-24
