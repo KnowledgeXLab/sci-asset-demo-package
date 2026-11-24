@@ -1,0 +1,14 @@
+
+
+插值已完成。两个目标点均为已知点（距离为 0），按规则直接取观测值。
+
+**产物绝对路径**：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent-sage/idw-interpolate/interpolated.csv`
+
+每行 `value_est`：
+
+| x | y | value_est | nearest_dist |
+|---|---|-----------|-------------|
+| 0 | 0 | 10.000000 | 0.000000 |
+| 10 | 0 | 20.000000 | 0.000000 |
+
+目录中还生成了 `run.json`（mode: idw, power: 2, source_points: 2, targets: 2）。注意产物写在了当前工作目录，未写入只读的技能目录。

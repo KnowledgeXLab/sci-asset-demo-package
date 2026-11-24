@@ -119,9 +119,9 @@ grid-stats-task/
 它会依次做：盘点资产并读使用说明 → 固定清单判定（P0/P1 + 覆盖表）→ 跑各资产自带用例 →
 harbor 任务跑官方 CLI 的 oracle（期望 reward=1）与 nop（期望 reward=0）→ 生成核验报告与 23 列对外发版清单。
 
-预期结论：**固定清单 P0 0 / P1 0**；`grid-stats-task` 的 harbor oracle=1 / nop=0；
-各资产自带用例全部通过（随包 `asset-runs/run-20261124-102008` 是 v1.2.0 时 5 个资产的完整批次，
-v1.3.0 新增的 4 个类型资产已逐条自检通过，尚未重跑整包 agent + Sage + harbor 批次）。
+预期结论：**固定清单 P0 0 / P1 0**、**40 例用例全部通过**（覆盖度 sufficient）、
+`grid-stats-task` 的 harbor oracle=1 / nop=0。随包 `asset-runs/run-20261124-140820` 就是这一批完整产出，
+可直接对照。
 只想核验其中一部分时，把范围写进 prompt 即可（例如「只看 `grid-stats-task` 这个资产」）；harbor 任务的 oracle/nop 双 trial 与 Sage 附加测试由 skill 按包内情况自动触发，不必在 prompt 里点名。
 
 ## 版本记录
@@ -161,4 +161,5 @@ v1.3.0 新增的 4 个类型资产已逐条自检通过，尚未重跑整包 age
 - `idw-interpolate`：补 `no_source_points` 失败语义与用例 `C07-no-source-points`（用例 6 → 7 组）
 - `grid-samples`：`validate.py` 用白名单 AST 求值替代 `eval()`；`--case` 默认值对齐 `cases.json`，未知 id 直接 exit 2
 - `assess-workflow`：readme 注明 `A01` 是 agent 验收编号、不属于 `cases.json` 给定用例
-- 附 2026-11-24 10:20:08 批次完整核验产出（24/24 用例通过，P0 0 / P1 0）
+- 附完整核验产出：`asset-runs/run-20261124-140820`（9 个资产、40 例用例全部通过、覆盖度 sufficient、
+  P0 0 / P1 0、harbor oracle=1 / nop=0）

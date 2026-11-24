@@ -1,0 +1,117 @@
+{
+  "tool": "state.json",
+  "run": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820",
+  "origin_package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "work_copy": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "work_copy_kept": true,
+  "work_copy_note": "保留工作副本以便复跑；如需回收执行 python scripts/work_copy.py clean <包> --run-id run-20261124-140820 --verify（会复核原包文件数/字节数）",
+  "intent": "delivery",
+  "history_batches_not_read": [
+    "run-20261124-102008"
+  ],
+  "stages": {
+    "skill_update": {
+      "status": "completed",
+      "artifacts": "skill-update.json",
+      "command": "python scripts/update_skill.py --apply；已是最新 1.3-beta.1"
+    },
+    "work_copy": {
+      "status": "completed",
+      "artifacts": "work-copy.json",
+      "command": "python scripts/work_copy.py init <包> --manifest；774 文件/747525 字节一致"
+    },
+    "inventory": {
+      "status": "completed",
+      "artifacts": "inventory.json, usage.md",
+      "command": "python scripts/build_ledger.py --work-copy <副本> --run <run>"
+    },
+    "envelope": {
+      "status": "completed",
+      "artifacts": "envelope-report.json",
+      "command": "python scripts/validate_envelope.py <包>（jsonschema 4.26.0，9/9 PASS）"
+    },
+    "selfcontained": {
+      "status": "completed",
+      "artifacts": "selfcontained-report.json, selfcontained-workcopy.json",
+      "command": "python scripts/check_selfcontained.py --package <包|副本>"
+    },
+    "probe_static": {
+      "status": "completed",
+      "artifacts": "probe-report.json",
+      "command": "python scripts/probe_package.py --package <包> --run-dir <run> --evaluate；指纹 df96ebe112592edc，P0 0 / P1 0"
+    },
+    "external_mounts": {
+      "status": "completed",
+      "artifacts": "external-mounts.json",
+      "command": "python scripts/mount_external.py --copy-root <副本> --origin-package <包>；同包解析 3、缺失 0"
+    },
+    "cases": {
+      "status": "completed",
+      "artifacts": "cases.json, cases-selfcheck.json, comparison.json, validation-run/",
+      "command": "python scripts/run_cases.py + scripts/build_ledger.py；38 组给定用例，38/38 通过"
+    },
+    "harbor": {
+      "status": "completed",
+      "artifacts": "harbor-run-report.json, harbor/",
+      "command": "python scripts/harbor_run.py --package <副本> --run-dir <run>；oracle 1.0 / nop 0.0（第 2 轮，第 1 轮 blocked 见 harbor-run-attempt-01-blocked-buildx/）"
+    },
+    "skill_agent": {
+      "status": "completed",
+      "artifacts": "agent/idw-interpolate-report.json, agent/assess-workflow-report.json",
+      "command": "python scripts/run_skill_agent.py --harness dsh（2/2 pass；idw 首轮 LLM transport 失败后重试通过）"
+    },
+    "sage": {
+      "status": "completed",
+      "artifacts": "sage-need.json, sage-config.json, sage-a1.5-report.json, agent-sage/",
+      "command": "python scripts/sage_probe.py detect/config；scripts/run_skill_agent_sage.py 起同一 harness 换 Sage-A1.5（2/2 pass，不计入判定）"
+    },
+    "deployment": {
+      "status": "completed",
+      "artifacts": "deployment/mcp.json, deployment/probes/",
+      "command": "python scripts/deploy_probe.py；无 MCP 端点（not_applicable_no_such_asset），CLI 直连 5 个资产各留一次成功 + 一次预期失败调用"
+    },
+    "registration": {
+      "status": "completed",
+      "artifacts": "registration/科学数字资产清单.xlsx, rows.json, check-list-report.json, field-evidence.json, asset-row-map.json",
+      "command": "python scripts/build_rows.py → asset_ids.py --inject → external_refs.py --inject → build_list.py（9 行 × 23 列，自检 errors 0 / warnings 0）"
+    },
+    "coverage": {
+      "status": "completed",
+      "artifacts": "coverage.json",
+      "command": "python scripts/check_coverage.py --cases cases.json --inventory inventory.json --report validation-report.md；8 类均达标"
+    },
+    "report": {
+      "status": "completed",
+      "artifacts": "validation-report.md, report-check.json",
+      "command": "python scripts/check_report.py（error 0 / warning 0）"
+    },
+    "prune": {
+      "status": "completed",
+      "artifacts": "evidence-prune.json",
+      "command": "python scripts/prune_evidence.py --run <run>；清 61 项 / 38413 字节，报告已注入证据保留口径"
+    },
+    "stamp": {
+      "status": "completed",
+      "artifacts": "validation-report.md front matter",
+      "command": "python scripts/stamp_report.py --run <run>；35 份证据 JSON 打戳"
+    }
+  },
+  "not_applicable": {
+    "mcp_registration": "not_applicable_no_such_asset（包内无 MCP 端点声明；zscore interface_type=cli）",
+    "platform_registration": "未执行：未提供平台接口与凭证，清单已生成但平台未注册（按 skill 要求不宣称注册成功）",
+    "sage_for_task": "task@harbor 不触发 Sage（oracle/nop 为确定性伪 agent）"
+  },
+  "resume": {
+    "重跑单例": "python scripts/run_cases.py --work-copy <副本> --run <run> --assets <资产名>",
+    "重跑 harbor": "DOCKER_CONFIG=<run>/harbor/.docker-config python scripts/harbor_run.py --package <副本> --run-dir <run>",
+    "重跑 agent 验收": "python scripts/run_skill_agent.py --skill <副本>/<资产> --out-dir <run>/agent/<资产> --harness dsh",
+    "重新生成清单": "python scripts/build_rows.py → asset_ids.py --inject → external_refs.py --inject → build_list.py"
+  },
+  "generated_at": "2026-11-24T14:15:13+08:00",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

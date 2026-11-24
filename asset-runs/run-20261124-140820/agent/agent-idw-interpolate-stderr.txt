@@ -1,0 +1,20 @@
+dsh: reasoning:
+The skill "idw-interpolate" isn't in the session skill catalog. It's a skill located in the given directory. Let me look there.
+dsh: reasoning:
+The skill isn't in the catalog, but it's a local skill directory. Let me read SKILL.md. The `skill` tool expects a name from catalog — idw-interpolate isn't there. So just read the files.
+dsh: reasoning:
+Now read the inputs, run.py, usage readme. Note: the skill name isn't in the catalog so `skill` tool would fail; I'll proceed reading locally (skill tool with name idw-interpolate would error since not in catalog). Let me try? Better not; SKILL.md is loaded — the instructions say follow it.
+
+Read files.
+dsh: reasoning:
+Simple: targets hit known points exactly, so value_est = 10 and 20.
+
+Run the script with --out-dir current working directory. Note the script writes interpolated.csv and run.json into out-dir. That's fine.
+
+The output dir is the cwd. Run: python3 <skill>/scripts/run.py --points .../points.csv --targets .../targets.csv --out-dir . --power 2
+
+Check that python3 exists and landlock write permissions allow cwd (workspace-write, yes).
+dsh: reasoning:
+Verify correctness independently: targets coincide with known points, so exact values 10 and 20. nearest_dist 0. Good.
+
+Report.

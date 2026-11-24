@@ -1,0 +1,75 @@
+{
+  "tool": "harbor_run.py",
+  "generated_at": "2026-11-24T14:11:29+08:00",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "harbor": {
+    "docker": "Client: Docker Engine - Community\n Version:    28.1.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.23.0\n    Path:     /usr/libexec/docker/cl",
+    "harbor": {
+      "bin": "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+      "version": "0.27.0",
+      "source": "auto-install"
+    },
+    "has_gpu": true,
+    "lint": "collected",
+    "lint_note": null
+  },
+  "verdict": "pass",
+  "summary": {
+    "total": 1,
+    "passed": 1,
+    "failed": 0,
+    "blocked": 0
+  },
+  "tasks": [
+    {
+      "task": "grid-stats-task",
+      "oracle": {
+        "status": "ran",
+        "cmd": [
+          "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+          "run",
+          "-p",
+          "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-task",
+          "-a",
+          "oracle",
+          "-o",
+          "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task",
+          "--job-name",
+          "oracle",
+          "--yes"
+        ],
+        "job_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/oracle",
+        "reward": 1.0,
+        "source": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/result.json"
+      },
+      "nop": {
+        "status": "ran",
+        "cmd": [
+          "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+          "run",
+          "-p",
+          "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-task",
+          "-a",
+          "nop",
+          "-o",
+          "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task",
+          "--job-name",
+          "nop",
+          "--yes"
+        ],
+        "job_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/nop",
+        "reward": 0.0,
+        "source": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/result.json"
+      },
+      "verdict": "pass"
+    }
+  ],
+  "blocked_tasks": [],
+  "findings": [],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

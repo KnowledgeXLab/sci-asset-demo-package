@@ -1,0 +1,100 @@
+{
+  "tool": "check_skill_spec.py",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "spec_format": "markdown",
+  "skills": 9,
+  "failed": 0,
+  "results": [
+    {
+      "asset_dir": "assess-workflow",
+      "asset_type": "skill",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "grid-samples",
+      "asset_type": "data",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "grid-stats-task",
+      "asset_type": "task",
+      "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [
+        "文档提到的包内路径不存在：assets/harness-registry.json（如为示例占位可忽略）",
+        "文档提到的包内路径不存在：output/summary.json（如为示例占位可忽略）"
+      ],
+      "ok": true
+    },
+    {
+      "asset_dir": "grid-stats-trajectory",
+      "asset_type": "trajectory",
+      "asset_id": "sciasset://2026ZD000042/demo/trajectory/grid-stats-trajectory",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "grid-summary-benchmark",
+      "asset_type": "benchmark",
+      "asset_id": "sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "idw-interpolate",
+      "asset_type": "skill",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "linear-model",
+      "asset_type": "model",
+      "asset_id": "sciasset://2026ZD000042/demo/model/linear-model",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "python-runtime",
+      "asset_type": "environment",
+      "asset_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    },
+    {
+      "asset_dir": "zscore-normalize",
+      "asset_type": "tool",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "spec": "validate/readme.md",
+      "errors": [],
+      "warnings": [],
+      "ok": true
+    }
+  ],
+  "rule": "skill 给 agent 用，验收必须上 agent：validate/readme.md 三节——Agent（agent harness + agent model）、测试任务（任务/输入/输出）、通过门槛（指标或对 agent 产物的验证脚本）；缺建议 harness 可替代但须在报告注明",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

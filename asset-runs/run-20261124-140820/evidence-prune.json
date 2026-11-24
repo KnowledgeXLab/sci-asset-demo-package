@@ -1,0 +1,647 @@
+{
+  "tool": "prune_evidence.py",
+  "run": "run-20261124-140820",
+  "pruned_at": "2026-11-24T14:14:34+08:00",
+  "dry_run": false,
+  "ledger_mark_error": null,
+  "keep_work": false,
+  "bytes_before": 920154,
+  "bytes_after": 881741,
+  "pruned_items": 61,
+  "pruned_bytes": 38413,
+  "scan_items": 61,
+  "scan_bytes": 38413,
+  "passes": [
+    {
+      "at": "2026-11-24T14:14:34+08:00",
+      "items": 61,
+      "bytes": 38413,
+      "pruned": [
+        {
+          "path": "validation-run/grid-stats-trajectory/C04-broken-step/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/grid-stats-trajectory/C01-structure/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/grid-stats-trajectory/C02-outcome-consistency/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/grid-stats-trajectory/C03-evidence-linked/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/python-runtime/C02-no-third-party/work",
+          "kind": "work_dir",
+          "bytes": 437
+        },
+        {
+          "path": "validation-run/python-runtime/C01-runtime-ok/work",
+          "kind": "work_dir",
+          "bytes": 437
+        },
+        {
+          "path": "validation-run/python-runtime/C04-dockerfile-consistent/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/python-runtime/C03-python-version-gate/work",
+          "kind": "work_dir",
+          "bytes": 1099
+        },
+        {
+          "path": "validation-run/grid-samples/C02-structure/work",
+          "kind": "work_dir",
+          "bytes": 410
+        },
+        {
+          "path": "validation-run/grid-samples/C04-extent/work",
+          "kind": "work_dir",
+          "bytes": 463
+        },
+        {
+          "path": "validation-run/grid-samples/C03-read/work",
+          "kind": "work_dir",
+          "bytes": 395
+        },
+        {
+          "path": "validation-run/grid-samples/C01-metadata/work",
+          "kind": "work_dir",
+          "bytes": 378
+        },
+        {
+          "path": "validation-run/grid-samples/C05-formula/work",
+          "kind": "work_dir",
+          "bytes": 200
+        },
+        {
+          "path": "validation-run/zscore-normalize/C06-empty-input/work",
+          "kind": "work_dir",
+          "bytes": 138
+        },
+        {
+          "path": "validation-run/zscore-normalize/C02-single/work",
+          "kind": "work_dir",
+          "bytes": 141
+        },
+        {
+          "path": "validation-run/zscore-normalize/C01-basic/work",
+          "kind": "work_dir",
+          "bytes": 301
+        },
+        {
+          "path": "validation-run/zscore-normalize/C05-bad-value/work",
+          "kind": "work_dir",
+          "bytes": 250
+        },
+        {
+          "path": "validation-run/zscore-normalize/C04-input-missing/work",
+          "kind": "work_dir",
+          "bytes": 481
+        },
+        {
+          "path": "validation-run/zscore-normalize/C03-bad-column/work",
+          "kind": "work_dir",
+          "bytes": 157
+        },
+        {
+          "path": "validation-run/linear-model/C01-predict/work",
+          "kind": "work_dir",
+          "bytes": 344
+        },
+        {
+          "path": "validation-run/linear-model/C02-reproducible/work",
+          "kind": "work_dir",
+          "bytes": 688
+        },
+        {
+          "path": "validation-run/linear-model/C04-input-missing/work",
+          "kind": "work_dir",
+          "bytes": 193
+        },
+        {
+          "path": "validation-run/linear-model/C03-bad-column/work",
+          "kind": "work_dir",
+          "bytes": 54
+        },
+        {
+          "path": "validation-run/grid-summary-benchmark/C01-score-good/work",
+          "kind": "work_dir",
+          "bytes": 851
+        },
+        {
+          "path": "validation-run/grid-summary-benchmark/C03-rubric-schema/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/grid-summary-benchmark/C05-missing-submission/work",
+          "kind": "work_dir",
+          "bytes": 1104
+        },
+        {
+          "path": "validation-run/grid-summary-benchmark/C04-reference-consistency/work",
+          "kind": "work_dir",
+          "bytes": 0
+        },
+        {
+          "path": "validation-run/grid-summary-benchmark/C02-score-bad/work",
+          "kind": "work_dir",
+          "bytes": 869
+        },
+        {
+          "path": "validation-run/assess-workflow/C02-missing-external/work",
+          "kind": "work_dir",
+          "bytes": 1312
+        },
+        {
+          "path": "validation-run/assess-workflow/C01-end-to-end/work",
+          "kind": "work_dir",
+          "bytes": 2771
+        },
+        {
+          "path": "validation-run/idw-interpolate/C01-hits/work",
+          "kind": "work_dir",
+          "bytes": 140
+        },
+        {
+          "path": "validation-run/idw-interpolate/C04-bad-column/work",
+          "kind": "work_dir",
+          "bytes": 45
+        },
+        {
+          "path": "validation-run/idw-interpolate/C07-no-source-points/work",
+          "kind": "work_dir",
+          "bytes": 39
+        },
+        {
+          "path": "validation-run/idw-interpolate/C06-bad-power/work",
+          "kind": "work_dir",
+          "bytes": 36
+        },
+        {
+          "path": "validation-run/idw-interpolate/C03-missing-file/work",
+          "kind": "work_dir",
+          "bytes": 236
+        },
+        {
+          "path": "validation-run/idw-interpolate/C02-equidistant/work",
+          "kind": "work_dir",
+          "bytes": 115
+        },
+        {
+          "path": "validation-run/idw-interpolate/C05-power-one/work",
+          "kind": "work_dir",
+          "bytes": 117
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 377
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2228
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1098
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/result.json",
+          "kind": "harbor_trial",
+          "bytes": 4329
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 3706
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/reward.json",
+          "kind": "harbor_trial",
+          "bytes": 16
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/reward.txt",
+          "kind": "harbor_trial",
+          "bytes": 2
+        },
+        {
+          "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/test-stdout.txt",
+          "kind": "harbor_trial",
+          "bytes": 52
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/agent/oracle.txt",
+          "kind": "harbor_trial",
+          "bytes": 52
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/artifacts/manifest.json",
+          "kind": "harbor_trial",
+          "bytes": 373
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/artifacts/workspace/output/summary.json",
+          "kind": "harbor_trial",
+          "bytes": 252
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/config.json",
+          "kind": "harbor_trial",
+          "bytes": 2234
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/lock.json",
+          "kind": "harbor_trial",
+          "bytes": 1101
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/result.json",
+          "kind": "harbor_trial",
+          "bytes": 4341
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/trial.log",
+          "kind": "harbor_trial",
+          "bytes": 360
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/reward.json",
+          "kind": "harbor_trial",
+          "bytes": 16
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/reward.txt",
+          "kind": "harbor_trial",
+          "bytes": 2
+        },
+        {
+          "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/test-stdout.txt",
+          "kind": "harbor_trial",
+          "bytes": 59
+        },
+        {
+          "path": "agent-sage/idw-interpolate/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 77
+        },
+        {
+          "path": "agent-sage/assess-workflow/skill/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 171
+        },
+        {
+          "path": "agent-sage/assess-workflow/tool/result.csv",
+          "kind": "bulk_file",
+          "bytes": 1559
+        },
+        {
+          "path": "agent/idw-interpolate/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 77
+        },
+        {
+          "path": "agent/assess-workflow/skill/interpolated.csv",
+          "kind": "bulk_file",
+          "bytes": 171
+        },
+        {
+          "path": "agent/assess-workflow/tool/result.csv",
+          "kind": "bulk_file",
+          "bytes": 1559
+        }
+      ]
+    }
+  ],
+  "kept_rule": "保留 *.md/*.json/*.txt/*.log/*.xlsx、registration/、scripts/、deployment/probes/*/probe.json；清理 */work/、deployment/probes/*/out/ 与 registration/ 之外的大体积实体文件",
+  "pruned": [
+    {
+      "path": "validation-run/grid-stats-trajectory/C04-broken-step/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/grid-stats-trajectory/C01-structure/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/grid-stats-trajectory/C02-outcome-consistency/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/grid-stats-trajectory/C03-evidence-linked/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/python-runtime/C02-no-third-party/work",
+      "kind": "work_dir",
+      "bytes": 437
+    },
+    {
+      "path": "validation-run/python-runtime/C01-runtime-ok/work",
+      "kind": "work_dir",
+      "bytes": 437
+    },
+    {
+      "path": "validation-run/python-runtime/C04-dockerfile-consistent/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/python-runtime/C03-python-version-gate/work",
+      "kind": "work_dir",
+      "bytes": 1099
+    },
+    {
+      "path": "validation-run/grid-samples/C02-structure/work",
+      "kind": "work_dir",
+      "bytes": 410
+    },
+    {
+      "path": "validation-run/grid-samples/C04-extent/work",
+      "kind": "work_dir",
+      "bytes": 463
+    },
+    {
+      "path": "validation-run/grid-samples/C03-read/work",
+      "kind": "work_dir",
+      "bytes": 395
+    },
+    {
+      "path": "validation-run/grid-samples/C01-metadata/work",
+      "kind": "work_dir",
+      "bytes": 378
+    },
+    {
+      "path": "validation-run/grid-samples/C05-formula/work",
+      "kind": "work_dir",
+      "bytes": 200
+    },
+    {
+      "path": "validation-run/zscore-normalize/C06-empty-input/work",
+      "kind": "work_dir",
+      "bytes": 138
+    },
+    {
+      "path": "validation-run/zscore-normalize/C02-single/work",
+      "kind": "work_dir",
+      "bytes": 141
+    },
+    {
+      "path": "validation-run/zscore-normalize/C01-basic/work",
+      "kind": "work_dir",
+      "bytes": 301
+    },
+    {
+      "path": "validation-run/zscore-normalize/C05-bad-value/work",
+      "kind": "work_dir",
+      "bytes": 250
+    },
+    {
+      "path": "validation-run/zscore-normalize/C04-input-missing/work",
+      "kind": "work_dir",
+      "bytes": 481
+    },
+    {
+      "path": "validation-run/zscore-normalize/C03-bad-column/work",
+      "kind": "work_dir",
+      "bytes": 157
+    },
+    {
+      "path": "validation-run/linear-model/C01-predict/work",
+      "kind": "work_dir",
+      "bytes": 344
+    },
+    {
+      "path": "validation-run/linear-model/C02-reproducible/work",
+      "kind": "work_dir",
+      "bytes": 688
+    },
+    {
+      "path": "validation-run/linear-model/C04-input-missing/work",
+      "kind": "work_dir",
+      "bytes": 193
+    },
+    {
+      "path": "validation-run/linear-model/C03-bad-column/work",
+      "kind": "work_dir",
+      "bytes": 54
+    },
+    {
+      "path": "validation-run/grid-summary-benchmark/C01-score-good/work",
+      "kind": "work_dir",
+      "bytes": 851
+    },
+    {
+      "path": "validation-run/grid-summary-benchmark/C03-rubric-schema/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/grid-summary-benchmark/C05-missing-submission/work",
+      "kind": "work_dir",
+      "bytes": 1104
+    },
+    {
+      "path": "validation-run/grid-summary-benchmark/C04-reference-consistency/work",
+      "kind": "work_dir",
+      "bytes": 0
+    },
+    {
+      "path": "validation-run/grid-summary-benchmark/C02-score-bad/work",
+      "kind": "work_dir",
+      "bytes": 869
+    },
+    {
+      "path": "validation-run/assess-workflow/C02-missing-external/work",
+      "kind": "work_dir",
+      "bytes": 1312
+    },
+    {
+      "path": "validation-run/assess-workflow/C01-end-to-end/work",
+      "kind": "work_dir",
+      "bytes": 2771
+    },
+    {
+      "path": "validation-run/idw-interpolate/C01-hits/work",
+      "kind": "work_dir",
+      "bytes": 140
+    },
+    {
+      "path": "validation-run/idw-interpolate/C04-bad-column/work",
+      "kind": "work_dir",
+      "bytes": 45
+    },
+    {
+      "path": "validation-run/idw-interpolate/C07-no-source-points/work",
+      "kind": "work_dir",
+      "bytes": 39
+    },
+    {
+      "path": "validation-run/idw-interpolate/C06-bad-power/work",
+      "kind": "work_dir",
+      "bytes": 36
+    },
+    {
+      "path": "validation-run/idw-interpolate/C03-missing-file/work",
+      "kind": "work_dir",
+      "bytes": 236
+    },
+    {
+      "path": "validation-run/idw-interpolate/C02-equidistant/work",
+      "kind": "work_dir",
+      "bytes": 115
+    },
+    {
+      "path": "validation-run/idw-interpolate/C05-power-one/work",
+      "kind": "work_dir",
+      "bytes": 117
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 377
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2228
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1098
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/result.json",
+      "kind": "harbor_trial",
+      "bytes": 4329
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 3706
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/reward.json",
+      "kind": "harbor_trial",
+      "bytes": 16
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/reward.txt",
+      "kind": "harbor_trial",
+      "bytes": 2
+    },
+    {
+      "path": "harbor/grid-stats-task/nop/grid-stats-task__vbL6tci/verifier/test-stdout.txt",
+      "kind": "harbor_trial",
+      "bytes": 52
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/agent/oracle.txt",
+      "kind": "harbor_trial",
+      "bytes": 52
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/artifacts/manifest.json",
+      "kind": "harbor_trial",
+      "bytes": 373
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/artifacts/workspace/output/summary.json",
+      "kind": "harbor_trial",
+      "bytes": 252
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/config.json",
+      "kind": "harbor_trial",
+      "bytes": 2234
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/lock.json",
+      "kind": "harbor_trial",
+      "bytes": 1101
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/result.json",
+      "kind": "harbor_trial",
+      "bytes": 4341
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/trial.log",
+      "kind": "harbor_trial",
+      "bytes": 360
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/reward.json",
+      "kind": "harbor_trial",
+      "bytes": 16
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/reward.txt",
+      "kind": "harbor_trial",
+      "bytes": 2
+    },
+    {
+      "path": "harbor/grid-stats-task/oracle/grid-stats-task__DmQrgY9/verifier/test-stdout.txt",
+      "kind": "harbor_trial",
+      "bytes": 59
+    },
+    {
+      "path": "agent-sage/idw-interpolate/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 77
+    },
+    {
+      "path": "agent-sage/assess-workflow/skill/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 171
+    },
+    {
+      "path": "agent-sage/assess-workflow/tool/result.csv",
+      "kind": "bulk_file",
+      "bytes": 1559
+    },
+    {
+      "path": "agent/idw-interpolate/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 77
+    },
+    {
+      "path": "agent/assess-workflow/skill/interpolated.csv",
+      "kind": "bulk_file",
+      "bytes": 171
+    },
+    {
+      "path": "agent/assess-workflow/tool/result.csv",
+      "kind": "bulk_file",
+      "bytes": 1559
+    }
+  ],
+  "ledger_marks": {
+    "cases.json": 40,
+    "comparison.json": 0
+  },
+  "report_note_injected": true,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

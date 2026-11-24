@@ -1,0 +1,19 @@
+{
+  "tool": "check_list.py",
+  "schema": "/home/dengnianchen/projects/agent_centric/.dsh/skills/sci-asset-verify-skill/assets/external-list-schema.json",
+  "xlsx": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/registration/科学数字资产清单.xlsx",
+  "sheet": "资产明细",
+  "rows_checked": 9,
+  "summary": {
+    "errors": 0,
+    "warnings": 0
+  },
+  "errors": [],
+  "warnings": [],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C02-score-bad", "ok": true, "score": 0.571429, "wrong_fields": ["value_sum", "quadrant_counts"]}

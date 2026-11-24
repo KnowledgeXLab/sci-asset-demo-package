@@ -1,0 +1,43 @@
+{
+  "asset": "grid-summary-benchmark",
+  "interface": "CLI",
+  "entry": "benchmark/run_evaluation.py",
+  "ok": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "benchmark/run_evaluation.py",
+      "--submission",
+      "benchmark/cases/good",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/b-ok"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"score\": 1.0, \"passed\": true, \"problems\": []}",
+    "stderr": ""
+  },
+  "expected_failure": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "benchmark/run_evaluation.py",
+      "--submission",
+      "/tmp/deploy-probe-xhg1d8d6/no-sub",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/b-bad"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"score\": 0.0, \"passed\": false, \"problems\": [\"缺少产物：/tmp/deploy-probe-xhg1d8d6/no-sub/summary.json\"]}",
+    "stderr": ""
+  },
+  "failure_expect": "score.json 记缺失、passed=false",
+  "runtime": {
+    "python": "3.14.7",
+    "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+    "python_executable": "/home/dengnianchen/miniconda3/bin/python3"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

@@ -1,0 +1,29 @@
+{
+  "checked_at": "2026-11-24T14:09:25+08:00",
+  "asset_root": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "asset_types": [
+    "benchmark",
+    "data",
+    "environment",
+    "model",
+    "skill",
+    "task",
+    "tool",
+    "trajectory"
+  ],
+  "type_hint": "包内含 benchmark、model、skill、task、trajectory 类型资产（仅作提示，需看是否有大模型 API 证据）",
+  "assumed": false,
+  "needed": true,
+  "reasons": [
+    "包内含 benchmark、model、skill、task、trajectory 类型资产（仅作提示，需看是否有大模型 API 证据）",
+    "包内含 skill 资产：验收须在 agent 上完成，Sage A1.5 应按同一 harness 执行（仅替换后端模型）"
+  ],
+  "evidence": [],
+  "nothing_to_do": null,
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

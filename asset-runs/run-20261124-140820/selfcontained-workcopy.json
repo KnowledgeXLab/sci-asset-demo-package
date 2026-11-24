@@ -1,0 +1,122 @@
+{
+  "tool": "check_selfcontained.py",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "assets_checked": 9,
+  "assets_violating": 0,
+  "violations": 0,
+  "results": [
+    {
+      "asset_dir": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "violations": [
+        {
+          "kind": "declared-external-link",
+          "severity": "note",
+          "where": "grid-samples",
+          "value": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples",
+          "resolves_to": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples",
+          "hint": "由 external_assets.json 声明并软链到副本内其他资产，属合规通道"
+        },
+        {
+          "kind": "declared-external-link",
+          "severity": "note",
+          "where": "idw-interpolate",
+          "value": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate",
+          "resolves_to": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate",
+          "hint": "由 external_assets.json 声明并软链到副本内其他资产，属合规通道"
+        },
+        {
+          "kind": "declared-external-link",
+          "severity": "note",
+          "where": "zscore-normalize",
+          "value": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize",
+          "resolves_to": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize",
+          "hint": "由 external_assets.json 声明并软链到副本内其他资产，属合规通道"
+        }
+      ],
+      "violation_count": 0,
+      "note_count": 3,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "grid-samples",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "grid-stats-task",
+      "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "本资产自带构建文件（Dockerfile/compose）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "grid-stats-trajectory",
+      "asset_id": "sciasset://2026ZD000042/demo/trajectory/grid-stats-trajectory",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "grid-summary-benchmark",
+      "asset_id": "sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "idw-interpolate",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "linear-model",
+      "asset_id": "sciasset://2026ZD000042/demo/model/linear-model",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "python-runtime",
+      "asset_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "本资产 metadata.environment_type=container（镜像 -）",
+      "self_contained": true
+    },
+    {
+      "asset_dir": "zscore-normalize",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "violations": [],
+      "violation_count": 0,
+      "note_count": 0,
+      "container_context": "同包的运行环境资产 python-runtime 声明了容器（container）",
+      "self_contained": true
+    }
+  ],
+  "rule": "资产只能引用自己目录内的文件；跨资产/跨目录引用必须走资产目录下的 external_assets.json",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

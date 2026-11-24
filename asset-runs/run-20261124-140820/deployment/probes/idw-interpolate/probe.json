@@ -1,0 +1,51 @@
+{
+  "asset": "idw-interpolate",
+  "interface": "CLI",
+  "entry": "scripts/run.py",
+  "ok": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "scripts/run.py",
+      "--points",
+      "validate/cases/C01/points.csv",
+      "--targets",
+      "validate/cases/C01/targets.csv",
+      "--power",
+      "2",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/i-ok"
+    ],
+    "exit_code": 0,
+    "stdout": "{\"source_points\": 2, \"targets\": 2}",
+    "stderr": ""
+  },
+  "expected_failure": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "scripts/run.py",
+      "--points",
+      "validate/cases/C01/points.csv",
+      "--targets",
+      "validate/cases/C01/targets.csv",
+      "--power",
+      "0",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/i-bad"
+    ],
+    "exit_code": 2,
+    "stdout": "",
+    "stderr": "错误：--power 必须为正数（当前 0.0）"
+  },
+  "failure_expect": "rc=2 + error.json(bad_power)",
+  "runtime": {
+    "python": "3.14.7",
+    "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+    "python_executable": "/home/dengnianchen/miniconda3/bin/python3"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

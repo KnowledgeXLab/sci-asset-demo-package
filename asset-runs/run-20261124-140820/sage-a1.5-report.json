@@ -1,0 +1,103 @@
+{
+  "tool": "sage_probe.py",
+  "generated_at": "2026-11-24T14:13:49+08:00",
+  "run": "run-20261124-140820",
+  "asset_involves_llm": true,
+  "status": "completed",
+  "note": "两个 skill 资产在同一 DSH harness 上只换后端为 Sage-A1.5 重跑，agent 产物均通过各自门槛（idw-interpolate、assess-workflow 各 1 例）；密钥经环境变量注入，未落盘",
+  "is_acceptance_criterion": false,
+  "statement": "Sage A1.5 结果属于兼容性附加测试：无论通过与否，都不改变该资产合格与否的判定，也不进入通过率与覆盖度分母。",
+  "need": {
+    "checked_at": "2026-11-24T14:09:25+08:00",
+    "asset_root": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+    "asset_types": [
+      "benchmark",
+      "data",
+      "environment",
+      "model",
+      "skill",
+      "task",
+      "tool",
+      "trajectory"
+    ],
+    "type_hint": "包内含 benchmark、model、skill、task、trajectory 类型资产（仅作提示，需看是否有大模型 API 证据）",
+    "assumed": false,
+    "needed": true,
+    "reasons": [
+      "包内含 benchmark、model、skill、task、trajectory 类型资产（仅作提示，需看是否有大模型 API 证据）",
+      "包内含 skill 资产：验收须在 agent 上完成，Sage A1.5 应按同一 harness 执行（仅替换后端模型）"
+    ],
+    "evidence": [],
+    "nothing_to_do": null,
+    "skill": {
+      "name": "sci-asset-verify-skill",
+      "version": "1.3-beta.1",
+      "commit": "feebb76",
+      "version_source": "VERSION"
+    }
+  },
+  "config": {
+    "tool": "sage_probe.py",
+    "checked_at": "2026-11-24T14:09:25+08:00",
+    "base_url": "https://discovery-api.intern-ai.org.cn/v1",
+    "model": "Sage-A1.5",
+    "api_key_present": true,
+    "sources": {
+      "base_url": "dsh-profile:/home/dengnianchen/.dsh/profiles/web/cordis.patch.yml#inkstone",
+      "model": "dsh-profile:/home/dengnianchen/.dsh/profiles/web/cordis.patch.yml#inkstone",
+      "api_key": "dsh-credentials:.credentials.yaml#INKSTONE_API_KEY"
+    },
+    "missing": [],
+    "status": "configured",
+    "probe": {
+      "base_url": "https://discovery-api.intern-ai.org.cn/v1",
+      "model": "Sage-A1.5",
+      "checked_at": "2026-11-24T14:09:25+08:00",
+      "models_endpoint": "ok",
+      "http_status": 200,
+      "models": [
+        "Agents-A1",
+        "Atria-Dawn",
+        "Atria-Dawn-Preview",
+        "Sage-A1.5",
+        "Sage-A1.5-Taiyi",
+        "Sage-S2.1-Flash",
+        "deepseek-v4.1-flash-1017",
+        "glm-5.3",
+        "intern-s2",
+        "kimi-k3.1-pro",
+        "qwen3.8-27b"
+      ],
+      "model_listed": true,
+      "seconds": 0.06
+    },
+    "probe_ok": true,
+    "skill": {
+      "name": "sci-asset-verify-skill",
+      "version": "1.3-beta.1",
+      "commit": "feebb76",
+      "version_source": "VERSION"
+    }
+  },
+  "evidence": {
+    "generic_backend": {
+      "cases": 2,
+      "passed": 2
+    },
+    "sage_backend": {
+      "cases": 2,
+      "passed": 2
+    },
+    "files": [
+      "agent-sage/idw-interpolate-report.json",
+      "agent-sage/assess-workflow-report.json",
+      "sage-config.json"
+    ]
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

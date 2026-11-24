@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C04-input-missing", "rc": 3, "error": "input_not_found", "expected": {"rc": 3, "error": "input_not_found"}, "ok": true}

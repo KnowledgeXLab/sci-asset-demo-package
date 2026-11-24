@@ -1,0 +1,24 @@
+{
+  "tool": "deploy_probe.py",
+  "mcp_endpoints": [],
+  "status": "not_applicable_no_such_asset",
+  "why": "包内 9 个资产的 asset.json 均未声明 MCP 端点（无 stdio/Streamable HTTP 服务）；zscore-normalize 的 interface_type=cli，其余为 CLI/Skill/任务包，故按 skill 第 3 步记「无 MCP 端点，采用 CLI/库直连验证」",
+  "cli_probes": [
+    "zscore-normalize",
+    "linear-model",
+    "idw-interpolate",
+    "grid-summary-benchmark",
+    "assess-workflow"
+  ],
+  "model_deployment": {
+    "asset": "linear-model",
+    "form": "CLI 推理（权重随包，无常驻服务）",
+    "probe": "deployment/probes/linear-model/probe.json"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

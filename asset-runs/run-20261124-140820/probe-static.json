@@ -1,0 +1,560 @@
+{
+  "tool": "probe_package.py",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "probe_fingerprint": "8e964ff0a724e9007b6954b8d33b7e0450a5e1af86e3e75aa64a375561f6843b",
+  "checks": {
+    "package_summary": {
+      "asset_count": 9,
+      "asset_types": {
+        "benchmark": 1,
+        "data": 1,
+        "environment": 1,
+        "model": 1,
+        "skill": 2,
+        "task": 1,
+        "tool": 1,
+        "trajectory": 1
+      },
+      "asset_dirs": [
+        "assess-workflow",
+        "grid-samples",
+        "grid-stats-task",
+        "grid-stats-trajectory",
+        "grid-summary-benchmark",
+        "idw-interpolate",
+        "linear-model",
+        "python-runtime",
+        "zscore-normalize"
+      ],
+      "root_files": [
+        ".gitignore",
+        "VERSION",
+        "readme.md"
+      ],
+      "has_catalog_json": false,
+      "root_markdown": [
+        "readme.md"
+      ],
+      "has_asset_runs": true
+    },
+    "governance_profile": {
+      "license": {
+        "CC-BY-4.0": 8,
+        "MIT": 1
+      },
+      "access": {
+        "public": 9
+      },
+      "risk_level": {
+        "low": 9
+      }
+    },
+    "lifecycle_profile": {
+      "distribution": {
+        "validated": 9
+      }
+    },
+    "artifact_integrity": {
+      "artifacts_checked": 38,
+      "missing": [],
+      "size_mismatch": [],
+      "sha_mismatch": []
+    },
+    "cases_profile": {
+      "assets": {
+        "assess-workflow": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 2,
+          "acceptance_missing_paths": []
+        },
+        "grid-samples": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 5,
+          "acceptance_missing_paths": []
+        },
+        "grid-stats-task": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 1,
+          "acceptance_missing_paths": []
+        },
+        "grid-stats-trajectory": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 4,
+          "acceptance_missing_paths": []
+        },
+        "grid-summary-benchmark": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 5,
+          "acceptance_missing_paths": []
+        },
+        "idw-interpolate": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 7,
+          "acceptance_missing_paths": []
+        },
+        "linear-model": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 4,
+          "acceptance_missing_paths": []
+        },
+        "python-runtime": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 4,
+          "acceptance_missing_paths": []
+        },
+        "zscore-normalize": {
+          "has_validate_dir": true,
+          "has_cases_json": true,
+          "has_acceptance_json": false,
+          "case_count": 6,
+          "acceptance_missing_paths": []
+        }
+      },
+      "assets_with_cases": 9,
+      "assets_without_cases": []
+    },
+    "validate_readme_profile": {
+      "assets": {
+        "assess-workflow": {
+          "present": true,
+          "is_skill": true,
+          "has_agent_section": true,
+          "has_task_section": true,
+          "has_gate_section": true,
+          "mentions_artifact": true
+        },
+        "grid-samples": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": false
+        },
+        "grid-stats-task": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": true,
+          "has_task_section": true,
+          "has_gate_section": true,
+          "mentions_artifact": true
+        },
+        "grid-stats-trajectory": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": true
+        },
+        "grid-summary-benchmark": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": true
+        },
+        "idw-interpolate": {
+          "present": true,
+          "is_skill": true,
+          "has_agent_section": true,
+          "has_task_section": true,
+          "has_gate_section": true,
+          "mentions_artifact": true
+        },
+        "linear-model": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": true
+        },
+        "python-runtime": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": false
+        },
+        "zscore-normalize": {
+          "present": true,
+          "is_skill": false,
+          "has_agent_section": false,
+          "has_task_section": false,
+          "has_gate_section": false,
+          "mentions_artifact": true
+        }
+      },
+      "complete": [
+        "assess-workflow",
+        "grid-stats-task",
+        "idw-interpolate"
+      ]
+    },
+    "external_refs_profile": {
+      "assets": {
+        "assess-workflow": {
+          "declared": 3,
+          "invalid_target_path": []
+        }
+      }
+    },
+    "tool_contract_profile": {
+      "assets": {
+        "zscore-normalize": {
+          "impl_exit_codes": [
+            1,
+            2
+          ],
+          "impl_error_names": [
+            "bad_value",
+            "empty_input",
+            "input_not_found",
+            "missing_value_column",
+            "zero_variance"
+          ],
+          "impl_error_names_not_declared": []
+        }
+      }
+    },
+    "data_declaration_profile": {
+      "assets": {
+        "grid-samples": {
+          "has_metadata": true,
+          "payload": "payload/points.csv",
+          "records_mismatch": null,
+          "columns_mismatch": null,
+          "bbox_mismatch": null,
+          "grid_incomplete": null,
+          "formula_max_dev": 4.915579161490768e-07,
+          "formula_tolerance": 1e-06
+        }
+      }
+    },
+    "structure_profile": {
+      "asset_dir_count": 9,
+      "non_asset_dirs": [],
+      "root_asset_json": false
+    },
+    "envelope_profile": {
+      "errors": [],
+      "summary": {
+        "assets": 9,
+        "passed": 9,
+        "failed": 0,
+        "warnings": 0,
+        "jsonschema_cross_check": "jsonschema 4.26.0"
+      },
+      "rc": 0
+    },
+    "outside_refs_profile": {
+      "outside_refs": [],
+      "escaping_symlinks": []
+    },
+    "doc_refs_profile": {
+      "missing": {},
+      "case_only_mismatch": {
+        "grid-summary-benchmark": [
+          "reference/summary.json"
+        ]
+      }
+    },
+    "version_profile": {
+      "mismatch": {}
+    },
+    "verify_doc_profile": {
+      "mismatch": {}
+    },
+    "verify_entry_profile": {
+      "assets": {
+        "assess-workflow": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [
+            "scripts/run_workflow.py"
+          ],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "grid-samples": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "grid-stats-task": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [
+            "solution/solve.sh",
+            "tests/test.sh"
+          ],
+          "runner_py": [],
+          "unit_tests": [
+            "tests/test_summary.py"
+          ],
+          "tests_dir": true,
+          "validate_readme": true
+        },
+        "grid-stats-trajectory": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "grid-summary-benchmark": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [
+            "benchmark/run_evaluation.py"
+          ],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "idw-interpolate": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [
+            "scripts/run.py"
+          ],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "linear-model": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "python-runtime": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [
+            "environment/runtime_check.py"
+          ],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        },
+        "zscore-normalize": {
+          "cases_json": [
+            "validate/cases.json"
+          ],
+          "acceptance_json": false,
+          "shell_scripts": [],
+          "runner_py": [],
+          "unit_tests": [],
+          "tests_dir": false,
+          "validate_readme": true
+        }
+      },
+      "without_entry": []
+    },
+    "secret_profile": {
+      "hits": [],
+      "count": 0
+    },
+    "harbor_profile": {
+      "asset_count": 1,
+      "assets": {
+        "grid-stats-task": {
+          "form": "task",
+          "task": {
+            "toml_ok": true,
+            "toml_error": null,
+            "schema_version": "1.4",
+            "task_name": "terminal-bench-science/demo-grid-stats",
+            "has_instruction": true,
+            "instruction_empty": false,
+            "has_environment_dir": true,
+            "declared_docker_image": null,
+            "has_solution": true,
+            "solution_script": "solution/solve.sh",
+            "has_tests": true,
+            "test_script": "tests/test.sh",
+            "declared_os": "linux",
+            "declared_gpus": 0,
+            "declared_network_mode": "no-network",
+            "env_var_refs": [],
+            "multi_step": false,
+            "verifier_llm_hints": []
+          },
+          "declared_asset_type": "task"
+        }
+      },
+      "unregistered_task_dirs": []
+    },
+    "harbor_run_profile": {},
+    "sage_profile": {}
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  },
+  "verdict": {
+    "intent": "delivery",
+    "findings": [],
+    "notes": [],
+    "coverage": [
+      {
+        "check_id": "P0-STRUCT",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-ENVELOPE",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-COMPLETE",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-VERIFY",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-SECRET",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-SAGE",
+        "level": "P0",
+        "status": "na",
+        "na_reason": "本包不需要 Sage 附加测试（无 skill/agent 类资产或未判定为需要）"
+      },
+      {
+        "check_id": "P0-HARB-STRUCT",
+        "level": "P0",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P0-HARB-RUN",
+        "level": "P0",
+        "status": "na",
+        "na_reason": "oracle/nop 由 harbor_run.py 执行判定：本次未执行（需 docker + harbor CLI）"
+      },
+      {
+        "check_id": "P1-DOC-REF",
+        "level": "P1",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P1-VERSION",
+        "level": "P1",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P1-DECL",
+        "level": "P1",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P1-DOC-FACT",
+        "level": "P1",
+        "status": "na",
+        "na_reason": "事实/算术类错误需人工判读，机器不自动判"
+      },
+      {
+        "check_id": "P1-VERIFY-DOC",
+        "level": "P1",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P1-HARB-DATASET",
+        "level": "P1",
+        "status": "na",
+        "na_reason": "包内没有显式 dataset.toml 数据集"
+      },
+      {
+        "check_id": "P1-HARB-ENVELOPE",
+        "level": "P1",
+        "status": "pass",
+        "na_reason": ""
+      },
+      {
+        "check_id": "P1-HARB-LINT",
+        "level": "P1",
+        "status": "na",
+        "na_reason": "harbor lint 未采集（需 harbor CLI，由 harbor_run.py 执行）"
+      }
+    ],
+    "coverage_summary": {
+      "pass": 11,
+      "fail": 0,
+      "na": 5
+    },
+    "summary": {
+      "P0": 0,
+      "P1": 0
+    },
+    "note": "P0/P1 只来自本清单；P2 是建议，可由执行者自由补充（含清单外观察）"
+  }
+}

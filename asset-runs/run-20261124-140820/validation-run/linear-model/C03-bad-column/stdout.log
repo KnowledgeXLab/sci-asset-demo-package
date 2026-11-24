@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C03-bad-column", "rc": 2, "error": "bad_columns", "expected": {"rc": 2, "error": "bad_columns"}, "ok": true}

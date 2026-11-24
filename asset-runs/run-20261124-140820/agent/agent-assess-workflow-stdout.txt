@@ -1,0 +1,21 @@
+全链路已跑通（退出码 0），且我用独立脚本重算校验了统计量与每个目标点的 IDW 估值，结果完全一致。
+
+**执行过程**
+1. `scripts/run_workflow.py --assets-root <技能目录> --out-dir .`，三个外部资产（`grid-samples`、`zscore-normalize`、`idw-interpolate`）在资产目录内均按 `external_assets.json` 的 `target_path` 以软链接就位，无需额外挂载；目标点用的是该资产自带的 `targets.csv`（5 行），未在技能目录内写任何文件。
+2. 工具 `zscore.py` → `tool/stats.json`（对原始 `value` 列统计）；技能 `run.py`（power=2）→ `skill/interpolated.csv`。
+3. 按 SKILL.md 的语义，`value_mean`/`value_pstdev` 是**原始观测值**的统计量，`estimate_min`/`estimate_max` 是对**原始观测值**做 IDW 的范围（标准化只用于产出统计量，不改变插值输入），产物中 `external_assets` 仅记录相对位置。
+
+**report.json 关键数值**
+
+| 字段 | 值 |
+|---|---|
+| `data_points` | **100** |
+| `targets` | **5** |
+| `value_mean` | **15.699537** |
+| `value_pstdev` | **2.318747** |
+| `estimate_min` | **12.323535** |
+| `estimate_max` | **18.208559** |
+
+5 个目标点的估值：2.5,2.5 → 16.441320；5.5,4.5 → 16.143838；7.25,3.75 → 14.333148；1.5,8.5 → 18.208559；8.5,1.25 → 12.323535。报告中 `steps` 为 `read_data` / `zscore_normalize` / `idw_interpolate` 三步。
+
+产物绝对路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/assess-workflow/report.json`（同目录另有过程产物 `tool/`、`skill/`）。

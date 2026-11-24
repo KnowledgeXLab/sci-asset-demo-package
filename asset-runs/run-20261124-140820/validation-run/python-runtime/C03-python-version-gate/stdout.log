@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C03-python-version-gate", "ok": true, "rc": 1, "problems": ["python 版本不满足：需要 >= 3.10，实际 3.9.0"]}

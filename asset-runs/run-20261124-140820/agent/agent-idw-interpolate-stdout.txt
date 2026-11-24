@@ -1,0 +1,12 @@
+插值完成（`--power 2`，退出码 0，2 个已知点 → 2 个目标点）。
+
+**每行 value_est**
+
+| x | y | value_est | nearest_dist |
+|---|---|---|---|
+| 0 | 0 | 10.000000 | 0.000000 |
+| 10 | 0 | 20.000000 | 0.000000 |
+
+说明：两个目标点恰好与已知点重合（距离为 0），按技能规则直接取该点观测值，因此结果就是 10 和 20，不做距离加权。产物目录同时生成了 `run.json`（`{"mode":"idw","power":2.0,"source_points":2,"targets":2}`）与 `interpolated.csv`。
+
+产物绝对路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/idw-interpolate/interpolated.csv`

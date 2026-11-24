@@ -1,6 +1,0 @@
-已写出 /tmp/grid-stats-validate-nz1qpz59/output/summary.json：count=67
-PASS: summary.json 与数据独立复算结果完全一致
-OK：instruction.md 示例与 verifier 期望值一致
-
-参考解 rc=0；verifier rc=0
-OK：参考解通过自带 verifier

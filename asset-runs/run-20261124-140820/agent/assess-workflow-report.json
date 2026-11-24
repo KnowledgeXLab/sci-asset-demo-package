@@ -1,0 +1,40 @@
+{
+  "tool": "run_skill_agent.py",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  },
+  "out_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/assess-workflow",
+  "harness": "dsh",
+  "harness_display": "DSH（DeepSeek Harness）",
+  "harness_hint": "DSH（DeepSeek Harness）Web 会话 —— 工作流需要先把外部资产挂载到位，再由 agent 执行",
+  "harness_reason": "按 readme 建议",
+  "substituted_harness": null,
+  "backend": "harness",
+  "provider": "harness-default",
+  "model": "(harness 默认)",
+  "cmd_head": [
+    "/home/dengnianchen/.nvm/versions/node/v22.22.2/bin/dsh",
+    "--profile",
+    "headless",
+    "--permission-mode",
+    "workspace-write",
+    "--",
+    "用 assess-workflow 这个工作流跑一遍：数据用 grid-samples，工具用 zscore-normalize，\n技能用 idw-interpolate，目标点用该资产自带的 targets.csv，报告写到当前工作目录下的 report.json。\n完成后把 report.json 里的 data_points、targets、estimate 范围告诉我。\n\n【硬约束】\n1. 技能与输入都在这个目录里（只读）：/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/assess-workflow\n2. 当前工作目录就是产物目录（/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/assess-workflow）；产物写在这里即可，不要写进技能目录\n3. 完成后用一句话回报产物绝对路径。"
+  ],
+  "dsh_home": "隔离 DSH_HOME=/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/.dsh-home-assess-workflow（工作区内可写）；凭据仅以环境变量注入，未落盘（注入键：AGENT_CENTER_API_KEY, DEEPSEEK_API_KEY, INKSTONE_API_KEY）",
+  "agent_rc": 0,
+  "secrets_scrubbed": [
+    "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/.dsh-home-idw-interpolate"
+  ],
+  "gate_cmd": "python validate/validate.py --case C01-end-to-end --artifact /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent/assess-workflow",
+  "gate_rc": 0,
+  "gate_stdout": "{\"mode\": \"artifact\", \"ok\": true, \"checks\": {\"data_points\": true, \"targets\": true, \"steps\": true, \"estimate_range\": true}, \"report\": {\"workflow\": \"assess-workflow\", \"version\": \"1.0.0\", \"steps\": [\"read_data\", \"zscore_normalize\", \"idw_interpolate\"], \"data_points\": 100, \"value_mean\": 15.699537, \"value_pstdev\": 2.318747, \"targets\": 5, \"estimate_min\": 12.323535, \"estimate_max\": 18.208559, \"external_assets\": {\"data\": \"grid-samples\", \"tool\": \"zscore-normalize\", \"skill\": \"idw-interpolate\"}}}\n",
+  "gate_stderr": "",
+  "artifact_retry_dirs": [],
+  "stray_artifacts": null,
+  "retried_with_isolated_dsh_home": true,
+  "verdict": "pass"
+}

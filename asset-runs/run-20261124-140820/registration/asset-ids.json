@@ -1,0 +1,87 @@
+{
+  "tool": "asset_ids.py",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "assets": 9,
+  "with_list_id": 9,
+  "problems": [],
+  "rows": [
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "asset_name": "示例评估工作流",
+      "asset_type": "skill",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/skill/assess-workflow",
+      "file": "assess-workflow/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "asset_name": "规则网格采样点数据",
+      "asset_type": "data",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/data/grid-samples",
+      "file": "grid-samples/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "asset_name": "网格采样点汇总任务（harbor 格式示例）",
+      "asset_type": "task",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/task/grid-stats-task",
+      "file": "grid-stats-task/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/trajectory/grid-stats-trajectory",
+      "asset_name": "网格汇总任务成功轨迹 001",
+      "asset_type": "trajectory",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/trajectory/grid-stats-trajectory",
+      "file": "grid-stats-trajectory/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark",
+      "asset_name": "网格汇总任务评测基准",
+      "asset_type": "benchmark",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/benchmark/grid-summary-benchmark",
+      "file": "grid-summary-benchmark/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "asset_name": "IDW 反距离权重插值技能",
+      "asset_type": "skill",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/skill/idw-interpolate",
+      "file": "idw-interpolate/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/model/linear-model",
+      "asset_name": "线性回归示例模型",
+      "asset_type": "model",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/model/linear-model",
+      "file": "linear-model/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+      "asset_name": "示例 Python 最小运行环境",
+      "asset_type": "environment",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/environment/python-runtime",
+      "file": "python-runtime/asset.json"
+    },
+    {
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "asset_name": "z-score 标准化工具",
+      "asset_type": "tool",
+      "asset_version": "1.0.0",
+      "list_asset_id": "2026ZD000042/demo/tool/zscore-normalize",
+      "file": "zscore-normalize/asset.json"
+    }
+  ],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

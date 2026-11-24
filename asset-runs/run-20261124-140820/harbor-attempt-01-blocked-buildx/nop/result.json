@@ -1,0 +1,40 @@
+{
+  "schema_version": 1,
+  "id": "ed53b982-db9c-429e-9920-5a38bbfdae60",
+  "started_at": "2026-11-24T14:09:36.238834",
+  "updated_at": "2026-11-24T14:09:37.193431",
+  "finished_at": "2026-11-24T14:09:37.193431",
+  "n_total_trials": 1,
+  "stats": {
+    "n_completed_trials": 1,
+    "n_errored_trials": 1,
+    "n_running_trials": 0,
+    "n_pending_trials": 0,
+    "n_cancelled_trials": 0,
+    "n_retries": 0,
+    "evals": {
+      "nop__adhoc": {
+        "n_trials": 0,
+        "n_errors": 1,
+        "metrics": [],
+        "pass_at_k": {},
+        "reward_stats": {},
+        "exception_stats": {
+          "RuntimeError": [
+            "grid-stats-task__eDwyLTr"
+          ]
+        }
+      }
+    },
+    "n_input_tokens": null,
+    "n_cache_tokens": null,
+    "n_output_tokens": null,
+    "cost_usd": null
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

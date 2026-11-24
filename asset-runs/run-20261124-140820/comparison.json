@@ -1,0 +1,1124 @@
+{
+  "tool": "build_ledger.py",
+  "run": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820",
+  "comparisons": [
+    {
+      "case_id": "C01-end-to-end",
+      "asset": "assess-workflow",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "数据→工具→技能全链路：100 个数据点、5 个目标点、3 步"
+      },
+      "actual": {
+        "case": "C01-end-to-end",
+        "rc": 0,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/assess-workflow/C01-end-to-end/stdout.log"
+    },
+    {
+      "case_id": "C02-missing-external",
+      "asset": "assess-workflow",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "挂载根缺外部资产 → 退出码 3 + error.json(external_asset_missing)"
+      },
+      "actual": {
+        "case": "C02-missing-external",
+        "rc": 3,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/assess-workflow/C02-missing-external/stdout.log"
+    },
+    {
+      "case_id": "C01-metadata",
+      "asset": "grid-samples",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": null,
+        "title": "记录数/列名/值域与 metadata.json 声明一致"
+      },
+      "actual": {
+        "case": "C01-metadata",
+        "checks": 3,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-samples/C01-metadata/stdout.log"
+    },
+    {
+      "case_id": "C02-structure",
+      "asset": "grid-samples",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": null,
+        "title": "列集合与行序稳定（首行 id=p001）"
+      },
+      "actual": {
+        "case": "C02-structure",
+        "checks": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-samples/C02-structure/stdout.log"
+    },
+    {
+      "case_id": "C03-read",
+      "asset": "grid-samples",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": null,
+        "title": "payload/points.csv 可解析为 UTF-8 CSV 且含表头"
+      },
+      "actual": {
+        "case": "C03-read",
+        "checks": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-samples/C03-read/stdout.log"
+    },
+    {
+      "case_id": "C04-extent",
+      "asset": "grid-samples",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": null,
+        "title": "声明空间范围与网格完整性：bbox 与 grid{nx,ny} 和实体一致"
+      },
+      "actual": {
+        "case": "C04-extent",
+        "checks": 3,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-samples/C04-extent/stdout.log"
+    },
+    {
+      "case_id": "C05-formula",
+      "asset": "grid-samples",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": null,
+        "title": "声明公式逐行复算：按 metadata.formula（i 自 1 起）重算 100 行，最大偏差 ≤ 1e-06"
+      },
+      "actual": {
+        "case": "C05-formula",
+        "checks": 1,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-samples/C05-formula/stdout.log"
+    },
+    {
+      "case_id": "C01-oracle-nop",
+      "asset": "grid-stats-task",
+      "asset_version": "1.0.0",
+      "expected": {
+        "oracle_reward": 1.0,
+        "nop_reward": 0.0
+      },
+      "actual": {
+        "oracle_reward": 1.0,
+        "nop_reward": 0.0
+      },
+      "fields": [
+        {
+          "field": "oracle_reward",
+          "expected": 1.0,
+          "actual": 1.0,
+          "abs_error": 0.0,
+          "tolerance": 0.0,
+          "status": "pass"
+        },
+        {
+          "field": "nop_reward",
+          "expected": 0.0,
+          "actual": 0.0,
+          "abs_error": 0.0,
+          "tolerance": 0.0,
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "evidence": "harbor/grid-stats-task/{oracle,nop}/<trial>/result.json"
+    },
+    {
+      "case_id": "C01-structure",
+      "asset": "grid-stats-trajectory",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "结构合法：format=ATIF、6 步、每步 role/type 在词表内、时间严格递增、run.status=success"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C01-structure",
+        "ok": true,
+        "steps": 6,
+        "problems": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-stats-trajectory/C01-structure/stdout.log"
+    },
+    {
+      "case_id": "C02-outcome-consistency",
+      "asset": "grid-stats-trajectory",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "结果自洽：final 的 result_summary 与关联 task 的期望一致（count 67 / sum 394 / mean 5.880597 / 四象限 17·17·17·16）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C02-outcome-consistency",
+        "ok": true,
+        "steps": 6,
+        "problems": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-stats-trajectory/C02-outcome-consistency/stdout.log"
+    },
+    {
+      "case_id": "C03-evidence-linked",
+      "asset": "grid-stats-trajectory",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "证据链完整：verification 步给出 verifier 名称、result=pass、reward=1 与证据位置"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C03-evidence-linked",
+        "ok": true,
+        "steps": 6,
+        "problems": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-stats-trajectory/C03-evidence-linked/stdout.log"
+    },
+    {
+      "case_id": "C04-broken-step",
+      "asset": "grid-stats-trajectory",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "篡改用例：删掉 verification 步 → 校验判不通过（trajectory 不能缺验证证据）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C04-broken-step",
+        "ok": true,
+        "problems": [
+          "缺少 verification 步（轨迹必须带验证证据）"
+        ]
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-stats-trajectory/C04-broken-step/stdout.log"
+    },
+    {
+      "case_id": "C01-score-good",
+      "asset": "grid-summary-benchmark",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "正确产物（cases/good）→ score=1.0、passed=true（七个字段全对 + 两条自洽约束成立）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C01-score-good",
+        "ok": true,
+        "score": 1.0,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-summary-benchmark/C01-score-good/stdout.log"
+    },
+    {
+      "case_id": "C02-score-bad",
+      "asset": "grid-summary-benchmark",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "篡改产物（cases/bad：value_sum 398、象限和 68≠67）→ passed=false，且 score<1"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C02-score-bad",
+        "ok": true,
+        "score": 0.571429,
+        "wrong_fields": [
+          "value_sum",
+          "quadrant_counts"
+        ]
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-summary-benchmark/C02-score-bad/stdout.log"
+    },
+    {
+      "case_id": "C03-rubric-schema",
+      "asset": "grid-summary-benchmark",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "评分规则自洽：权重之和=1、pass_threshold∈[0,1]、指标类型在支持列表内、产物布局与 task 一致"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C03-rubric-schema",
+        "ok": true,
+        "problems": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-summary-benchmark/C03-rubric-schema/stdout.log"
+    },
+    {
+      "case_id": "C04-reference-consistency",
+      "asset": "grid-summary-benchmark",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "参考答案自洽：字段与判分口径一致、象限之和=count、mean=sum/count（容差 1e-6）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C04-reference-consistency",
+        "ok": true,
+        "problems": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-summary-benchmark/C04-reference-consistency/stdout.log"
+    },
+    {
+      "case_id": "C05-missing-submission",
+      "asset": "grid-summary-benchmark",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "产物目录没有 summary.json → problems 记录缺失、passed=false"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C05-missing-submission",
+        "ok": true,
+        "problems": [
+          "缺少产物：/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C05-missing-submission/work/c05-empty/summary.json"
+        ]
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/grid-summary-benchmark/C05-missing-submission/stdout.log"
+    },
+    {
+      "case_id": "C01-hits",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "命中已知点 → value_est 10/20、nearest_dist 均为 0（两列都判）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C01-hits",
+        "ok": true,
+        "rows": 2,
+        "value_est": [
+          "10.000000",
+          "20.000000"
+        ],
+        "nearest_dist": [
+          "0.000000",
+          "0.000000"
+        ],
+        "expected": {
+          "rows": 2,
+          "value_est": [
+            "10.000000",
+            "20.000000"
+          ],
+          "nearest_dist": [
+            "0.000000",
+            "0.000000"
+          ]
+        },
+        "why": ""
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C01-hits/stdout.log"
+    },
+    {
+      "case_id": "C02-equidistant",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "等距两点 → 均值 15、nearest_dist 5（两列都判）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C02-equidistant",
+        "ok": true,
+        "rows": 1,
+        "value_est": [
+          "15.000000"
+        ],
+        "nearest_dist": [
+          "5.000000"
+        ],
+        "expected": {
+          "rows": 1,
+          "value_est": [
+            "15.000000"
+          ],
+          "nearest_dist": [
+            "5.000000"
+          ]
+        },
+        "why": ""
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C02-equidistant/stdout.log"
+    },
+    {
+      "case_id": "C03-missing-file",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C03-missing-file",
+        "rc": 3,
+        "error": "input_not_found",
+        "expected": {
+          "rc": 3,
+          "error": "input_not_found"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C03-missing-file/stdout.log"
+    },
+    {
+      "case_id": "C04-bad-column",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "目标点缺 x 列 → 退出码 2 + error.json(bad_columns)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C04-bad-column",
+        "rc": 2,
+        "error": "bad_columns",
+        "expected": {
+          "rc": 2,
+          "error": "bad_columns"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C04-bad-column/stdout.log"
+    },
+    {
+      "case_id": "C05-power-one",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "非默认幂次 power=1 → 解析解 12.5、nearest_dist 2.5"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C05-power-one",
+        "ok": true,
+        "rows": 1,
+        "value_est": [
+          "12.500000"
+        ],
+        "nearest_dist": [
+          "2.500000"
+        ],
+        "expected": {
+          "rows": 1,
+          "value_est": [
+            "12.500000"
+          ],
+          "nearest_dist": [
+            "2.500000"
+          ]
+        },
+        "why": ""
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C05-power-one/stdout.log"
+    },
+    {
+      "case_id": "C06-bad-power",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "--power ≤ 0 → 退出码 2 + error.json(bad_power)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C06-bad-power",
+        "rc": 2,
+        "error": "bad_power",
+        "expected": {
+          "rc": 2,
+          "error": "bad_power"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C06-bad-power/stdout.log"
+    },
+    {
+      "case_id": "C07-no-source-points",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "已知点表为空（只有表头）→ 退出码 2 + error.json(no_source_points)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C07-no-source-points",
+        "rc": 2,
+        "error": "no_source_points",
+        "expected": {
+          "rc": 2,
+          "error": "no_source_points"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/idw-interpolate/C07-no-source-points/stdout.log"
+    },
+    {
+      "case_id": "C01-predict",
+      "asset": "linear-model",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "6 条样本按 weights.json 推理，prediction 与解析解逐值一致（2.0/3.0/2.75/3.75/3.5/4.5）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C01-predict",
+        "ok": true,
+        "why": "",
+        "rows": 6,
+        "values": [
+          "2.000000",
+          "3.000000",
+          "2.750000",
+          "3.750000",
+          "3.500000",
+          "4.500000"
+        ]
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/linear-model/C01-predict/stdout.log"
+    },
+    {
+      "case_id": "C02-reproducible",
+      "asset": "linear-model",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "同一输入连跑两次，predictions.csv 逐字节一致（确定性推理）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C02-reproducible",
+        "ok": true,
+        "why": "",
+        "rows": 6,
+        "values": [
+          "2.000000",
+          "3.000000",
+          "2.750000",
+          "3.750000",
+          "3.500000",
+          "4.500000"
+        ],
+        "reproducible": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/linear-model/C02-reproducible/stdout.log"
+    },
+    {
+      "case_id": "C03-bad-column",
+      "asset": "linear-model",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "输入缺 y 列 → 退出码 2 + error.json(bad_columns)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C03-bad-column",
+        "rc": 2,
+        "error": "bad_columns",
+        "expected": {
+          "rc": 2,
+          "error": "bad_columns"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/linear-model/C03-bad-column/stdout.log"
+    },
+    {
+      "case_id": "C04-input-missing",
+      "asset": "linear-model",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C04-input-missing",
+        "rc": 3,
+        "error": "input_not_found",
+        "expected": {
+          "rc": 3,
+          "error": "input_not_found"
+        },
+        "ok": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/linear-model/C04-input-missing/stdout.log"
+    },
+    {
+      "case_id": "C01-runtime-ok",
+      "asset": "python-runtime",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "环境自检通过：python ≥ 3.10、8 个标准库模块可用、无网络依赖（runtime-report.ok=true）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C01-runtime-ok",
+        "ok": true,
+        "rc": 0,
+        "third_party_present": [],
+        "python": "3.14.7"
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/python-runtime/C01-runtime-ok/stdout.log"
+    },
+    {
+      "case_id": "C02-no-third-party",
+      "asset": "python-runtime",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "声明的依赖清单为空，环境内不应出现 numpy/pandas/scipy/tensorflow/torch（third_party_present 为空）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C02-no-third-party",
+        "ok": true,
+        "rc": 0,
+        "third_party_present": [],
+        "python": "3.14.7"
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/python-runtime/C02-no-third-party/stdout.log"
+    },
+    {
+      "case_id": "C03-python-version-gate",
+      "asset": "python-runtime",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "模拟 python 版本不满足（3.9）→ 自检判不通过（problems 含版本原因）"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C03-python-version-gate",
+        "ok": true,
+        "rc": 1,
+        "problems": [
+          "python 版本不满足：需要 >= 3.10，实际 3.9.0"
+        ]
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/python-runtime/C03-python-version-gate/stdout.log"
+    },
+    {
+      "case_id": "C04-dockerfile-consistent",
+      "asset": "python-runtime",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "Dockerfile 的基础镜像版本与 asset.json 声明的 python 版本一致，且 requirements.lock 无实际依赖"
+      },
+      "actual": {
+        "mode": "self-check",
+        "case": "C04-dockerfile-consistent",
+        "ok": true,
+        "declared_python": "3.12",
+        "image": "3.12",
+        "lock_entries": []
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/python-runtime/C04-dockerfile-consistent/stdout.log"
+    },
+    {
+      "case_id": "C01-basic",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "success",
+        "title": "1,2,3 三点：z 值 -1.224745/0/1.224745，mean=2.0，pstdev=0.816497"
+      },
+      "actual": {
+        "case": "C01-basic",
+        "rc": 0,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C01-basic/stdout.log"
+    },
+    {
+      "case_id": "C02-single",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "单条记录方差为 0 → 退出码 2 + error.json(zero_variance)"
+      },
+      "actual": {
+        "case": "C02-single",
+        "rc": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C02-single/stdout.log"
+    },
+    {
+      "case_id": "C03-bad-column",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "缺 value 列 → 退出码 2 + error.json(missing_value_column)"
+      },
+      "actual": {
+        "case": "C03-bad-column",
+        "rc": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C03-bad-column/stdout.log"
+    },
+    {
+      "case_id": "C04-input-missing",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)"
+      },
+      "actual": {
+        "case": "C04-input-missing",
+        "rc": 3,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C04-input-missing/stdout.log"
+    },
+    {
+      "case_id": "C05-bad-value",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "value 含非数值 → 退出码 2 + error.json(bad_value)"
+      },
+      "actual": {
+        "case": "C05-bad-value",
+        "rc": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C05-bad-value/stdout.log"
+    },
+    {
+      "case_id": "C06-empty-input",
+      "asset": "zscore-normalize",
+      "asset_version": "1.0.0",
+      "expected": {
+        "expected_kind": "error",
+        "title": "只有表头的空输入 → 退出码 2 + error.json(empty_input)"
+      },
+      "actual": {
+        "case": "C06-empty-input",
+        "rc": 2,
+        "passed": true
+      },
+      "status": "pass",
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "validate.py rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "evidence": "validation-run/zscore-normalize/C06-empty-input/stdout.log"
+    },
+    {
+      "case_id": "A01-agent-acceptance",
+      "asset": "idw-interpolate",
+      "asset_version": "1.0.0",
+      "expected": {
+        "gate_rc": 0
+      },
+      "actual": {
+        "gate_rc": 0,
+        "agent_rc": 0
+      },
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "evidence": "agent/idw-interpolate-report.json"
+    },
+    {
+      "case_id": "A01-agent-acceptance",
+      "asset": "assess-workflow",
+      "asset_version": "1.0.0",
+      "expected": {
+        "gate_rc": 0
+      },
+      "actual": {
+        "gate_rc": 0,
+        "agent_rc": 0
+      },
+      "fields": [
+        {
+          "field": "gate",
+          "expected": "rc=0",
+          "actual": "rc=0",
+          "status": "pass"
+        }
+      ],
+      "status": "pass",
+      "evidence": "agent/assess-workflow-report.json"
+    }
+  ],
+  "tolerance_note": "数值类容差沿用资产自带 validate.py（1e-6）；错误类比对退出码与 error 码",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

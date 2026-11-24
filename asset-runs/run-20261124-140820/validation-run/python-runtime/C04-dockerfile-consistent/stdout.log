@@ -1,0 +1,1 @@
+{"mode": "self-check", "case": "C04-dockerfile-consistent", "ok": true, "declared_python": "3.12", "image": "3.12", "lock_entries": []}

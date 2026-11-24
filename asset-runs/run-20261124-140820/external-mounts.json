@@ -1,0 +1,74 @@
+{
+  "tool": "mount_external.py",
+  "copy_root": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "origin_package": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+  "search_roots": [],
+  "consumers": [
+    "assess-workflow"
+  ],
+  "declared": 3,
+  "resolved": [
+    {
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "asset_version": "1.0.0",
+      "required": true,
+      "source": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples",
+      "placed_at": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples",
+      "from": "same-package"
+    },
+    {
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "asset_version": "1.0.0",
+      "required": true,
+      "source": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize",
+      "placed_at": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize",
+      "from": "same-package"
+    },
+    {
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "asset_version": "1.0.0",
+      "required": true,
+      "source": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate",
+      "placed_at": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate",
+      "from": "same-package"
+    }
+  ],
+  "links": [
+    {
+      "link": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/assess-workflow/grid-samples",
+      "target": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples",
+      "created": true,
+      "note": null,
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples"
+    },
+    {
+      "link": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/assess-workflow/zscore-normalize",
+      "target": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize",
+      "created": true,
+      "note": null,
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize"
+    },
+    {
+      "link": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/assess-workflow/idw-interpolate",
+      "target": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate",
+      "created": true,
+      "note": null,
+      "consumer": "assess-workflow",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate"
+    }
+  ],
+  "missing": [],
+  "required_missing": [],
+  "status": "complete",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

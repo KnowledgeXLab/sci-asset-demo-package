@@ -1,0 +1,48 @@
+{
+  "asset": "linear-model",
+  "interface": "CLI（库内推理）",
+  "entry": "model/predict.py",
+  "weights": {
+    "path": "model/weights.json",
+    "sha256": "aca2cbed55d9cabf703f70643f1e9e7ea450f1ad949c0e8c1e41171d7e123a4a",
+    "size_bytes": 315
+  },
+  "ok": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "model/predict.py",
+      "--input",
+      "payload/samples.csv",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/m-ok"
+    ],
+    "exit_code": 0,
+    "stdout": "已写出 6 条预测 → /tmp/deploy-probe-xhg1d8d6/m-ok/predictions.csv",
+    "stderr": ""
+  },
+  "expected_failure": {
+    "argv": [
+      "/home/dengnianchen/miniconda3/bin/python3",
+      "model/predict.py",
+      "--input",
+      "/tmp/deploy-probe-xhg1d8d6/no-such.csv",
+      "--out-dir",
+      "/tmp/deploy-probe-xhg1d8d6/m-bad"
+    ],
+    "exit_code": 3,
+    "stdout": "",
+    "stderr": "错误：找不到输入（/tmp/deploy-probe-xhg1d8d6/no-such.csv）"
+  },
+  "failure_expect": "rc=3 + error.json(input_not_found)",
+  "runtime": {
+    "python": "3.14.7",
+    "platform": "Linux-6.8.0-149-generic-x86_64-with-glibc2.39",
+    "python_executable": "/home/dengnianchen/miniconda3/bin/python3"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

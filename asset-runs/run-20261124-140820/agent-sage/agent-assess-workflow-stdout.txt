@@ -1,0 +1,20 @@
+
+
+## 完成 ✅
+
+工作流 `assess-workflow` 已跑通：数据资产 `grid-samples`（`payload/points.csv`，100 个点）→ 工具 `zscore-normalize`（标准化+统计）→ 技能 `idw-interpolate`（`targets.csv` 的 5 个目标点，IDW power=2），产物未写进只读技能目录，全部输出在当前工作目录。
+
+**report.json 中的关键指标：**
+
+| 字段 | 值 |
+|---|---|
+| `data_points` | **100** |
+| `targets` | **5** |
+| `estimate_min` | **12.323535** |
+| `estimate_max` | **18.208559** |
+
+（`value_mean` = 15.699537，`value_pstdev` = 2.318747，`steps` = `["read_data", "zscore_normalize", "idw_interpolate"]`，`external_assets` 只记相对路径，不包含挂载绝对路径。）
+
+经 `validate/validate.py --case C01-end-to-end --artifact <产物目录>` 校验，所有检查项（`data_points=100`、`targets=5`、`steps` 三步、`estimate_min < estimate_max`）均为通过，退出码 0。
+
+产物报告绝对路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/agent-sage/assess-workflow/report.json`

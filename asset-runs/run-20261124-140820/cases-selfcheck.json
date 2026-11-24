@@ -1,0 +1,770 @@
+{
+  "tool": "run_cases.py",
+  "work_copy": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "run": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820",
+  "generated_at": "2026-11-24T14:09:42+08:00",
+  "total": 38,
+  "pass": 37,
+  "fail": 0,
+  "results": [
+    {
+      "asset": "assess-workflow",
+      "case_id": "C01-end-to-end",
+      "title": "数据→工具→技能全链路：100 个数据点、5 个目标点、3 步",
+      "kind": "workflow",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "python validate/validate.py --case C01-end-to-end --out-dir <run>/validation-run/assess-workflow/C01-end-to-end/work --assets-root <副本>/assess-workflow",
+      "exit_code": 0,
+      "duration_s": 0.052,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C01-end-to-end\", \"rc\": 0, \"passed\": true}",
+      "stderr_tail": "需要 --out-dir + --assets-root（自检）或 --artifact（验收）",
+      "evidence": {
+        "stdout": "validation-run/assess-workflow/C01-end-to-end/stdout.log",
+        "stderr": "validation-run/assess-workflow/C01-end-to-end/stderr.log",
+        "out_dir": "validation-run/assess-workflow/C01-end-to-end/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00",
+      "note": "该资产的自检入口要求 --assets-root（缺省时报用法错误 rc=2）；C02 用一个不含外部资产的空目录作为挂载根"
+    },
+    {
+      "asset": "assess-workflow",
+      "case_id": "C02-missing-external",
+      "title": "挂载根缺外部资产 → 退出码 3 + error.json(external_asset_missing)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "python validate/validate.py --case C02-missing-external --out-dir <run>/validation-run/assess-workflow/C02-missing-external/work --assets-root <run>/validation-run/assess-workflow/C02-missing-external/empty-root",
+      "exit_code": 0,
+      "duration_s": 0.051,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C02-missing-external\", \"rc\": 3, \"passed\": true}",
+      "stderr_tail": "需要 --out-dir + --assets-root（自检）或 --artifact（验收）",
+      "evidence": {
+        "stdout": "validation-run/assess-workflow/C02-missing-external/stdout.log",
+        "stderr": "validation-run/assess-workflow/C02-missing-external/stderr.log",
+        "out_dir": "validation-run/assess-workflow/C02-missing-external/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00",
+      "note": "该资产的自检入口要求 --assets-root（缺省时报用法错误 rc=2）；C02 用一个不含外部资产的空目录作为挂载根"
+    },
+    {
+      "asset": "grid-samples",
+      "case_id": "C01-metadata",
+      "title": "记录数/列名/值域与 metadata.json 声明一致",
+      "kind": "declared-metadata",
+      "expected_kind": null,
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples/validate/validate.py --case C01-metadata --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-samples/C01-metadata/work",
+      "exit_code": 0,
+      "duration_s": 0.064,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C01-metadata\", \"checks\": 3, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-samples/C01-metadata/stdout.log",
+        "stderr": "validation-run/grid-samples/C01-metadata/stderr.log",
+        "out_dir": "validation-run/grid-samples/C01-metadata/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00"
+    },
+    {
+      "asset": "grid-samples",
+      "case_id": "C02-structure",
+      "title": "列集合与行序稳定（首行 id=p001）",
+      "kind": "structure",
+      "expected_kind": null,
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples/validate/validate.py --case C02-structure --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-samples/C02-structure/work",
+      "exit_code": 0,
+      "duration_s": 0.067,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C02-structure\", \"checks\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-samples/C02-structure/stdout.log",
+        "stderr": "validation-run/grid-samples/C02-structure/stderr.log",
+        "out_dir": "validation-run/grid-samples/C02-structure/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00"
+    },
+    {
+      "asset": "grid-samples",
+      "case_id": "C03-read",
+      "title": "payload/points.csv 可解析为 UTF-8 CSV 且含表头",
+      "kind": "file_metadata",
+      "expected_kind": null,
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples/validate/validate.py --case C03-read --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-samples/C03-read/work",
+      "exit_code": 0,
+      "duration_s": 0.063,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C03-read\", \"checks\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-samples/C03-read/stdout.log",
+        "stderr": "validation-run/grid-samples/C03-read/stderr.log",
+        "out_dir": "validation-run/grid-samples/C03-read/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00"
+    },
+    {
+      "asset": "grid-samples",
+      "case_id": "C04-extent",
+      "title": "声明空间范围与网格完整性：bbox 与 grid{nx,ny} 和实体一致",
+      "kind": "declared-metadata",
+      "expected_kind": null,
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples/validate/validate.py --case C04-extent --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-samples/C04-extent/work",
+      "exit_code": 0,
+      "duration_s": 0.067,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C04-extent\", \"checks\": 3, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-samples/C04-extent/stdout.log",
+        "stderr": "validation-run/grid-samples/C04-extent/stderr.log",
+        "out_dir": "validation-run/grid-samples/C04-extent/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00"
+    },
+    {
+      "asset": "grid-samples",
+      "case_id": "C05-formula",
+      "title": "声明公式逐行复算：按 metadata.formula（i 自 1 起）重算 100 行，最大偏差 ≤ 1e-06",
+      "kind": "declared-formula",
+      "expected_kind": null,
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-samples/validate/validate.py --case C05-formula --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-samples/C05-formula/work",
+      "exit_code": 0,
+      "duration_s": 0.067,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C05-formula\", \"checks\": 1, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-samples/C05-formula/stdout.log",
+        "stderr": "validation-run/grid-samples/C05-formula/stderr.log",
+        "out_dir": "validation-run/grid-samples/C05-formula/work"
+      },
+      "executed_at": "2026-11-24T14:09:38+08:00"
+    },
+    {
+      "asset": "grid-stats-task",
+      "case_id": "C01-oracle-nop",
+      "title": "harbor 双 trial：oracle 注入 solution 期望 reward=1，nop 不注入期望 reward=0（nop 即负例）",
+      "expected_kind": "harbor",
+      "kind": "task",
+      "status": "delegated_harbor",
+      "entrypoint": "tests/test.sh",
+      "note": "由 harbor_run.py 执行 oracle/nop 双 trial"
+    },
+    {
+      "asset": "grid-stats-trajectory",
+      "case_id": "C01-structure",
+      "title": "结构合法：format=ATIF、6 步、每步 role/type 在词表内、时间严格递增、run.status=success",
+      "kind": "trajectory",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-trajectory/validate/validate.py --case C01-structure --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-stats-trajectory/C01-structure/work",
+      "exit_code": 0,
+      "duration_s": 0.053,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C01-structure\", \"ok\": true, \"steps\": 6, \"problems\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-stats-trajectory/C01-structure/stdout.log",
+        "stderr": "validation-run/grid-stats-trajectory/C01-structure/stderr.log",
+        "out_dir": "validation-run/grid-stats-trajectory/C01-structure/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-stats-trajectory",
+      "case_id": "C02-outcome-consistency",
+      "title": "结果自洽：final 的 result_summary 与关联 task 的期望一致（count 67 / sum 394 / mean 5.880597 / 四象限 17·17·17·16）",
+      "kind": "trajectory",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-trajectory/validate/validate.py --case C02-outcome-consistency --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-stats-trajectory/C02-outcome-consistency/work",
+      "exit_code": 0,
+      "duration_s": 0.049,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C02-outcome-consistency\", \"ok\": true, \"steps\": 6, \"problems\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-stats-trajectory/C02-outcome-consistency/stdout.log",
+        "stderr": "validation-run/grid-stats-trajectory/C02-outcome-consistency/stderr.log",
+        "out_dir": "validation-run/grid-stats-trajectory/C02-outcome-consistency/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-stats-trajectory",
+      "case_id": "C03-evidence-linked",
+      "title": "证据链完整：verification 步给出 verifier 名称、result=pass、reward=1 与证据位置",
+      "kind": "trajectory",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-trajectory/validate/validate.py --case C03-evidence-linked --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-stats-trajectory/C03-evidence-linked/work",
+      "exit_code": 0,
+      "duration_s": 0.055,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C03-evidence-linked\", \"ok\": true, \"steps\": 6, \"problems\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-stats-trajectory/C03-evidence-linked/stdout.log",
+        "stderr": "validation-run/grid-stats-trajectory/C03-evidence-linked/stderr.log",
+        "out_dir": "validation-run/grid-stats-trajectory/C03-evidence-linked/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-stats-trajectory",
+      "case_id": "C04-broken-step",
+      "title": "篡改用例：删掉 verification 步 → 校验判不通过（trajectory 不能缺验证证据）",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-trajectory/validate/validate.py --case C04-broken-step --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-stats-trajectory/C04-broken-step/work",
+      "exit_code": 0,
+      "duration_s": 0.052,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C04-broken-step\", \"ok\": true, \"problems\": [\"缺少 verification 步（轨迹必须带验证证据）\"]}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-stats-trajectory/C04-broken-step/stdout.log",
+        "stderr": "validation-run/grid-stats-trajectory/C04-broken-step/stderr.log",
+        "out_dir": "validation-run/grid-stats-trajectory/C04-broken-step/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-summary-benchmark",
+      "case_id": "C01-score-good",
+      "title": "正确产物（cases/good）→ score=1.0、passed=true（七个字段全对 + 两条自洽约束成立）",
+      "kind": "benchmark",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-summary-benchmark/validate/validate.py --case C01-score-good --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C01-score-good/work",
+      "exit_code": 0,
+      "duration_s": 0.108,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C01-score-good\", \"ok\": true, \"score\": 1.0, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-summary-benchmark/C01-score-good/stdout.log",
+        "stderr": "validation-run/grid-summary-benchmark/C01-score-good/stderr.log",
+        "out_dir": "validation-run/grid-summary-benchmark/C01-score-good/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-summary-benchmark",
+      "case_id": "C02-score-bad",
+      "title": "篡改产物（cases/bad：value_sum 398、象限和 68≠67）→ passed=false，且 score<1",
+      "kind": "benchmark",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-summary-benchmark/validate/validate.py --case C02-score-bad --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C02-score-bad/work",
+      "exit_code": 0,
+      "duration_s": 0.115,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C02-score-bad\", \"ok\": true, \"score\": 0.571429, \"wrong_fields\": [\"value_sum\", \"quadrant_counts\"]}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-summary-benchmark/C02-score-bad/stdout.log",
+        "stderr": "validation-run/grid-summary-benchmark/C02-score-bad/stderr.log",
+        "out_dir": "validation-run/grid-summary-benchmark/C02-score-bad/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-summary-benchmark",
+      "case_id": "C03-rubric-schema",
+      "title": "评分规则自洽：权重之和=1、pass_threshold∈[0,1]、指标类型在支持列表内、产物布局与 task 一致",
+      "kind": "declared-metadata",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-summary-benchmark/validate/validate.py --case C03-rubric-schema --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C03-rubric-schema/work",
+      "exit_code": 0,
+      "duration_s": 0.056,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C03-rubric-schema\", \"ok\": true, \"problems\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-summary-benchmark/C03-rubric-schema/stdout.log",
+        "stderr": "validation-run/grid-summary-benchmark/C03-rubric-schema/stderr.log",
+        "out_dir": "validation-run/grid-summary-benchmark/C03-rubric-schema/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-summary-benchmark",
+      "case_id": "C04-reference-consistency",
+      "title": "参考答案自洽：字段与判分口径一致、象限之和=count、mean=sum/count（容差 1e-6）",
+      "kind": "benchmark",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-summary-benchmark/validate/validate.py --case C04-reference-consistency --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C04-reference-consistency/work",
+      "exit_code": 0,
+      "duration_s": 0.061,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C04-reference-consistency\", \"ok\": true, \"problems\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-summary-benchmark/C04-reference-consistency/stdout.log",
+        "stderr": "validation-run/grid-summary-benchmark/C04-reference-consistency/stderr.log",
+        "out_dir": "validation-run/grid-summary-benchmark/C04-reference-consistency/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "grid-summary-benchmark",
+      "case_id": "C05-missing-submission",
+      "title": "产物目录没有 summary.json → problems 记录缺失、passed=false",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-summary-benchmark/validate/validate.py --case C05-missing-submission --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C05-missing-submission/work",
+      "exit_code": 0,
+      "duration_s": 0.105,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C05-missing-submission\", \"ok\": true, \"problems\": [\"缺少产物：/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/grid-summary-benchmark/C05-missing-submission/work/c05-empty/summary.json\"]}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/grid-summary-benchmark/C05-missing-submission/stdout.log",
+        "stderr": "validation-run/grid-summary-benchmark/C05-missing-submission/stderr.log",
+        "out_dir": "validation-run/grid-summary-benchmark/C05-missing-submission/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C01-hits",
+      "title": "命中已知点 → value_est 10/20、nearest_dist 均为 0（两列都判）",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C01-hits --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C01-hits/work",
+      "exit_code": 0,
+      "duration_s": 0.111,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C01-hits\", \"ok\": true, \"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"], \"expected\": {\"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"]}, \"why\": \"\"}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C01-hits/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C01-hits/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C01-hits/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C02-equidistant",
+      "title": "等距两点 → 均值 15、nearest_dist 5（两列都判）",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C02-equidistant --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C02-equidistant/work",
+      "exit_code": 0,
+      "duration_s": 0.111,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C02-equidistant\", \"ok\": true, \"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"], \"expected\": {\"rows\": 1, \"value_est\": [\"15.000000\"], \"nearest_dist\": [\"5.000000\"]}, \"why\": \"\"}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C02-equidistant/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C02-equidistant/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C02-equidistant/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C03-missing-file",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C03-missing-file --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C03-missing-file/work",
+      "exit_code": 0,
+      "duration_s": 0.104,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C03-missing-file\", \"rc\": 3, \"error\": \"input_not_found\", \"expected\": {\"rc\": 3, \"error\": \"input_not_found\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C03-missing-file/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C03-missing-file/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C03-missing-file/work"
+      },
+      "executed_at": "2026-11-24T14:09:39+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C04-bad-column",
+      "title": "目标点缺 x 列 → 退出码 2 + error.json(bad_columns)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C04-bad-column --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C04-bad-column/work",
+      "exit_code": 0,
+      "duration_s": 0.108,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C04-bad-column\", \"rc\": 2, \"error\": \"bad_columns\", \"expected\": {\"rc\": 2, \"error\": \"bad_columns\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C04-bad-column/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C04-bad-column/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C04-bad-column/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C05-power-one",
+      "title": "非默认幂次 power=1 → 解析解 12.5、nearest_dist 2.5",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C05-power-one --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C05-power-one/work",
+      "exit_code": 0,
+      "duration_s": 0.105,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C05-power-one\", \"ok\": true, \"rows\": 1, \"value_est\": [\"12.500000\"], \"nearest_dist\": [\"2.500000\"], \"expected\": {\"rows\": 1, \"value_est\": [\"12.500000\"], \"nearest_dist\": [\"2.500000\"]}, \"why\": \"\"}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C05-power-one/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C05-power-one/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C05-power-one/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C06-bad-power",
+      "title": "--power ≤ 0 → 退出码 2 + error.json(bad_power)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C06-bad-power --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C06-bad-power/work",
+      "exit_code": 0,
+      "duration_s": 0.104,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C06-bad-power\", \"rc\": 2, \"error\": \"bad_power\", \"expected\": {\"rc\": 2, \"error\": \"bad_power\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C06-bad-power/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C06-bad-power/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C06-bad-power/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "idw-interpolate",
+      "case_id": "C07-no-source-points",
+      "title": "已知点表为空（只有表头）→ 退出码 2 + error.json(no_source_points)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/idw-interpolate/validate/validate.py --case C07-no-source-points --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/idw-interpolate/C07-no-source-points/work",
+      "exit_code": 0,
+      "duration_s": 0.106,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C07-no-source-points\", \"rc\": 2, \"error\": \"no_source_points\", \"expected\": {\"rc\": 2, \"error\": \"no_source_points\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/idw-interpolate/C07-no-source-points/stdout.log",
+        "stderr": "validation-run/idw-interpolate/C07-no-source-points/stderr.log",
+        "out_dir": "validation-run/idw-interpolate/C07-no-source-points/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "linear-model",
+      "case_id": "C01-predict",
+      "title": "6 条样本按 weights.json 推理，prediction 与解析解逐值一致（2.0/3.0/2.75/3.75/3.5/4.5）",
+      "kind": "predict",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/linear-model/validate/validate.py --case C01-predict --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/linear-model/C01-predict/work",
+      "exit_code": 0,
+      "duration_s": 0.115,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C01-predict\", \"ok\": true, \"why\": \"\", \"rows\": 6, \"values\": [\"2.000000\", \"3.000000\", \"2.750000\", \"3.750000\", \"3.500000\", \"4.500000\"]}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/linear-model/C01-predict/stdout.log",
+        "stderr": "validation-run/linear-model/C01-predict/stderr.log",
+        "out_dir": "validation-run/linear-model/C01-predict/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "linear-model",
+      "case_id": "C02-reproducible",
+      "title": "同一输入连跑两次，predictions.csv 逐字节一致（确定性推理）",
+      "kind": "predict",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/linear-model/validate/validate.py --case C02-reproducible --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/linear-model/C02-reproducible/work",
+      "exit_code": 0,
+      "duration_s": 0.19,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C02-reproducible\", \"ok\": true, \"why\": \"\", \"rows\": 6, \"values\": [\"2.000000\", \"3.000000\", \"2.750000\", \"3.750000\", \"3.500000\", \"4.500000\"], \"reproducible\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/linear-model/C02-reproducible/stdout.log",
+        "stderr": "validation-run/linear-model/C02-reproducible/stderr.log",
+        "out_dir": "validation-run/linear-model/C02-reproducible/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "linear-model",
+      "case_id": "C03-bad-column",
+      "title": "输入缺 y 列 → 退出码 2 + error.json(bad_columns)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/linear-model/validate/validate.py --case C03-bad-column --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/linear-model/C03-bad-column/work",
+      "exit_code": 0,
+      "duration_s": 0.112,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C03-bad-column\", \"rc\": 2, \"error\": \"bad_columns\", \"expected\": {\"rc\": 2, \"error\": \"bad_columns\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/linear-model/C03-bad-column/stdout.log",
+        "stderr": "validation-run/linear-model/C03-bad-column/stderr.log",
+        "out_dir": "validation-run/linear-model/C03-bad-column/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "linear-model",
+      "case_id": "C04-input-missing",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/linear-model/validate/validate.py --case C04-input-missing --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/linear-model/C04-input-missing/work",
+      "exit_code": 0,
+      "duration_s": 0.111,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C04-input-missing\", \"rc\": 3, \"error\": \"input_not_found\", \"expected\": {\"rc\": 3, \"error\": \"input_not_found\"}, \"ok\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/linear-model/C04-input-missing/stdout.log",
+        "stderr": "validation-run/linear-model/C04-input-missing/stderr.log",
+        "out_dir": "validation-run/linear-model/C04-input-missing/work"
+      },
+      "executed_at": "2026-11-24T14:09:40+08:00"
+    },
+    {
+      "asset": "python-runtime",
+      "case_id": "C01-runtime-ok",
+      "title": "环境自检通过：python ≥ 3.10、8 个标准库模块可用、无网络依赖（runtime-report.ok=true）",
+      "kind": "environment",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/python-runtime/validate/validate.py --case C01-runtime-ok --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/python-runtime/C01-runtime-ok/work",
+      "exit_code": 0,
+      "duration_s": 0.129,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C01-runtime-ok\", \"ok\": true, \"rc\": 0, \"third_party_present\": [], \"python\": \"3.14.7\"}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/python-runtime/C01-runtime-ok/stdout.log",
+        "stderr": "validation-run/python-runtime/C01-runtime-ok/stderr.log",
+        "out_dir": "validation-run/python-runtime/C01-runtime-ok/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "python-runtime",
+      "case_id": "C02-no-third-party",
+      "title": "声明的依赖清单为空，环境内不应出现 numpy/pandas/scipy/tensorflow/torch（third_party_present 为空）",
+      "kind": "environment",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/python-runtime/validate/validate.py --case C02-no-third-party --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/python-runtime/C02-no-third-party/work",
+      "exit_code": 0,
+      "duration_s": 0.135,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C02-no-third-party\", \"ok\": true, \"rc\": 0, \"third_party_present\": [], \"python\": \"3.14.7\"}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/python-runtime/C02-no-third-party/stdout.log",
+        "stderr": "validation-run/python-runtime/C02-no-third-party/stderr.log",
+        "out_dir": "validation-run/python-runtime/C02-no-third-party/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "python-runtime",
+      "case_id": "C03-python-version-gate",
+      "title": "模拟 python 版本不满足（3.9）→ 自检判不通过（problems 含版本原因）",
+      "kind": "environment",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/python-runtime/validate/validate.py --case C03-python-version-gate --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/python-runtime/C03-python-version-gate/work",
+      "exit_code": 0,
+      "duration_s": 0.136,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C03-python-version-gate\", \"ok\": true, \"rc\": 1, \"problems\": [\"python 版本不满足：需要 >= 3.10，实际 3.9.0\"]}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/python-runtime/C03-python-version-gate/stdout.log",
+        "stderr": "validation-run/python-runtime/C03-python-version-gate/stderr.log",
+        "out_dir": "validation-run/python-runtime/C03-python-version-gate/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "python-runtime",
+      "case_id": "C04-dockerfile-consistent",
+      "title": "Dockerfile 的基础镜像版本与 asset.json 声明的 python 版本一致，且 requirements.lock 无实际依赖",
+      "kind": "declared-metadata",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/python-runtime/validate/validate.py --case C04-dockerfile-consistent --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/python-runtime/C04-dockerfile-consistent/work",
+      "exit_code": 0,
+      "duration_s": 0.058,
+      "status": "pass",
+      "stdout_tail": "{\"mode\": \"self-check\", \"case\": \"C04-dockerfile-consistent\", \"ok\": true, \"declared_python\": \"3.12\", \"image\": \"3.12\", \"lock_entries\": []}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/python-runtime/C04-dockerfile-consistent/stdout.log",
+        "stderr": "validation-run/python-runtime/C04-dockerfile-consistent/stderr.log",
+        "out_dir": "validation-run/python-runtime/C04-dockerfile-consistent/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C01-basic",
+      "title": "1,2,3 三点：z 值 -1.224745/0/1.224745，mean=2.0，pstdev=0.816497",
+      "kind": "analytic",
+      "expected_kind": "success",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C01-basic --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C01-basic/work",
+      "exit_code": 0,
+      "duration_s": 0.111,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C01-basic\", \"rc\": 0, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C01-basic/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C01-basic/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C01-basic/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C02-single",
+      "title": "单条记录方差为 0 → 退出码 2 + error.json(zero_variance)",
+      "kind": "edge",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C02-single --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C02-single/work",
+      "exit_code": 0,
+      "duration_s": 0.112,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C02-single\", \"rc\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C02-single/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C02-single/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C02-single/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C03-bad-column",
+      "title": "缺 value 列 → 退出码 2 + error.json(missing_value_column)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C03-bad-column --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C03-bad-column/work",
+      "exit_code": 0,
+      "duration_s": 0.113,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C03-bad-column\", \"rc\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C03-bad-column/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C03-bad-column/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C03-bad-column/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C04-input-missing",
+      "title": "输入文件不存在 → 退出码 3 + error.json(input_not_found)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C04-input-missing --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C04-input-missing/work",
+      "exit_code": 0,
+      "duration_s": 0.108,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C04-input-missing\", \"rc\": 3, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C04-input-missing/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C04-input-missing/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C04-input-missing/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C05-bad-value",
+      "title": "value 含非数值 → 退出码 2 + error.json(bad_value)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C05-bad-value --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C05-bad-value/work",
+      "exit_code": 0,
+      "duration_s": 0.116,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C05-bad-value\", \"rc\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C05-bad-value/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C05-bad-value/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C05-bad-value/work"
+      },
+      "executed_at": "2026-11-24T14:09:41+08:00"
+    },
+    {
+      "asset": "zscore-normalize",
+      "case_id": "C06-empty-input",
+      "title": "只有表头的空输入 → 退出码 2 + error.json(empty_input)",
+      "kind": "invalid",
+      "expected_kind": "error",
+      "entrypoint": "validate/validate.py",
+      "command": "/home/dengnianchen/miniconda3/bin/python3 /home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/zscore-normalize/validate/validate.py --case C06-empty-input --out-dir /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/validation-run/zscore-normalize/C06-empty-input/work",
+      "exit_code": 0,
+      "duration_s": 0.117,
+      "status": "pass",
+      "stdout_tail": "{\"case\": \"C06-empty-input\", \"rc\": 2, \"passed\": true}",
+      "stderr_tail": "",
+      "evidence": {
+        "stdout": "validation-run/zscore-normalize/C06-empty-input/stdout.log",
+        "stderr": "validation-run/zscore-normalize/C06-empty-input/stderr.log",
+        "out_dir": "validation-run/zscore-normalize/C06-empty-input/work"
+      },
+      "executed_at": "2026-11-24T14:09:42+08:00"
+    }
+  ],
+  "note_rerun": "assess-workflow 的两例以 --assets-root 重跑，记录已并入本文件",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

@@ -1,0 +1,84 @@
+{
+  "tool": "harbor_run.py",
+  "generated_at": "2026-11-24T14:09:42+08:00",
+  "package": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820",
+  "harbor": {
+    "docker": "Client: Docker Engine - Community\n Version:    28.1.1\n Context:    default\n Debug Mode: false\n Plugins:\n  buildx: Docker Buildx (Docker Inc.)\n    Version:  v0.23.0\n    Path:     /usr/libexec/docker/cl",
+    "harbor": {
+      "bin": "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+      "version": "0.27.0",
+      "source": "auto-install"
+    },
+    "has_gpu": true,
+    "lint": "collected",
+    "lint_note": null
+  },
+  "verdict": "blocked",
+  "summary": {
+    "total": 2,
+    "passed": 0,
+    "failed": 0,
+    "blocked": 1
+  },
+  "tasks": [
+    {
+      "task": "grid-stats-task",
+      "oracle": {
+        "status": "ran",
+        "cmd": [
+          "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+          "run",
+          "-p",
+          "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-task",
+          "-a",
+          "oracle",
+          "-o",
+          "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task",
+          "--job-name",
+          "oracle",
+          "--yes"
+        ],
+        "job_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/oracle",
+        "reward": null,
+        "source": null,
+        "note": "未找到 trial/result reward 或 verifier reward 文件"
+      },
+      "nop": {
+        "status": "ran",
+        "cmd": [
+          "/tmp/sci-asset-verify-harbor-venv/bin/harbor",
+          "run",
+          "-p",
+          "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-task",
+          "-a",
+          "nop",
+          "-o",
+          "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task",
+          "--job-name",
+          "nop",
+          "--yes"
+        ],
+        "job_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-140820/harbor/grid-stats-task/nop",
+        "reward": null,
+        "source": null,
+        "note": "未找到 trial/result reward 或 verifier reward 文件"
+      },
+      "verdict": "blocked",
+      "reason": "未找到 trial/result reward 或 verifier reward 文件"
+    }
+  ],
+  "blocked_tasks": [
+    {
+      "task": "/home/dengnianchen/projects/agent_centric/examples/.asset-work/run-20261124-140820/grid-stats-task",
+      "status": "blocked_ran",
+      "reason": "未找到 trial/result reward 或 verifier reward 文件"
+    }
+  ],
+  "findings": [],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}

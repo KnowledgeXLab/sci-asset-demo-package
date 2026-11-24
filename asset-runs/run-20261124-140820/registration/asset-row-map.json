@@ -1,0 +1,149 @@
+{
+  "rows": [
+    {
+      "资产名称": "规则网格采样点数据",
+      "asset_id": "sciasset://2026ZD000042/demo/data/grid-samples",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 2,
+      "asset_dir": "grid-samples",
+      "case_ids": [
+        "C01-metadata",
+        "C02-structure",
+        "C03-read",
+        "C04-extent",
+        "C05-formula"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "z-score 标准化工具",
+      "asset_id": "sciasset://2026ZD000042/demo/tool/zscore-normalize",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 3,
+      "asset_dir": "zscore-normalize",
+      "case_ids": [
+        "C01-basic",
+        "C02-single",
+        "C03-bad-column",
+        "C04-input-missing",
+        "C05-bad-value",
+        "C06-empty-input"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "IDW 反距离权重插值技能",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/idw-interpolate",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 4,
+      "asset_dir": "idw-interpolate",
+      "case_ids": [
+        "C01-hits",
+        "C02-equidistant",
+        "C03-missing-file",
+        "C04-bad-column",
+        "C05-power-one",
+        "C06-bad-power",
+        "C07-no-source-points",
+        "A01-agent-acceptance"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "示例评估工作流",
+      "asset_id": "sciasset://2026ZD000042/demo/skill/assess-workflow",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 5,
+      "asset_dir": "assess-workflow",
+      "case_ids": [
+        "C01-end-to-end",
+        "C02-missing-external",
+        "A01-agent-acceptance"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "线性回归示例模型",
+      "asset_id": "sciasset://2026ZD000042/demo/model/linear-model",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 6,
+      "asset_dir": "linear-model",
+      "case_ids": [
+        "C01-predict",
+        "C02-reproducible",
+        "C03-bad-column",
+        "C04-input-missing"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "示例 Python 最小运行环境",
+      "asset_id": "sciasset://2026ZD000042/demo/environment/python-runtime",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 7,
+      "asset_dir": "python-runtime",
+      "case_ids": [
+        "C01-runtime-ok",
+        "C02-no-third-party",
+        "C03-python-version-gate",
+        "C04-dockerfile-consistent"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "网格采样点汇总任务（harbor 格式示例）",
+      "asset_id": "sciasset://2026ZD000042/demo/task/grid-stats-task",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 8,
+      "asset_dir": "grid-stats-task",
+      "case_ids": [
+        "C01-oracle-nop"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "网格汇总任务成功轨迹 001",
+      "asset_id": "sciasset://2026ZD000042/demo/trajectory/grid-stats-trajectory",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 9,
+      "asset_dir": "grid-stats-trajectory",
+      "case_ids": [
+        "C01-structure",
+        "C02-outcome-consistency",
+        "C03-evidence-linked",
+        "C04-broken-step"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    },
+    {
+      "资产名称": "网格汇总任务评测基准",
+      "asset_id": "sciasset://2026ZD000042/demo/benchmark/grid-summary-benchmark",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 10,
+      "asset_dir": "grid-summary-benchmark",
+      "case_ids": [
+        "C01-score-good",
+        "C02-score-bad",
+        "C03-rubric-schema",
+        "C04-reference-consistency",
+        "C05-missing-submission"
+      ],
+      "登记状态": "已完成（本次核验回填）"
+    }
+  ],
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.3-beta.1",
+    "commit": "feebb76",
+    "version_source": "VERSION"
+  }
+}
