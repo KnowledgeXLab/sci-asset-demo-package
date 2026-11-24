@@ -95,15 +95,15 @@ grid-stats-task/
 在装好该 skill 的 agent（DSH / Claude Code / Codex 等）里，直接给它这段话即可：
 
 ```
-用 sci-asset-verify-skill 自查 <本仓库路径> 这个资产包，按对外发版口径全量跑一遍：
-含 harbor 任务的 oracle/nop 双 trial 和 Sage 附加测试，交付前我想知道还有哪些项没过。
+用 sci-asset-verify-skill 自查 <本仓库路径> 这个包，
+全量跑一遍，清单按对外发版口径填，交付前我想知道还有哪些项没过。
 ```
 
 它会依次做：盘点资产并读使用说明 → 固定清单判定（P0/P1 + 覆盖表）→ 跑各资产自带用例 →
 harbor 任务跑官方 CLI 的 oracle（期望 reward=1）与 nop（期望 reward=0）→ 生成核验报告与 23 列对外发版清单。
 
 本包用当前版本如实跑过一遍，预期结论：**24 条用例全部通过、固定清单 P0 0 / P1 0、harbor oracle=1 / nop=0**。
-只想核验其中一部分时，把范围写进 prompt 即可（例如「只看 `grid-stats-task` 这个资产」）。
+只想核验其中一部分时，把范围写进 prompt 即可（例如「只看 `grid-stats-task` 这个资产」）；harbor 任务的 oracle/nop 双 trial 与 Sage 附加测试由 skill 按包内情况自动触发，不必在 prompt 里点名。
 
 ## 版本记录
 
