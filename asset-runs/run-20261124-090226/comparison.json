@@ -1,0 +1,1008 @@
+{
+  "comparisons": [
+    {
+      "case_id": "C01-metadata",
+      "asset": "grid-samples",
+      "input": "payload/points.csv + metadata.json",
+      "truth_source": "grid-samples/metadata.json（记录数/columns/bbox/grid/formula）",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "record_count",
+          "expected": 100,
+          "actual": 100,
+          "unit": "count",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "value_min",
+          "expected": 10.06741,
+          "actual": 10.06741,
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "value_max",
+          "expected": 20.4125,
+          "actual": 20.4125,
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/grid-samples/C01-metadata/out/data-checks.json",
+        "cases/grid-samples/C01-metadata/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C02-structure",
+      "asset": "grid-samples",
+      "input": "payload/points.csv + metadata.json",
+      "truth_source": "grid-samples/metadata.json（记录数/columns/bbox/grid/formula）",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "columns",
+          "expected": [
+            "id",
+            "x",
+            "y",
+            "value"
+          ],
+          "actual": [
+            "id",
+            "x",
+            "y",
+            "value"
+          ],
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "row_order_stable",
+          "expected": "p001",
+          "actual": "p001",
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/grid-samples/C02-structure/out/data-checks.json",
+        "cases/grid-samples/C02-structure/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C03-read",
+      "asset": "grid-samples",
+      "input": "payload/points.csv + metadata.json",
+      "truth_source": "grid-samples/metadata.json（记录数/columns/bbox/grid/formula）",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "record_count",
+          "expected": 100,
+          "actual": 100,
+          "unit": "count",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "columns",
+          "expected": [
+            "id",
+            "x",
+            "y",
+            "value"
+          ],
+          "actual": [
+            "id",
+            "x",
+            "y",
+            "value"
+          ],
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/grid-samples/C03-read/out/data-checks.json",
+        "cases/grid-samples/C03-read/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C04-extent",
+      "asset": "grid-samples",
+      "input": "payload/points.csv + metadata.json",
+      "truth_source": "grid-samples/metadata.json（记录数/columns/bbox/grid/formula）",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "bbox_x",
+          "expected": [
+            0,
+            9
+          ],
+          "actual": [
+            0,
+            9
+          ],
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "bbox_y",
+          "expected": [
+            0,
+            9
+          ],
+          "actual": [
+            0,
+            9
+          ],
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        },
+        {
+          "field": "grid_complete",
+          "expected": true,
+          "actual": true,
+          "unit": "n/a",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/grid-samples/C04-extent/out/data-checks.json",
+        "cases/grid-samples/C04-extent/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C05-formula",
+      "asset": "grid-samples",
+      "input": "payload/points.csv + metadata.json",
+      "truth_source": "grid-samples/metadata.json（记录数/columns/bbox/grid/formula）",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "formula_recompute",
+          "expected": true,
+          "actual": true,
+          "unit": "value",
+          "absolute_error": 0,
+          "tolerance": "0（严格相等）；公式项 1e-06",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/grid-samples/C05-formula/out/data-checks.json",
+        "cases/grid-samples/C05-formula/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C01-basic",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "result.csv.zscore",
+          "expected": [
+            "-1.224745",
+            "0.000000",
+            "1.224745"
+          ],
+          "actual": [
+            "-1.224745",
+            "0.000000",
+            "1.224745"
+          ],
+          "unit": "无量纲",
+          "absolute_error": 0,
+          "tolerance": "0（字符串级严格相等）",
+          "status": "pass"
+        },
+        {
+          "field": "stats.json",
+          "expected": {
+            "n": 3,
+            "mean": 2.0,
+            "pstdev": 0.816497
+          },
+          "actual": {
+            "n": 3,
+            "mean": 2.0,
+            "pstdev": 0.816497
+          },
+          "unit": "n 个 / 无量纲",
+          "absolute_error": 0,
+          "tolerance": "0（字典完全相等）",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C01-basic/out/tool-checks.json",
+        "cases/zscore-normalize/C01-basic/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C02-single",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "zero_variance",
+          "actual": "zero_variance",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C02-single/out/tool-checks.json",
+        "cases/zscore-normalize/C02-single/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C03-bad-column",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "missing_value_column",
+          "actual": "missing_value_column",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C03-bad-column/out/tool-checks.json",
+        "cases/zscore-normalize/C03-bad-column/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C04-input-missing",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 3,
+          "actual": 3,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "input_not_found",
+          "actual": "input_not_found",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C04-input-missing/out/tool-checks.json",
+        "cases/zscore-normalize/C04-input-missing/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C05-bad-value",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "bad_value",
+          "actual": "bad_value",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C05-bad-value/out/tool-checks.json",
+        "cases/zscore-normalize/C05-bad-value/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C06-empty-input",
+      "asset": "zscore-normalize",
+      "input": "脚本内造的固定输入",
+      "truth_source": "解析解（总体标准差）/ 文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "empty_input",
+          "actual": "empty_input",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/zscore-normalize/C06-empty-input/out/tool-checks.json",
+        "cases/zscore-normalize/C06-empty-input/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C01-hits",
+      "asset": "idw-interpolate",
+      "input": "随包输入 validate/cases/<case>/（points.csv/targets.csv）",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "interpolated.csv.value_est",
+          "expected": [
+            "10.000000",
+            "20.000000"
+          ],
+          "actual": [
+            "10.000000",
+            "20.000000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.nearest_dist",
+          "expected": [
+            "0.000000",
+            "0.000000"
+          ],
+          "actual": [
+            "0.000000",
+            "0.000000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.rows",
+          "expected": 2,
+          "actual": 2,
+          "unit": "行",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C01-hits/stdout.log",
+        "cases/idw-interpolate/C01-hits/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C02-equidistant",
+      "asset": "idw-interpolate",
+      "input": "随包输入 validate/cases/<case>/（points.csv/targets.csv）",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "interpolated.csv.value_est",
+          "expected": [
+            "15.000000"
+          ],
+          "actual": [
+            "15.000000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.nearest_dist",
+          "expected": [
+            "5.000000"
+          ],
+          "actual": [
+            "5.000000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.rows",
+          "expected": 1,
+          "actual": 1,
+          "unit": "行",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C02-equidistant/stdout.log",
+        "cases/idw-interpolate/C02-equidistant/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C05-power-one",
+      "asset": "idw-interpolate",
+      "input": "随包输入 validate/cases/<case>/（points.csv/targets.csv）",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "interpolated.csv.value_est",
+          "expected": [
+            "12.500000"
+          ],
+          "actual": [
+            "12.500000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.nearest_dist",
+          "expected": [
+            "2.500000"
+          ],
+          "actual": [
+            "2.500000"
+          ],
+          "unit": "同输入观测值单位 / 同坐标单位",
+          "absolute_error": 0,
+          "tolerance": "0（6 位小数逐值字符串相等）",
+          "status": "pass"
+        },
+        {
+          "field": "interpolated.csv.rows",
+          "expected": 1,
+          "actual": 1,
+          "unit": "行",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C05-power-one/stdout.log",
+        "cases/idw-interpolate/C05-power-one/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C03-missing-file",
+      "asset": "idw-interpolate",
+      "input": "构造的缺失/非法输入",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 3,
+          "actual": 3,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "input_not_found",
+          "actual": "input_not_found",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C03-missing-file/stdout.log",
+        "cases/idw-interpolate/C03-missing-file/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C04-bad-column",
+      "asset": "idw-interpolate",
+      "input": "构造的缺失/非法输入",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "bad_columns",
+          "actual": "bad_columns",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C04-bad-column/stdout.log",
+        "cases/idw-interpolate/C04-bad-column/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C06-bad-power",
+      "asset": "idw-interpolate",
+      "input": "构造的缺失/非法输入",
+      "truth_source": "IDW 在已知点/等距点/幂次 1 的闭式解；文档承诺的错误语义",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 2,
+          "actual": 2,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "bad_power",
+          "actual": "bad_power",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/idw-interpolate/C06-bad-power/stdout.log",
+        "cases/idw-interpolate/C06-bad-power/rc.txt"
+      ]
+    },
+    {
+      "case_id": "C01-end-to-end",
+      "asset": "assess-workflow",
+      "input": "自带 targets.csv + 挂载后的三个资产目录",
+      "truth_source": "用例约定的报告字段与步骤序列",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "report.json.data_points",
+          "expected": 100,
+          "actual": 100,
+          "unit": "个",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "report.json.targets",
+          "expected": 5,
+          "actual": 5,
+          "unit": "个",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "report.json.steps",
+          "expected": [
+            "read_data",
+            "zscore_normalize",
+            "idw_interpolate"
+          ],
+          "actual": [
+            "read_data",
+            "zscore_normalize",
+            "idw_interpolate"
+          ],
+          "unit": "步骤名",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "report.json.estimate_range",
+          "expected": "estimate_min < estimate_max",
+          "actual": [
+            12.323535,
+            18.208559
+          ],
+          "unit": "同 value 单位",
+          "absolute_error": 5.885024000000001,
+          "tolerance": "单调性",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/assess-workflow/C01-end-to-end/"
+      ]
+    },
+    {
+      "case_id": "C02-missing-external",
+      "asset": "assess-workflow",
+      "input": "空挂载根",
+      "truth_source": "SKILL.md「失败语义」",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "exit_code",
+          "expected": 3,
+          "actual": 3,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "error.json.error",
+          "expected": "external_asset_missing",
+          "actual": "external_asset_missing",
+          "unit": "错误码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "cases/assess-workflow/C02-missing-external/"
+      ]
+    },
+    {
+      "case_id": "C01-oracle-nop",
+      "asset": "grid-stats-task",
+      "input": "environment/data/points.csv（agent 侧）+ tests/data/points.csv（verifier 真值）",
+      "truth_source": "tests/test_summary.py 从自带真值独立复算",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "oracle_reward",
+          "expected": 1.0,
+          "actual": 1.0,
+          "unit": "reward",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "nop_reward",
+          "expected": 0.0,
+          "actual": 0.0,
+          "unit": "reward",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "harbor-run-report.json",
+        "harbor/grid-stats-task/oracle/job.log",
+        "harbor/grid-stats-task/nop/job.log"
+      ]
+    },
+    {
+      "case_id": "A01-idw-agent",
+      "asset": "idw-interpolate",
+      "input": "validate/cases/C01 的 points.csv/targets.csv，幂次 2",
+      "truth_source": "validate/validate.py --artifact 门槛判据",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "agent_rc",
+          "expected": 0,
+          "actual": 0,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "gate_rc",
+          "expected": 0,
+          "actual": 0,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "agent/idw-interpolate-report.json"
+      ]
+    },
+    {
+      "case_id": "A01-assess-agent",
+      "asset": "assess-workflow",
+      "input": "自带 targets.csv + 挂载后的三个资产目录",
+      "truth_source": "validate/validate.py --artifact 门槛判据",
+      "match_keys": [
+        "case_id",
+        "asset_id",
+        "asset_version"
+      ],
+      "fields": [
+        {
+          "field": "agent_rc",
+          "expected": 0,
+          "actual": 0,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        },
+        {
+          "field": "gate_rc",
+          "expected": 0,
+          "actual": 0,
+          "unit": "退出码",
+          "absolute_error": 0,
+          "tolerance": "0",
+          "status": "pass"
+        }
+      ],
+      "ignored": [],
+      "run_status": "completed",
+      "scientific_verdict": "pass",
+      "integrity_verdict": "pass",
+      "evidence": [
+        "agent/assess-workflow-report.json"
+      ]
+    }
+  ],
+  "tool": "manual assembly (script-assisted)",
+  "run_id": "run-20261124-090226",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

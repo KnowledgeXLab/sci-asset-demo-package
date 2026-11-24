@@ -12,7 +12,7 @@
   "value_max": 11,
   "x_extent": [0, 9],
   "y_extent": [0, 9],
-  "quadrant_counts": {"Q1": 0, "Q2": 0, "Q3": 0, "Q4": 0},
+  "quadrant_counts": {"Q1": 17, "Q2": 17, "Q3": 17, "Q4": 16},
   "value_sum": 394
 }
 ```

@@ -1,0 +1,2 @@
+启动 agent：DSH（DeepSeek Harness）（backend=sage, model=Sage-A1.5）
+{"harness": "dsh", "backend": "sage", "agent_rc": 0, "gate_rc": 0, "verdict": "pass", "hint": null}

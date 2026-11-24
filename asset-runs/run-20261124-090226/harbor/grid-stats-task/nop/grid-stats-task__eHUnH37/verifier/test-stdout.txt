@@ -1,0 +1,1 @@
+FAIL: 缺少产物：/workspace/output/summary.json

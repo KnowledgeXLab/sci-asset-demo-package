@@ -19,7 +19,7 @@ python3 <skill>/scripts/harbor_run.py --package <包根> --run-dir <run>
 **无 docker 时的离线口径**：
 
 ```bash
-python3 validate/validate.py                 # 参考解 + verifier，应双双通过
+python3 validate/validate.py                 # 示例值自检 + 参考解 + verifier，应全部通过
 python3 validate/validate.py --no-solution   # 缺产物时 verifier 必须判不通过
 ```
 

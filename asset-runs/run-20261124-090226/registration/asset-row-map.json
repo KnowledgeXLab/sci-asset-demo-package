@@ -1,0 +1,90 @@
+{
+  "tool": "asset-row-map (manual assembly)",
+  "run_id": "run-20261124-090226",
+  "rows": [
+    {
+      "资产名称": "规则网格采样点数据",
+      "asset_id": "2026ZD000042/demo/data/grid-samples",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 2,
+      "case_ids": [
+        "C01-metadata",
+        "C02-structure",
+        "C03-read",
+        "C04-extent",
+        "C05-formula"
+      ],
+      "登记状态": "completed（表内已填，清单自检 errors=0；平台未注册）"
+    },
+    {
+      "资产名称": "z-score 标准化工具",
+      "asset_id": "2026ZD000042/demo/tool/zscore-normalize",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 3,
+      "case_ids": [
+        "C01-basic",
+        "C02-single",
+        "C03-bad-column",
+        "C04-input-missing",
+        "C05-bad-value",
+        "C06-empty-input"
+      ],
+      "登记状态": "completed（表内已填，清单自检 errors=0；平台未注册）"
+    },
+    {
+      "资产名称": "IDW 反距离权重插值技能",
+      "asset_id": "2026ZD000042/demo/skill/idw-interpolate",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 4,
+      "case_ids": [
+        "C01-hits",
+        "C02-equidistant",
+        "C05-power-one",
+        "C03-missing-file",
+        "C04-bad-column",
+        "C06-bad-power",
+        "A01-idw-agent"
+      ],
+      "登记状态": "completed（表内已填，清单自检 errors=0；平台未注册）"
+    },
+    {
+      "资产名称": "示例评估工作流",
+      "asset_id": "2026ZD000042/demo/skill/assess-workflow",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 5,
+      "case_ids": [
+        "C01-end-to-end",
+        "C02-missing-external",
+        "A01-assess-agent"
+      ],
+      "登记状态": "completed（表内已填，清单自检 errors=0；平台未注册）"
+    },
+    {
+      "资产名称": "网格采样点汇总任务（harbor 格式示例）",
+      "asset_id": "2026ZD000042/demo/task/grid-stats-task",
+      "version": "1.0.0",
+      "sheet": "资产明细",
+      "row": 6,
+      "case_ids": [
+        "C01-oracle-nop"
+      ],
+      "登记状态": "completed（表内已填，清单自检 errors=0；平台未注册）"
+    }
+  ],
+  "inventory_xor_map": {
+    "only_in_inventory": [],
+    "only_in_map": [],
+    "equal": true
+  },
+  "note": "行标识为「资产ID + 版本」；内部编号不适用（示例包无内部编号体系）",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

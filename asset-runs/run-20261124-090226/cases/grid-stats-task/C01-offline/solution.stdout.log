@@ -1,0 +1,5 @@
+已写出 /tmp/grid-stats-validate-3j61ehpw/output/summary.json：count=67
+PASS: summary.json 与数据独立复算结果完全一致
+
+参考解 rc=0；verifier rc=0
+OK：参考解通过自带 verifier

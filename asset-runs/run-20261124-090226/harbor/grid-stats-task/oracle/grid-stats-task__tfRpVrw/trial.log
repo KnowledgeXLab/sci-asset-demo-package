@@ -1,0 +1,4 @@
+Skipping image OS validation for hb__4ff37f2bdbafd2dca8a78c3a483e8555: docker inspect returned 1
+Agent 'oracle' exposes no native web search or fetch tools for Harbor to disable; continuing. Sandbox network policy still applies.
+Collecting main service artifacts
+Skipping image OS validation for hb__c585cc0fbf1abb7a7dfa451f18d3838d: docker inspect returned 1

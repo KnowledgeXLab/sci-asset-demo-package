@@ -1,0 +1,119 @@
+{
+  "tool": "sage_probe.py",
+  "generated_at": "2026-11-24T09:07:29+08:00",
+  "run": "run-20261124-090226",
+  "asset_involves_llm": true,
+  "status": "completed",
+  "note": "同一 DSH harness 换 Sage 后端（base_url 来自端砚平台配置，模型 Sage-A1.5）跑两个 skill 资产的 agent 验收任务，产物门槛均通过；该项为兼容性附加测试，不计入通过率与覆盖度分母。",
+  "is_acceptance_criterion": false,
+  "statement": "Sage A1.5 结果属于兼容性附加测试：无论通过与否，都不改变该资产合格与否的判定，也不进入通过率与覆盖度分母。",
+  "need": {
+    "checked_at": "2026-11-24T09:02:44+08:00",
+    "asset_root": "/home/dengnianchen/projects/agent_centric/examples/demo-assets",
+    "asset_types": [
+      "data",
+      "skill",
+      "task",
+      "tool"
+    ],
+    "type_hint": "包内含 skill、task 类型资产（仅作提示，需看是否有大模型 API 证据）",
+    "assumed": false,
+    "needed": true,
+    "reasons": [
+      "包内含 skill、task 类型资产（仅作提示，需看是否有大模型 API 证据）",
+      "包内含 skill 资产：验收须在 agent 上完成，Sage A1.5 应按同一 harness 执行（仅替换后端模型）"
+    ],
+    "evidence": [],
+    "nothing_to_do": null,
+    "skill": {
+      "name": "sci-asset-verify-skill",
+      "version": "1.2-beta.9",
+      "commit": "b21305b",
+      "version_source": "VERSION"
+    }
+  },
+  "config": {
+    "tool": "sage_probe.py",
+    "checked_at": "2026-11-24T09:02:48+08:00",
+    "base_url": "https://discovery-api.intern-ai.org.cn/v1",
+    "model": "Sage-A1.5",
+    "api_key_present": true,
+    "sources": {
+      "base_url": "dsh-profile:/home/dengnianchen/.dsh/profiles/web/cordis.patch.yml#inkstone",
+      "model": "dsh-profile:/home/dengnianchen/.dsh/profiles/web/cordis.patch.yml#inkstone",
+      "api_key": "dsh-credentials:.credentials.yaml#INKSTONE_API_KEY"
+    },
+    "missing": [],
+    "status": "configured",
+    "probe": {
+      "base_url": "https://discovery-api.intern-ai.org.cn/v1",
+      "model": "Sage-A1.5",
+      "checked_at": "2026-11-24T09:02:48+08:00",
+      "models_endpoint": "ok",
+      "http_status": 200,
+      "models": [
+        "Agents-A1",
+        "Atria-Dawn",
+        "Atria-Dawn-Preview",
+        "Sage-A1.5",
+        "Sage-A1.5-Taiyi",
+        "Sage-S2.1-Flash",
+        "deepseek-v4.1-flash-1017",
+        "glm-5.3",
+        "intern-s2",
+        "kimi-k3.1-pro",
+        "qwen3.8-27b"
+      ],
+      "model_listed": true,
+      "seconds": 0.06
+    },
+    "probe_ok": true,
+    "skill": {
+      "name": "sci-asset-verify-skill",
+      "version": "1.2-beta.9",
+      "commit": "b21305b",
+      "version_source": "VERSION"
+    }
+  },
+  "evidence": {
+    "runs": [
+      {
+        "asset": "idw-interpolate",
+        "harness": "dsh",
+        "harness_display": "DSH（DeepSeek Harness）",
+        "backend": "sage",
+        "model": "Sage-A1.5",
+        "agent_rc": 0,
+        "gate_rc": 0,
+        "verdict": "pass",
+        "ok": true,
+        "gate_cmd": "python validate/validate.py --case C01-hits --artifact /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent-sage/idw-interpolate",
+        "gate_stdout": "{\"mode\": \"artifact\", \"case\": \"C01-hits\", \"ok\": true, \"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"], \"expected\": {\"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"]}, \"why\": \"\"}\n",
+        "evidence": "agent-sage/idw-interpolate-report.json"
+      },
+      {
+        "asset": "assess-workflow",
+        "harness": "dsh",
+        "harness_display": "DSH（DeepSeek Harness）",
+        "backend": "sage",
+        "model": "Sage-A1.5",
+        "agent_rc": 0,
+        "gate_rc": 0,
+        "verdict": "pass",
+        "ok": true,
+        "gate_cmd": "python validate/validate.py --case C01-end-to-end --artifact /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent-sage/assess-workflow",
+        "gate_stdout": "{\"mode\": \"artifact\", \"ok\": true, \"checks\": {\"data_points\": true, \"targets\": true, \"steps\": true, \"estimate_range\": true}, \"report\": {\"workflow\": \"assess-workflow\", \"version\": \"1.0.0\", \"steps\": [\"read_data\", \"zscore_normalize\", \"idw_interpolate\"], \"data_points\": 100, \"value_mean\": 15.699537, \"value_pstdev\": 2.318747, \"targets\": 5, \"estimate_min\": 12.323535, \"estimate_max\": 18.208559, \"external_assets\": {\"data\": \"grid-samples\", \"tool\": \"zscore-normalize\", \"skill\": \"idw-interpolate\"}}}\n",
+        "evidence": "agent-sage/assess-workflow-report.json"
+      }
+    ],
+    "command": "python scripts/run_skill_agent.py --skill <副本>/<资产> --out-dir <run>/agent-sage/<资产> --harness auto --backend sage",
+    "note": "SAGE_* 只在进程内存中解析后以环境变量注入，未写入任何文件；origin 配置来自宿主机 DSH profile（只读）+ 凭据服务。",
+    "retry_note": "首次启动均命中核验侧文件沙箱（写 ~/.dsh/profiles/*/cordis.yml 被拒），自动改用隔离 DSH_HOME 后成功，attempt-01 现场留 agent-sage/agent-*-attempt-01-sandbox-stderr.txt。"
+  },
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

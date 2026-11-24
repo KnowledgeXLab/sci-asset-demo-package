@@ -1,0 +1,18 @@
+工作流已跑通（退出码 0），产物落在当前工作目录，并已用该资产自带的验收模式 `validate.py --artifact .` 校验通过（data_points / targets / steps / estimate_range 四项均 true）。
+
+**report.json 关键值**
+
+| 字段 | 值 |
+|---|---|
+| `data_points` | 100（`grid-samples/payload/points.csv`） |
+| `targets` | 5（工作流自带的 `targets.csv`） |
+| `estimate_min` | 12.323535 |
+| `estimate_max` | 18.208559 |
+| `value_mean` / `value_pstdev` | 15.699537 / 2.318747（原始观测值统计量） |
+
+说明与核对：
+- 按 SKILL.md 的语义，z-score 只用于产出 `value_mean`/`value_pstdev`，IDW 插值用的是**原始** `points.csv`（`--power 2`），所以我另外独立重算了一遍 5 个目标点的 IDW 估值，与 `skill/interpolated.csv` 逐值一致，范围 12.323535 ~ 18.208559（原始值域 10.067 ~ 20.413 之内，符合 IDW 向均值收缩的预期）。
+- 各目标点估值依次为：16.441320、16.143838、14.333148、18.208559、12.323535。
+- `external_assets` 只记录了相对位置（grid-samples / zscore-normalize / idw-interpolate），未写挂载绝对路径，换机可复现；技能/输入目录只读、未被写入，中间产物（`tool/`、`skill/`）都写在产物目录内。
+
+产物绝对路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent/assess-workflow/report.json`

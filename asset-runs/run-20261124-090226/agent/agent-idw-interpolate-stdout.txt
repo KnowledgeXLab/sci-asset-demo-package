@@ -1,0 +1,20 @@
+已完成。技能目录里的 `SKILL.md` 未被注册为会话技能（`skill` 工具查不到该名字），但按其中说明直接调用 `scripts/run.py` 执行成功（退出码 0），并用自带校验器复核通过。
+
+执行命令（只读引用技能目录，产物写在工作目录）：
+```
+python3 <skill>/scripts/run.py --points <skill>/validate/cases/C01/points.csv \
+  --targets <skill>/validate/cases/C01/targets.csv --out-dir "$PWD" --power 2
+```
+
+输出路径：`/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent/idw-interpolate/interpolated.csv`（另有 `run.json`）
+
+各行 `value_est`（幂次 2）：
+
+| x | y | value_est | nearest_dist |
+|---|-----|-----------|--------------|
+| 0 | 0 | 10.000000 | 0.000000 |
+| 10 | 0 | 20.000000 | 0.000000 |
+
+两行目标点恰好命中已知采样点，因此按技能规则直接取观测值（10、20），最近邻距离均为 0；校验结果 `ok: true`，`value_est` 与 `nearest_dist` 两列均与预期逐值一致。
+
+一句话回报：产物绝对路径为 `/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent/idw-interpolate/interpolated.csv`。

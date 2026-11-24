@@ -1,0 +1,10 @@
+{
+  "error": "input_not_found",
+  "path": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/cases/zscore-normalize/C04-input-missing/out/nope.csv",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  }
+}

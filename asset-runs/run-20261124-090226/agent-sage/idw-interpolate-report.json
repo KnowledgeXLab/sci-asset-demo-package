@@ -1,0 +1,39 @@
+{
+  "tool": "run_skill_agent.py",
+  "skill": {
+    "name": "sci-asset-verify-skill",
+    "version": "1.2-beta.9",
+    "commit": "b21305b",
+    "version_source": "VERSION"
+  },
+  "out_dir": "/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent-sage/idw-interpolate",
+  "harness": "dsh",
+  "harness_display": "DSH（DeepSeek Harness）",
+  "harness_hint": "DSH（DeepSeek Harness）Web 会话 —— 把本资产目录放进 agent 可读的 skills 位置，或在 prompt 里给出 `SKILL.md` 路径",
+  "harness_reason": "按 readme 建议",
+  "substituted_harness": null,
+  "backend": "sage",
+  "provider": "sage-env",
+  "model": "Sage-A1.5",
+  "cmd_head": [
+    "/home/dengnianchen/.nvm/versions/node/v22.22.2/bin/dsh",
+    "--profile",
+    "headless",
+    "--patch",
+    "/tmp/sage-patch-jfwg_t0o/sage.yml",
+    "--permission-mode",
+    "workspace-write",
+    "--"
+  ],
+  "dsh_home": "隔离 DSH_HOME=/home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent-sage/.dsh-home-idw-interpolate（工作区内可写）；凭据仅以环境变量注入，未落盘（注入键：AGENT_CENTER_API_KEY, DEEPSEEK_API_KEY, INKSTONE_API_KEY）",
+  "agent_rc": 0,
+  "secrets_scrubbed": [],
+  "gate_cmd": "python validate/validate.py --case C01-hits --artifact /home/dengnianchen/projects/agent_centric/examples/demo-assets/asset-runs/run-20261124-090226/agent-sage/idw-interpolate",
+  "gate_rc": 0,
+  "gate_stdout": "{\"mode\": \"artifact\", \"case\": \"C01-hits\", \"ok\": true, \"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"], \"expected\": {\"rows\": 2, \"value_est\": [\"10.000000\", \"20.000000\"], \"nearest_dist\": [\"0.000000\", \"0.000000\"]}, \"why\": \"\"}\n",
+  "gate_stderr": "",
+  "artifact_retry_dirs": [],
+  "stray_artifacts": null,
+  "retried_with_isolated_dsh_home": true,
+  "verdict": "pass"
+}

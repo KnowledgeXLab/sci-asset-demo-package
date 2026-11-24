@@ -14,8 +14,8 @@
   ],
   "task_classes": [
     {
-      "id": "operation:task-execution",
-      "label": "任务执行"
+      "id": "operation:data-processing",
+      "label": "数据处理"
     }
   ],
   "provenance": {

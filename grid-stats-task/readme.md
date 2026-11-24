@@ -50,5 +50,6 @@ python3 <skill>/scripts/harbor_run.py --package <包根> --run-dir <run>
 - 数据仅 67 行、纯标准库、无网络，构建与执行都在秒级，适合作为 harbor 格式的最小样例
 - `TBS_WORKSPACE` 覆盖工作区（默认 `/workspace`）、`TBS_DATA_CSV` 覆盖 verifier 真值路径，
   便于在 harbor 之外复跑
+- `validate/validate.py` 还会核对 `instruction.md` 的示例 JSON 与 verifier 期望值一致（防「示例写错、被测方照抄」），这属于校验的一部分
 - verifier 自带真值是有意的：`environment_mode = "separate"` 下被测方的 `data/` 未必可见，
   判分不能依赖它（否则 nop trial 会因为"读不到输入"而误判 0，oracle 也会假失败）
